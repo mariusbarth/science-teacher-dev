@@ -8,4 +8,6 @@ language:
   ui:
     edit: Bearbeiten
     chapter_name: "Kapitel "
+edit: "https://github.com/mariusbarth/science-teacher-dev/edit/master/%s"
 output_dir: "docs"
+
