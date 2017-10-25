@@ -8,3 +8,4 @@ language:
   ui:
     edit: Bearbeiten
     chapter_name: "Kapitel "
+output_dir: "docs"
