@@ -1,0 +1,14 @@
+\usepackage{booktabs}
+\usepackage{amsthm}
+\usepackage[ngerman]{babel}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+
+\addto\captionsngerman{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Inhalt}%
+}

@@ -1,0 +1,14 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      before: |
+        <li><a href="./">Forschungsmethoden</a></li>
+      after: |
+
+    edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
+    download: ["pdf"]
+bookdown::tufte_book2:
+  includes:
+    in_header: preamble.tex
+  citation_package: natbib

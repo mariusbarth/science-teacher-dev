@@ -1,0 +1,10 @@
+book_filename: "Forschungsmethoden"
+language:
+  label:
+    fig: "Abbildung "
+    tab: "Tabelle "
+    eq: "Gleichung "
+    toc: "Inhalt"
+  ui:
+    edit: Bearbeiten
+    chapter_name: "Kapitel "
