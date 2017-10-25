@@ -1,0 +1,130 @@
+# Messen {#measurement}
+
+<!-- stolen from CS: Statistik 1 -->
+<!-- noch zu abstrakt -->
+
+Bei einer Datenerhebung geht es darum, bestimmte *Merkmale* – Eigenschaften der untersuchten Merkmalsträger (Personen, Gruppen, Objekte, ...) – zu erfassen.
+Die individuellen *Ausprägungen* der Merkmale (die Werte der Variablen) werden dann zu einem Datensatz zusammengeführt und gespeichert.
+Weil diese Merkmale zwischen den Merkmalsträgern variieren können, spricht man auch von *Variablen*. (Unveränderliche Größen nennt man *Konstanten*.)
+Damit man die Merkmalsausprägungen in einem Datensatz speichern und weiter verarbeiten kann, muss man sie zunächst in symbolische Zeichen (z.B. Zahlen) "übersetzen".
+Diesen Vorgang nennen wir *Messen*.
+
+<!-- Messen: -->
+<!-- Zuordnung von Zahlen zu Objekten nach bestimmten Regeln, so dass die Relationen in der Menge der Objete in der Menge der Zahlen erhalten bleiben. -->
+<!-- Überführen eines empirischen Relativs in ein numerisches Relativ. -->
+
+<!-- Messen als Lineal-Anlegen -->
+Aus dem Alltag ist uns das Messen von vielen Merkmalen vollkommen vertraut:
+Wenn wir die Körpergröße einer Person wissen wollen, nehmen wir z.B. ein Maßband zur Hand, messen sie kurz und schreiben uns die Körpergröße
+in Zentimetern oder Metern auf.
+Wenn wir unser Körpergewicht kennen wollen, wiegen wir uns auf einer Personenwaage und notieren das Gewicht in Kilogramm.
+Bei diesen Merkmalen ist uns also schon eine Übersetzung von Merkmalsausprägungen in Zahlen geläufig.
+
+Bei anderen Merkmalen ist es aber gar nicht so einfach, einer bestimmten Ausprägung auch einen ganz bestimmten Zahlenwert zuzuordnen.
+Würden wir z.B. eine Schulklasse nach ihren Lieblingsgerichten fragen, bekämen wir Antworten wie "Pizza", "Mangoldquiche" oder "Reis mit Ketchup", aber keine Zahlen, die wir uns ohne weiteres notieren können.
+<!-- auch ordinalskaliertes Beispiel? -->
+Um aber dennoch auch solche Merkmale messen zu können, benötigen wir also eine Übersetzung von diesen Begriffen in Zahlen.
+<!-- "Skala" erst im nächsten Abschnitt definieren? -->
+Es gibt eine Reihe von Regeln, die einem dabei helfen eine möglichst sinnvolle Übersetzung anzufertigen.
+Das Ziel dieser Regeln ist es, dass sich die *Beziehungen*, die zwischen den Ausprägungen des Merkmals herrschen, auch in den Beziehungen zwischen den Zahlen wiederfinden (man spricht von den *erhaltenen Relationen*).
+
+1. Gleichheit und Verschiedenheit: Wenn sich die Ausprägungen eines Merkmals unterscheiden, sollen sich auch die Zahlen, in die man sie übersetzt, unterscheiden (z.B. bekommen alle Schüler, die "Pizza" gesagt haben, eine 1, all jene, die "Mangoldquiche" gesagt haben, aber eine 2). Wenn die Ausprägungen aber gleich sind, dann sollen auch die zugeordneten Zahlen gleich sein (z.B. bekommen wirklich alle Schüler, die "Pizza" gesagt haben, auch eine 1).
+2. Ordnung: Manchmal lassen sich die Ausprägungen eines Merkmals in eine sinnvolle Reihenfolge bringen, indem man die Ausprägungen nach ihrer Größe, Stärke oder Intensität ordnet.
+Würde man z.B. einen einzelnen Schüler zu mehreren Gerichten befragen, wie gerne er diese mag, und ihn seine Antworten "auf einer Skala von 1 bis 10" geben lassen (mit einer 10 als bestem Wert), könnte man sich ziemlich sicher sein, dass eine 10 eine größere Vorliebe wiederspiegelt als eine 9.
+Ob aber der Unterschied zwischen einer 9 und einer 10 *genauso groß* ist wie der Unterschied zwischen einer 8 und einer 9, könnte man nicht sicher sagen.
+Ein anderes Beispiel für ordinalskalierte Variablen sind Rangfolgen, also z.B. die Gold-, Silber- und Bronzemedaillen bei den olympischen Spielen.
+Wir wüssten, dass eine Goldmedaille eine bessere Leistung als eine Silbermedaille anzeigen soll;
+vielleicht war aber der Leistungsunterschied zwischen Gold und Silber viel kleiner (oder viel größer) als der zwischen Silber und Bronze.
+<!-- wissen wollen, wie beliebt einzelne Gerichte in einer Klasse sind, könnte man zählen, wie häufig jedes Gericht in der Klasse genannt wurde, und so eine Rangreihenfolge der beliebstesten Gerichte erstellen. In solch einem Fall ist es sinnvoll, auch bei der Übersetzung in Zahlen diese Reihenfolge beizubehalten, also z.B. dem am häufigsten genannten Gericht eine 1 zu geben, dem am zweithäufigsten genannten Gericht eine 2, und so weiter. . Solche Rangfolgen sagen jedoch nichts darüber aus, wie *groß* die Unterschiede zwischen den Rangplätzen sind: Es könnte ja sein, dass die beiden beliebtesten Gerichten beide sehr viele Stimmen bekommen haben, das drittbeliebstes Gericht aber sehr wenige Stimmen --trotzdem würden sich die Zahlen, die die Ränge bezeichnen (1., 2. und 3. Platz), nur jeweils um 1 unterscheiden. -->
+<!-- damn, eigentlich brauchen wir ein nicht-singuläres Merkmal, damit man den Median vernünftig erklären kann -->
+<!-- Lieber doch was? Könnte unklug sein, aus einer Häufigkeit ein "niederes" Skalenniveau zu machen -->
+3. Größe der Verschiedenheit: Zusätzlich zu der Ordnung der Merkmalsausprägungen ist es manchmal möglich, auch Asussagen darüber zu treffen, *wie groß* die Unterschiede zwischen zwei Merkmalsausprägungen ist. Dies ist z.B. Bei der Temperatur in Grad Celsius möglich: Der Temperatur*unterschied* zwischen 10°C und 20°C ist genauso groß wie der Temperaturunterschied zwischen 20°C und 30°C. Man kann allerdings nicht sagen, dass 30°C warmes Wasser dreimal so warm ist wie 10°C warmes Wasser.
+4. Verhältnis der Merkmalsausprägung: Zusätzlich kann es möglich sein, auch Aussagen über das Verhältnis mehrerer Merkmalsausprägungen zueinander treffen. Dies ist bei vielen physikalischen Größen wie z.B. der Masse eines Körpers möglich: 100 kg sind 100-mal so viel wie 1 kg. Solche Variablen haben einen natürlichen Nullpunkt, z.B. besagt eine Masse von 0 kg, dass tatsächlich *keine* Masse vorhanden ist.
+5. Absolute Werte: Schließlich kann es noch möglich sein, dass das Merkmal in einer natürlichen Einheit vorliegt, d.h. auch die Abstände zwischen zwei Merkmalsausprägungen sind natürlich gegeben. Dies ist der Fall für absolute Häufigkeiten, also z.B. die Häufigkeit, wie oft sich jemand in einer Unterrichtsstunde gemeldet hat.
+
+## Skalen und Skalenniveaus
+
+Die Zuordnung von bestimmten Zahlen zu Ausprägungen eines Merkmals nennen wir *Skala*. 
+Je nachdem, welche der Regeln beim Übersetzen in Zahlen berücksichtigt wurden, unterscheidet man unterschiedliche *Skalenniveaus*.
+
+1. Eine Skala, die nur die Regel von Gleichheit/Verschiedenheit befolgt, nennen wir *Nominalskala*.
+2. Eine Skala, die zusätzlich zu Gleichhheit/Verschiedenheit auch die Rangreihenfolge der Merkmalsausprägungen in Zahlen abbildet, nennen wir *Ordinalskala*.
+3. Eine Skala, die zusätzlich auch die Größe der Verschiedenheit abbildet, nennen wir *Intervallskala*.
+4. Eine Skala, die zusätzlich auch das Verhältnis der Merkmalsausprägungen abbildet, nennen wir *Verhältnisskala*.
+5. Eine Skala, die zusätzlich auch eine natürliche Maßeinheit abbildet, nennen wir *Absolutskala*. Mit diesem Skalenniveau haben wir regelmäig dann zu tun, wenn wir betrachten, wie *häufig* ein Merkmal aufgetreten ist bzw. wie *viele* Beobachtungen einer bestimmten Art wir machen. Ein Beispiel wäre die Anzahl der Versuche, die jemand braucht, um ein Rad zu schlagen.
+
+Tabelle 1.1 gibt eine Übersicht über die erhaltenen Beziehungen (= Relationen) für die fünf vorgestellten Skalenniveaus. Das Skalenniveau entscheidet häufig darüber, welche Aussagen über eine Variable sinnvoll zu treffen sind und (später) wie wir sie beschreiben, zusammenfassen und (später) auswerten können. Je *höher* das Skalenniveau ist, d.h. je mehr der Relationen erhalten sind, desto mehr Aussagen sind sinnvoll zu treffen. Deshalb ist es wünschenswert, ein Merkmal möglichst immer auf einem möglichst hohen Skalenniveau zu messen.
+
+```{r}
+x <- matrix("nein", ncol = 5, nrow = 5)
+y <- lower.tri(x, diag = TRUE)
+x[y] <- "ja"
+colnames(x) <- c("Gleichheit/ Verschiedenheit", "Ordnung", "Größe der Verschiedenheit", "Verhältnisse", "absolute Werte")
+y <- as.data.frame(x)
+y$Skala <- c("Nominal-", "Ordinal-", "Intervall-", "Verhältnis-", "Absolut-")
+y <- y[, c("Skala", colnames(x))]
+knitr::kable(y, caption = "Übersicht über die vorgestellten *Skalenniveaus* und die jeweils erhaltenen *Relationen*.", format = 'pandoc')
+```
+
+
+<!--
++-----------+-----------------------------+---------+-----------------+--------------+----------------+
+| Skala     | Gleichheit/                 | Ordnung | Größe der       | Verhältnisse | absolute       |
+|           | Verschiedenheit             |         | Verschiedenheit |              | Werte          |
++===========+=============================+=========+=================+==============+================+
+| Nominal   | ja                          | nein    | nein        | nein         | nein           |
++-----------+-----------------------------+---------+-------------+--------------+----------------+
+| Ordinal   | ja                          | ja      | nein        | nein         | nein           |
++-----------+-----------------------------+---------+-------------+--------------+----------------+
+| Intervall | ja                          | ja      | ja          | nein         | nein           |
++-----------+-----------------------------+---------+-------------+--------------+----------------+
+| Verhältnis| ja                          | ja      | ja          | ja           | nein           |
++-----------+-----------------------------+---------+-------------+--------------+----------------+
+| Absolut   | ja                          | ja      | ja          | ja           | ja             |
++-----------+-----------------------------+---------+-------------+--------------+----------------+
+-->
+
+## Messbarkeit und Messfehler
+
+Jede Messung ist mit einem mehr oder weniger großen *Messfehler* behaftet.
+Damit ist gemeint, dass der Messwert niemals exakt der Ausprägung des Merkmals entspricht.
+Hierfür gibt es mindestens zwei Gründe:
+
+Der erste Grund liegt darin, dass
+jedes reale Messinstrument hat nur eine begrenzte Genauigkeit besitzt. Wenn wir z.B. ein Lineal mit einer Millimetereinteilung verwenden, können wir nicht auf den Zehntel- oder Hundertstelmillimeter genau ablesen. Auch wenn wir uns mehrmals nacheinander mit einer Personenwaage wiegen, wird sie nicht immer exakt den gleichen Wert anzeigen, obwohl es unwahrscheinlich ist, dass sich unser Gewicht innerhalb eines Augenblicks geändert hat -- die Abweichungen entstehen durch Ungenauigkeiten des Messinstruments.
+
+Der zweite Grund liegt darin, dass viele Merkmale, für die wir uns interessieren,
+gar nicht *direkt messbar* sind. Beispielsweise soll es ja vielleicht in einer Klassenarbeit darum gehen,
+die Fähigkeit oder das Wissen der Schüler in einem bestimmten Bereich zu messen.
+Die Note der Klassenarbeit (die in diesem Fall unser Messinstrument für die Fähigkeit sein soll),
+wird aber auch durch viele andere Dinge beeinflusst, z.B. ob man am Tag der Klassenarbeit einen guten 
+Tag hatte, ob man mit der Art, wie der Lehrer die Aufgaben stellt, zurechtkommt, 
+man während der Arbeit auf Toilette musste und deshalb Zeit verloren hat, 
+und viele andere mögliche Störeinflüsse.
+
+<!-- <!-- latente merkmale vs. manifeste merkmale -->
+<!-- Messfehler eines Messinstruments -->
+<!-- Lineal mit Millimetereinteilung -- wird nicht kleiner -->
+<!-- Personenwaage: Variation -->
+
+<!-- Messinstrumente sind immer ungenau -> Ungenauigkeit der Daten -->
+
+<!-- Die Dinge, die wir messen wollen, sind manchmal nicht direkt messbar: -->
+<!-- Klassenarbeit sollen das Instrument für Fähigkeit sein, sondern ist fehlerbehaftet -->
+
+<!-- Waage vs. Klassenarbeit als Messinstrument -->
+
+<!-- zwei Schwierigkeiten: -->
+<!-- - Genauigkeit der messung -->
+<!-- - nicht nur: wie präzise messe ich auf der richtigen dimension, sondern welche dimension messe ich noch? -->
+
+## Aufgaben {-}
+
+Überlegt in 2er- oder 3er-Gruppen, welches Skalenniveau die folgenden Variablen aufweisen.
+Hierzu is es sinnvoll, zunächst zu überlegen, welches Merkmal die Variable wohl eigentlich erfassen soll
+und welche Relationen (= Beziehungen zwischen den Merkmalsausprägungen) erhalten sind.
+
+a) Das bei uns geläufige metrische System zur Messung von Distanzen in Millimetern, Zentimetern, Metern, oder Kilometern;
+b) die Nummern der Straßenbahnen der KVB (Kölner Verkehrsbetriebe);
+c) Schulnoten;
+d) Postleitzahlen.

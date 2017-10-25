@@ -1,0 +1,41 @@
+--- 
+title: 'Forschungsmethoden im Biologieunterricht'
+author: "Marius Barth"
+date: 'Stand: `r format(Sys.Date(), format = "%d.%m.%Y")`'
+site: bookdown::bookdown_site
+always_allow_html: yes
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: methexp/bioteacher
+description: "Unterlagen zur Lehrveranstaltung \"Didaktische Forschungsprojekte\""
+language: ngerman
+keep_tex: yes
+---
+
+
+
+```{r echo = FALSE, message = FALSE}
+# citation_package: natbib
+knitr::opts_chunk$set(echo = FALSE)
+library(papaja)
+library(shinydegs.definitions)
+set_shinydegs_theme()
+```
+
+
+<!--
+# Formaler Rahmen {-}
+
+Datum   | bisher geplantes Thema
+--------|---------------------------------------------------------------------------------------------------------------------------------------
+18.10.  | messen/skalenniveaus, methoden der datenerhebung
+25.10.  | wahrscheinlichkeitstheorie, grundlagen des signifikanztests, power
+08.11.  | Regression, Korrelation vs. Kausalität
+15.11.  | Logik des wissenchaftlichen Arbeitens, Theory Appraisal, Anekdote vs. Wissenschaft, Qualitätssicherung im Wissenschaftsbetrieb
+-->
+
+# Vorwort {-}
+
+Diese Unterlagen sollen

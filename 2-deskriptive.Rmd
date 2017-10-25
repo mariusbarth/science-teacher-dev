@@ -1,0 +1,243 @@
+# Beschreiben und Zusammenfassen
+
+Die *deskriptive Statistik* beschäftigt sicht mit der Frage, wie Merkmale bzw. Variablen sinnvoll beschrieben und zusammengefasst werden können.
+Wichtige Methoden hierzu sind *Häufigkeitsverteilungen* und *statistische Kennwerte*, die wir in diesem Kapitel vorstellen werden.
+
+## Häufigkeitsverteilungen
+
+Um ein Merkmal zu beschreiben, kann man sich dessen *Häufigkeitsverteilung* anschauen.
+Die Häufigkeitsverteilung eines Merkmals ist charakterisiert durch
+(1) die Gesamtheit der unterschiedlichen Merkmalsausprägungen und
+(2) die Häufigkeit, mit der diese Ausprägungen vorkommen.
+Sie lässt sich in Form von Häufigkeitstabellen oder in einem Säulendiagramm wie Abbildung
+\@ref(fig:first-distribution) darstellen.
+
+```{r first-distribution, fig.margin = TRUE, fig.cap = "Die Häufigkeitsverteilung der nominalskalierten Variable *Lieblingsgericht*. Die $x$-Achse bezeichnet die Ausprägung des Merkmals, die Höhe der Verteilung ($y$-Wert) gibt Aufschluss über die Häufigkeit der zugehörigen Merkmalsausprägung."}
+# # means
+# par(mar = c(5, .1, .1, .1))
+# # par(mar = c(5, 4, 2, 2))
+# xlim <- c(-4, 4)
+# plot.new()
+# plot.window(xlim = xlim, ylim = c(0, .4))
+# 
+# 
+# x <- seq(xlim[1], xlim[2], .05)
+# y1 <- dnorm(x)
+# y2 <- dnorm(x, mean = 3)
+# y3 <- dnorm(x, mean = -3)
+# 
+# lines(x = x, y = y1, col = "skyblue4", lwd = 3)
+# # lines(x = x, y = y2, col = "indianred3", lwd = 3)
+# # lines(x = x, y = y3, col = "seagreen", lwd = 3)
+# 
+# axis(side = 1, at = seq(xlim[1], xlim [2], 2))
+# title(xlab = "Merkmalsausprägung")
+
+data <- c(
+  rep("Pizza", 9)
+  , rep("Spaghetti Bolognese", 6)
+  , rep("Pommes", 5)
+  , rep("Reis mit Ketchup", 3)
+)
+data <- as.factor(data)
+
+variable_label(data) <- "Lieblingsgericht"
+par(cex = .8)
+plot_univariate(x = data)
+
+# png(filename = "~/means.png", width = 800, height = 700)
+```
+
+In diesem ersten Beispiel gibt es nur vier unterschiedliche Merkmalsausprägungen (Lieblingsgerichte), deshalb lässt sich
+die Häufigkeitsverteilung noch leicht in einem Diagramm darstellen. Wenn es aber sehr viele unterschiedliche Merkmalsausprägungen gibt,
+könnte man aber auch *Kategorien von Merkmalsausprägungen* bilden, um diese dann als sog. *sekundäre Häufigkeitsverteilung* darzustellen.
+Z.B. wäre es denkbar, dass die Schüler viele unterschiedliche Nudelgerichte angegeben hätten, die man dann zu der Kategorie "Nudelgerichte" zusammengefasst hätte.
+
+<!-- oder doch schon diskontionuierlich/stetig oben einführen?? -->
+  
+  Betrachtet man die Häufigkeitsverteilung eines Merkmals wie der Körpergröße von Schülern in einer Klasse, merkt man schnell, dass man nicht für jede Merkmalsausprägung eine eigene Säule zeichnen möchte:
+  Hat man die Körpergröße z.B. auf den Zentimeter genau gemessen, wird es in einer Klasse kaum zwei Schüler geben, die genau gleich groß sind und jede Säule hätte die Höhe 1.
+Deshalb ist es bei intervall- und verhältnisskalierten Variablen oft sinnvoll, gleich eine sekundäre Häufigkeitsverteilung zu zeichnen.
+Die häufigste Form der Darstellung ist bei solchen Variablen eine besondere Form des Säulendiagramms, das *Histogramm*:
+  Bei ihm ist auch die Breite der Säulen und somit die Fläche der Säulen interpretierbar; man sieht so anhand der Flächen relativ schnell, wie sich das Merkmal auf dessen Ausprägungsbereiche verteilt.
+
+```{r first-histogram, fig.margin = TRUE, fig.cap = "Histogramm der gemessenen Körpergröße in einer 10. Klasse."}
+data <- rnorm(n = 24, mean = 168, sd = 12)
+# todo: füge fixe Werte ein
+variable_label(data) <- "Körpergröße in cm"
+plot_univariate(data)
+```
+
+<!-- Verteilungsformen würde ich schludern -->
+  
+## Statistische Kennwerte
+  
+Um die Häufigkeitsverteilung eines Merkmals zusammenfassend zu beschreiben, verwendet man zusätzlich *statistische Kennwerte*, 
+die bestimmte Eigenschaften der Häufigkeitsverteilung in Zahlen zusammenfassen sollen.
+Hierzu unterscheidet man
+(1) *Lagemaße* bzw. *Maße der zentralen Tendenz* und
+(2) *Streuungs-* bzw. *Dispersionsmaße*.
+Lagemaße beantworten die Frage "Wo auf der Skala liegen die Messwerte?",
+Streuungsmaße beantworten die Frage "Wie stark unterscheiden sich die Messwerte voneinander?".
+
+Sowohl für die Lage als auch die Streuung gibt es viele unterschiedliche Kennwerte -- welchen Kennwert man
+am besten verwendet, hängt nämlich davon ab, welches Skalenniveau die Variable, die wir beschreiben möchten, aufweist.
+
+
+```{r fig.margin = TRUE, fig.cap = "Zwei Häufigkeitsverteilungen mit unterschiedlicher Lage, aber gleicher Streuung.", fig.width = 8}
+# # means
+par(mar = c(5, 4, .1, .1))
+# # par(mar = c(5, 4, 2, 2))
+# xlim <- c(-6, 6)
+# plot.new()
+# plot.window(xlim = xlim, ylim = c(0, .4))
+# 
+# 
+# x <- seq(xlim[1], xlim[2], .05)
+# y1 <- dnorm(x)
+# y2 <- dnorm(x, mean = 3)
+# y3 <- dnorm(x, mean = -3)
+# 
+# lines(x = x, y = y1, col = "skyblue4", lwd = 3)
+# lines(x = x, y = y2, col = "indianred3", lwd = 3)
+# lines(x = x, y = y3, col = "seagreen", lwd = 3)
+# 
+# axis(side = 1, at = seq(xlim[1], xlim [2], 2))
+# title(xlab = "Messwert")
+
+# png(filename = "~/means.png", width = 800, height = 700)
+par(mfrow = c(1, 2))
+
+x1 <- rnorm(n = 5e4, mean = -1, sd = 1)
+x2 <- rnorm(n = 5e4, mean = 1, sd = 1)
+
+hist(x = x1[x1>-6 & x1<6], breaks = seq(-6, 6, .2), border = "white", col = "indianred3", xlab = "Messwert", main = "", axes = F, ylim = c(0, 4e3), ylab = "Häufigkeit")
+axis(side = 1)
+axis(side = 2, las = 1)
+hist(x = x2[x2>-6 & x2<6], breaks = seq(-6, 6, .2), border = "white", col = "seagreen", xlab = "Messwert", main = "", axes = F, ylim = c(0, 4e3), ylab = "")
+axis(side = 1)
+
+
+```
+
+```{r fig.margin = TRUE, fig.cap = "Zwei Häufigkeitsverteilungen mit gleicher Lage, aber unterschiedlicher Streuung.", fig.width = 8}
+# # standard deviations
+# 
+par(mar = c(5, 4, .1, .1))
+# 
+# xlim <- c(-6, 6)
+# plot.new()
+# plot.window(xlim = xlim, ylim = c(0, .4))
+# 
+# x <- seq(xlim[1], xlim[2], .05)
+# y1 <- dnorm(x)
+# y2 <- dnorm(x, sd = 2)
+# y3 <- dnorm(x, sd = 3)
+# 
+# lines(x = x, y = y1, col = "skyblue4", lwd = 3)
+# lines(x = x, y = y2, col = "indianred3", lwd = 3)
+# lines(x = x, y = y3, col = "seagreen", lwd = 3)
+# 
+# axis(side = 1, at = seq(xlim[1], xlim[2], 2))
+# title(xlab = "Messwert")
+
+par(mfrow = c(1, 2))
+
+x1 <- rnorm(n = 5e4, mean = 0, sd = 1)
+x2 <- rnorm(n = 5e4, mean = 0, sd = 2)
+
+hist(x = x1[x1>-6 & x1<6], breaks = seq(-6, 6, .2), border = "white", col = "indianred3", xlab = "Messwert", main = "", axes = F, ylim = c(0, 4e3), ylab = "Häufigkeit")
+axis(side = 1)
+axis(side = 2, las = 1)
+hist(x = x2[x2>-6 & x2<6], breaks = seq(-6, 6, .2), border = "white", col = "seagreen", xlab = "Messwert", main = "", axes = F, ylim = c(0, 4e3), ylab = "")
+axis(side = 1)
+
+```
+
+### Lagemaße
+
+*Modus* bzw. *Modelwert*.
+Der Modus $\textit{Mo}$ ist derjenige Wert einer Variablen, der *am häufigsten* vorkommt.
+Man "berechnet" ihn also, indem man zählt, wie häufig jede einzelne Merkmalsausprägung vorkommt und
+die häufigste Ausprägung aufschreibt.
+Der Modus ist schon ab Nominalskalenniveau interpretierbar.
+In unseren Beispiel aus Kapitel 1, in dem wir eine Schulklasse nach ihren Lieblingsgerichten gefragt haben,
+wäre also der Modus der Variable Lieblingsgericht der Wert "Pizza" -- genau jene Antwort,
+die am häufigsten genannt wurde.
+Hätten wir den einzelnen Gerichten Zahlen zugeordnet, z.B. "Pizza" = 1, "Pommes" = 2, usw., wäre der Modus $\textit{Mo}=1$.
+Das ist genau der Zahlenwert, den wir zuvor der Antwort "Pizza" zugeordnet hatten.
+
+*Median*.
+Der Median $\textit{Md}$ ist derjenige Wert einer Variablen, der alle Werte, die man voher der Größe nach geordnet hat, genau in der Mitte halbiert.
+Um ihn zu berechnen, ordnet man also zunächst alle Werte der Größe nach und schaut dann, welcher Wert genau in der Mitte dieser geordneten Zahlenreihe steht.
+Der Median ist dann sinvoll interpretierbar, wenn die Variable mindestens Ordinalskalenniveau aufweist,
+sich die Werte also sinnvoll der Größe, Intensität oder Stärke nach ordnen lassen.
+Ein gutes Beispiel hierfür sind Schulnoten.
+
+
+*Mittelwert*.
+Der Mittelwert $M$ ist der Durchschnitt der Werte einer Variablen.
+Ihn kann man am leichtesten bestimmen, indem man (1) alle beobachteten Werte aufsummiert und dann (2) durch die Anzahl der beobachteten Werte teilt.
+Damit der Mittelwert sinnvoll interpretierbar ist, muss die Variable mindestens Intervallskalennievau aufweisen.
+Ein gutes Beispiel hierfür ist die Temperatur in Grad Celsius:
+  Haben wir einen Eimer mit 10°C warmen Wasser und einem Eimer mit 20°C warmen Wasser, können wir sagen, 
+dass die Temperatur des wassers in den beiden Eimern im Durchschnitt oder im Mittel 15°C beträgt.
+Das geht deshalb, da der Unterschied von 15°C zu 10°C genauso groß ist wieder der Unterschied von 15°C zu 20°C (nämlich jeweils 5°C).
+
+
+### Streuungsmaße
+
+*Range* bzw. *Variationsbreite*.
+Der Range $v$ (engl. für Reichweite/Bandbreite) bezeichnet dem Umfang der Werte einer Variable.
+Im Falle einer nominalskalierten Variable berechnet er sich als die Anzahl unterschiedlicher Merkmalsausprägungen, die beobachtet wurden (wenn z.B. nur drei unterschiedliche Lieblinsgerichte genannt, ist der Range $v=3$)
+Im Falle von mindestens ordinalskalierten Variablen bezeichnet er die Differenz zwischen dem höchsten und niedrigsten beobachteten Wert der Variablen. (Besser ist es im Falle von nominal- oder ordinalskalierten Variablen, den sog. *relativen Informationsgehalt* $H$ zu berechnen.)
+
+*Interquartilsbereich*.
+Der Interquartilsbereich $\textit{IQB}$ bezeichnet den Bereich der Werte einer Variable, der die Hälfte aller Beobachtungen umfasst, die, wenn man die Werte der Reihe nach ordnet, in der Mitte liegen. Man kann also auch sagen, dass man die Werte der Variable der Reihe nach ordnet, das unterste Viertel (mit den kleinsten Werten) und das oberste Viertel (mit den größten Werten) abschneidet, und dann schaut, welche Werte die Variable an diesen Schnittpunkten hat.
+Da man die Werte hierfür in eine Ordnung bringen muss, kann man den Interquartilsbereich erst ab Ordinalskalenniveau berechnen.
+
+*Standardabweichung*.
+Die Standardabweichung $\textit{SD}$ ist das wohl wichtigste und am häufigsten verwendete Maß der Dispersion.
+Leider lässt sich es sich nicht ganz so leicht berechnen, denn man muss (1) für jeden Wert der Variablen den Abstand zum Mittelwert der Variablen berechnen, (2) diese Abstände dann jeweils quadrieren, (3) die quadrierten Abstände aufsummieren, (4) diese Summe durch die Anzahl der Beobachtungen teilen und (5) aus dieser Summe die Wurzel ziehen.
+Das klingt ziemlich kompliziert, muss man aber zum Glück praktisch nie von Hand machen. 
+Um zu verstehen, was die Standardabweichung ausdrückt, kann man sich vorstellen, dass sie ungefähr dem Wert entspricht, den die Messwerte (betragsmäßig) durchschnittlich vom Mittelwert abweichen (wobei große Abweichungen aber etwas stärker gewichtet werden).
+Es lässt sich erst ab Intervallskalenniveau berechnen, da erst hier die Größen von Abständen bzw. Unterschieden sinnvoll interpretierbar sind.
+
+Tabelle 1.2 zeigt einen Überblick, ab welchem Skalenniveau man welchen der vorgestellen Kennwerte berechnen darf.
+
+```{r}
+x <- matrix("nein", ncol = 3, nrow = 3)
+y <- lower.tri(x, diag = TRUE)
+x[y] <- "ja"
+x <- cbind(x, x)
+x <- as.data.frame(x)
+x[4, ] <- rep("ja", 6)
+x[5, ] <- rep("ja", 6)
+colnames(x) <- c("Modus", "Median", "Mittelwert","Range", "*IQB*", "*SD*")
+y <- x
+y$Skala <- c("Nominal-", "Ordinal-", "Intervall-", "Verhältnis-", "Absolut-")
+y <- y[, c("Skala", colnames(x))]
+knitr::kable(y, caption = "Übersicht über die vorgestellten Lage- und Streuungsmaße und auf welchem Skalenniveau man sie sinnvoll berechnen kann.", format = 'pandoc')
+```
+
+
+## Aufgaben {-}
+
+1. Zeichnet ein Histogramm der Variable *Alter* in der folgenden Tabelle.
+
+```{r}
+psychoclass <- data.frame(
+  "Nr." = 1:40
+  , "Geschlecht" = c(1, 1, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1)
+  , "Alter" = c(33, 28, 21, 26, 25, 22, 22, 37, 27, 25, 21, 19, 26, 19, 19, 22, 31, 24, 27, 24, 19, 21, 27, 44, 24, 29, 27, 19, 21, 25, 25, 24, 21, 28, 37, 23, 20, 21, 19, 22)
+)
+psychoclass$Geschlecht <- factor(psychoclass$Geschlecht, levels = 1:2, labels = c("weiblich", "männlich"))
+
+data <- cbind(psychoclass[1:20, ], psychoclass[21:40, ])
+knitr::kable(data, format = 'pandoc', caption = "Die Häufigkeitsverteilung der Variablen *Geschlecht* und *Alter* in einer Erstsemesterveranstaltung der Uni Köln.")
+```
+
+2. Zeichnet ein Histogramm der Variable *Alter* aus der vorigen Aufgabe. Zeichnet dieses Mal jedoch eine sekundäre Häufigkeitsverteilung, beginnend mit der Kategorie "18-21 Jahre".
+3. Berechnet den Modus der Variable *Geschlecht* aus Aufgabe 1.
+4. Berechnet den Mittelwert der Variable *Alter* aus Aufgabe 1.
+5. Erläutert, warum es nicht sinnvoll ist, den Median der Variable *Geschlecht* zu berechnen.

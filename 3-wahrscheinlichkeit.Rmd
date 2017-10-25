@@ -1,0 +1,175 @@
+
+# Wahrscheinlichkeitstheorie und inferenzstatistische Grundlagen
+
+In den vorausgehenden Kapitel haben wir uns damit beschäftigt,
+Merkmale zu messen, zu beschreiben und zusammenzufassen.
+Ziel jeder Wissenschaft ist es jedoch, ausgehend von spezischen Beobachtungen auf
+ *allgemeingültige* Aussagen schließen zu können.
+
+Hierzu ist es hilfreich, zwischen der Population bzw. Grundgesamtheit
+und der Stichprobe zu unterscheiden:
+Die *Population* ist ein Begriff für alle potentiell untersuchbaren Merkmalsträger
+(und damit ein Begriff für das, was "im Allgemeinen" gilt), 
+die *Stichprobe* ist die Teilmenge der Population,
+deren Merkmalsausprägung wir gemessen haben.
+Will man also allgemeingültige Aussagen treffen können, muss man von der Stichprobe auf die Eigenschaften der Population schließen.
+ 
+Wir müssen uns aber klarmachen, dass wir immer dann, wenn wir von spezifischen Beobachtungen zu allgemeingültigen
+Aussagen gelangen wollen, das Risiko eingehen, dass unsere Beobachtungen immer nur einen Teil der Wirklichkeit wiederspiegeln und wir zufällig genau jenen Teil der Wirklichkeit nicht beobachten, der unserer allgemeingültigen Aussage widerspricht. 
+Diese Quelle von Fehlentscheidungen -- den sog. *Stichprobenfehler* -- können wir niemals mit absoluter Sicherheit ausschließen, wenn wir nicht die gesamte Population beobachten können; Ziel der *Inferenzstatistik* ist es deshalb abzuschätzen, mit welcher Sicherheit (oder Unsicherheit) dennoch von der Stichprobe auf die Population geschlossen werden kann.
+
+Um dies tun zu können, benötigen wir immer ein *Modell* der Merkmalsausprägungen in der Population;
+haben wir ein solches Modell, können wir das Ziehen unserer Stichprobe aus der Population als ein sog.
+*Zufallsexperiment* auffassen.
+Ein Zufallsexperiment ist definiert als die Durchführung eines *Zufallsvorgangs*,
+d.h. eines Vorgangs, der zu unvorhersehbaren und sich gegenseitig ausschließenden Ergebnissen führt, unter kontrollierten Bedingungen.
+Die *Ergebnisse* eines Zufallsexperiments nennen wir *Zufallsvariable*.
+
+Ein gutes Beispiel für ein Zufallsexperiment ist der einfache Münzwurf:
+Der Zufallsvorgang -- das Werfen einer Münze -- kann beliebig oft und unter kontrollierten Bedingungen durchgeführt werden.
+Die resultierende Zufallsvariable sind die Häufigkeiten, mit denen die Münze Kopf oder Zahl gezeigt hat.
+Nehmen wir nun ein Modell unseres Merkmals in der Population an, das besagt, dass beide Seiten gleich häufig vorkommen, lässt sich mit Methoden der Inferenzstatistik berechnen, wie wahrscheinlich ein Ergebnis unter der Annahme dieses Modells waren.
+An dieser Stelle kann man auch schon sehen, dass das zugrundeliegende Populationsmodell oft "nur" ein *Modell* und keine allumfassende Beschreibung der Wirklichkeit ist, denn es gibt ja vmtl. auch noch den sehr seltenen Fall, dass eine Münze auf ihrer Kante stehen bleibt, dieser Fall ist aber im Modell nicht berücksichtigt.
+
+Die Annahme, dass das Ziehen unserer Stichprobe aus der Population den Regeln eines Zufallsexperiments folgt,
+erlaubt es uns, die Wahrscheinlichkeit bestimmter Ergebnisse, die wir in unserer Stichprobe beobachten,
+für ein bestimmtes Modell der Population zu bestimmen.
+Um dies zu erläutern betrachten wir zunächst, welche Vorstellungen vor Wahrscheinlichkeit es gibt und wie man
+Wahrscheinlichkeiten von Ergebnissen eines Zufallsexperiments berechnen kann.
+
+## Wahrscheinlichkeitsbegriffe
+
+<!-- Einleitung zum Begriff "Wahrscheinlichkeit"-->
+
+Wahrscheinlichkeit ist uns aus dem Alltag ein vertrauter Begriff.
+Beispielsweise würden die meisten Leute darin übereinstimmen, dass es
+"unwahrscheinlich" ist, fünfmal nacheinander eine Sechs zu würfeln.
+Wir verwenden aber den Begriff Wahrscheinlichkeit mit mindestens zwei unterschiedlichen Bedeutungen;
+es ist z.B. etwas anderes zu sagen
+"Ein fairer Würfel zeigt mit einer Wahrscheinlichkeit von $1/6$ eine Sechs." als zu zu sagen
+"Morgen wird es wahrscheinlich regnen.".
+Diese Intuition findet sich auch in unterschiedlichen Wahrscheinlichkeitsbegriffen in der 
+Wahrscheinlichkeitstheorie wieder.
+
+
+*Klassicher Wahrscheinlichkeitsbegriff*. Der klassische Wahrscheinlichkeitsbegriff entspricht unserem obigen Beispiel des Würfelwurfs. Hierbei geht man davon aus, dass man ein und denselben Zufallsvorgang beliebig häufig wiederholen kann.
+
+Die klassische Definition einer Wahrscheinlichkeit (nach Pierre-Simon Laplace) lautet:
+Wahrscheinlichkeit ist der Anteil der günstigen Fälle an der Gesamtzahl der Fälle.
+Ist das Ereignis $A$ der "günstige" Fall, berechnet sich dessen Wahrscheinlichkeit $p(A)$ als
+ 
+$$p(A) = \frac{n_A}{N_{\mathrm{gesamt}}}$$
+wobei $n_A$ die Anzahl der günstigen Fälle und $N_{\mathrm{gesamt}}$ die Gesamtzahl der Fälle bezeichnet.
+
+Die frequentistische Definition einer Wahrscheinlichkeit (nach Richard Edler von Mises) erweitert diesen Gedanken,
+indem sie annimmt, dass es eine *wahre* Wahrscheinlichkeit gibt, die wir mit einer wachsenden Anzahl an Versuchen bzw. Beobachtungen immer genauer schätzen können. Die Definition besagt, dass bei prinzipiell unendlich häufiger Durchführung des Versuchs der *Grenzwert* des Anteils der günstigen Fälle dieser wahren Wahrscheinlichkeit $\pi(A)$ ("pi von A") enspricht.
+
+$$\pi(A) = \lim_{N \to \infty} \frac{n_A}{N}$$
+Man kann also auch sagen, dass sich der Anteil der günstigen Fälle $\frac{n_A}{N}$ immer weiter der Wahrscheinlichkeit $\pi(A)$ annähert, je größer $N$, also die Anzahl an Versuchen oder Wiederholungen, wird.
+Diese Überlegungen bilden die Grundlage der klassischen -- frequentistischen -- Statistik.
+
+*Subjektiver Wahrscheinlichkeitsbegriff*. Im Gegensatz dazu geht es beim subjektiven Wahrscheinlichkeitsbegriff darum, die subjektive Einschätzung der Sicherheits des Eintretens eines Ereignisses auszudrücken, z.B. "Morgen wird es mit einer Wahrscheinlichkeit von 80% regnen".
+Es geht hierbei darum, das Ausmaß des Vertrauens, das ein vernünftiger Akteur in eine Aussage setzen würde, auszudrücken.
+Dieser Wahrscheinlichkeitsbegriff erlaubt Aussagen über einzelne Ereignisse, nicht nur um "prinzipiell beliebig häufig wiederholbare" Ereignisse (wie bei dem klassichen Wahrscheinlichkeitsbegriff).
+Darüber hinaus erlaubt er die Kombination vielfältiger Informationen zu einem Urteil (z.B. Vorwissen, Plausibilitätsüberlegungen, etc.).
+Dieser Wahrscheinlichkeitsbegriff bildet die Grundlage der sog. Bayes-Statistik (die wir im Rahmen dieser Veranstaltung nicht vertiefen werden).
+
+## Wahrscheinlichkeits- und Wahrscheinlichkeitsdichteverteilungen
+
+Wahrscheinlichkeits- und Wahrscheinlichkeits*dichte*verteilungen dienen der Beschreibung der möglichen Ergebnisse eines
+Zufallsexperiments.
+Wahrscheinlichkeitsverteilungen kommen dabei bei *diskreten*,
+Wahrscheinlichkeitsdichteverteilungen bei *stetigen* Zufallsvariablen zur Anwendung.
+Eine diskrete Variable liegt dann vor, wenn es endlich viele Ausprägungen eines Merkmals gibt (z.B. die wählbaren Parteien bei der Bundestagswahl), *oder* wenn es theoretisch unendlich viele, aber abzählbare Ausprägungen eines Merkmals gibt (z.B. die Anzahl der Versuche, bis jemand eine Aufgabe gelöst hat -- theoretisch gibt es unendlich viele mögliche Ausprägungen des Variable *Anzahl Versuche*, man kann aber trotzdem die Anzahl der Versuche abzählen.)
+Gibt es jedoch überabzählbar unendlich viele Merkmalsausprägungen, sprechen wir von einer *stetigen* oder *kontinuierlichen* Variable.
+"Überabzählbar" bedeutet, dass innerhalb eines Werteintervalls beliebig viele Zwischenwerte liegen können, 
+man also die Gesamtheit möglicher Werte nicht abzählen kann (typische Beispiele sind die Körpergröße in Meter oder das Gewicht in Kilogramm).
+
+*Wahrscheinlichkeitsverteilungen*. Eine Wahrscheinlichkeitsverteilung gibt für jeden Wert einer *diskreten* Zufallsvariable die Auftretenswahrscheinlichkeit an. Eine Wahrscheinlichkeitsverteilung lässt sich als Säulendiagramm wie Abbildung \@ref(fig:probability-distribution) darstellen.
+
+```{r probability-distribution, fig.cap = "Die Wahrscheinlichkeitsverteilung der Variable *Ausgang eines Münzwurfs*. Die $x$-Achse bezeichnet die Ausprägung des Merkmals, die $y$-Achse die zugehörige Wahrscheinlichkeit."}
+par(cex = .8)
+x <- as.factor(c(rep("Kopf", 12), rep("Zahl", 9)))
+variable_label(x) <- "Ausgang eines Münzwurfs"
+plot_univariate(x, ylab = "Wahrscheinlichkeit", freq = FALSE)
+```
+
+*Wahrscheinlichkeitsdichteverteilungen*. Eine Wahrscheinlichkeitsdichteverteilung (wie in Abbildung \@ref(fig:density-distribution)) beschreibt ein Zufallsexperiment mit überabzählbar unendlich vielen möglichen Ereignissen. 
+(Man kann man sie sich auch als diskrete Wahrscheinlichkeitsverteilung mit unendlich kleinen Kategoriebreiten vorstellen.)
+Das hat zur Folge dass, je kleiner man das betrachtete Werteintervall wählt, auch die Wahrscheinlichkeit immer kleiner wird.
+Geht die Breite des Intervalls gegen 0, wird die zugehörige Wahrscheinlichkeit unendlich klein;
+für einen einzelnen fixen Wert ist die Wahrscheinlichkeit gleich 0.
+Deshalb können Wahrscheinlichkeiten immer nur für Bereiche (Intervalle) angegeben werden.
+Die Kurve selbst beschreibt die Wahrscheinlichkeitsdichte.
+Die Fläche unter der Kurve in einem Bereich gibt die Wahrscheinlichkeit dafür an, dass ein Wert in diesen Bereich fällt.
+
+```{r density-distribution, fig.cap = "Die Wahrscheinlichkeitsdichteverteilung der Variable *Körpergröße*. Die $x$-Achse bezeichnet die Ausprägung des Merkmals, die $y$-Achse die zugehörige Wahrscheinlichkeitsdichte. Wahrscheinlichkeiten können für Intervalle von Merkmalsausprägungen angegeben werden, indem die Fläche unterhalb der Kurve in diesem Intervall bestimmt wird: In diesem Beispiel beträgt die Fläche im Intervall [160, 180] ungefähr .68, also ist $p(160 \\leq$ Körpergröße $\\leq 180) = .68$."}
+# body length [cm]
+par(cex = .8)
+mean_x <- 170
+sd_x <- 10
+
+
+x <- seq(120, 220, .2)
+y <- dnorm(x, mean_x, sd_x)
+
+plot.new()
+plot.window(xlim = c(120, 220), ylim = c(0, 1.1 * dnorm(mean_x, mean_x, sd_x)))
+
+sub_x <- seq(160, 180, .2)
+sub_y <- dnorm(sub_x, mean_x, sd_x)
+
+polygon(x = c(sub_x, max(sub_x), min(sub_x)), y = c(dnorm(sub_x, mean_x, sd_x), 0, 0), border = "white", col = getOption("shinydegs.theme")$col)
+
+lines(x = x, y = y, lwd = 3, col = "skyblue4")
+text(x = 200, y = .042, labels = expression(italic(p)(160<=~"Körpergröße"<=180)==".68"), col = "skyblue4")
+arrows(x0 = 200, x1 = 170, y0 = .04, y = .025, lwd = 2, length = .07, col = "skyblue4")
+
+# -----------------------------------------------------------------------------
+# Axes, etc
+axis(side = 1)
+axis(side = 2, las = 1)
+
+title(xlab = "Körpergröße [cm]", ylab = "Wahrscheinlichkeitsdichte")
+
+
+```
+
+
+
+## Stichprobenkennwerteverteilung
+
+Wir haben in Kapitel \@ref(statistische-kennwerte) schon verschiedene Stichprobenkennwerte,
+also Kennwerte zur zusammenfassenden Beschreibung eines Merkmals einer Stichprobe,
+kennengelernt (z.B. Mittelwert und Standardabweichung).
+Möchten wir allgemeingültige Aussagen treffen, interessieren wir uns aber für nicht für die Kennwerte
+der konkreten Stichprobe, sondern für jene der zugrundeliegenden Population.
+Nehmen wir nun ein bestimmtes Modell des Merkmals in der Population an,
+können wir mithilfe der Stichprobenkennwerte *Schätzer* der entsprechenden Populationskennwerte bestimmen.
+Hierbei gilt, dass mit wachsender Stichprobengröße die Genauigkeit der Schätzung zunimmt.
+
+In der klassichen (= frequentistischen) Inferenzstatistik verwendet man die oben beschriebene
+frequentistische Definition einer Wahrscheinlichkeit zusätzlich, um Verteilungen
+von Stichprobenkennwerten über viele Stichproben hinweg vorherzusagen, diese sind Wahrscheinlichkeits- bzw. Wahrscheinlichkeitsdichteverteilungen.
+Hiermit ist es auch möglich, die Wahrscheinlichkeit zu bestimmen, dass ein bestimmter Stichprobenkennwert
+unter der Annahme eines bestimmten Modells des Merkmals in der Population auftreten kann.
+
+Eine besonders wichtige Stichprobenkennwerteverteilung ist Verteilung des Stichprobenmittelwerts, die in folgender
+App dargestellt wird.
+
+[Öffne App in neuem Fenster](http://134.95.17.54:3838/univariate)
+
+```{r}
+knitr::include_app(
+  "http://134.95.17.54:3838/univariate/"
+  ,  height = "600px")
+```
+
+## Aufgaben {-}
+
+Verwendet die App, um die folgenden Fragen zu beantworten:
+
+1. Wie verändert sich die Verteilung der Messwerte in der Stichprobe, wenn die Stichprobengröße $N$ größer oder kleiner wird?
+2. Wie verändert sich die Verteilung der Stichprobenmittelwerte, wenn die Stichprobengröße $N$ größer oder kleiner wird?
+3. Wie verändert sich die Verteilung der Stichprobenmittelwerte, wenn Körpergröße in Wirklichkeit eine kleinere oder größerere Variabilität (entspricht hier der Standardabweichung) aufweist?
+4. Welche drei Maßnahmen sollte ich (in diesem Beispiel) ergreifen, um möglichst viel über die "Wirklichkeit" zu erfahren?

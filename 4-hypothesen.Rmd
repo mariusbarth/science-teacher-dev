@@ -1,0 +1,86 @@
+# Hypothesen und Hypothesentest
+
+Wissenschaftliche Untersuchungen werden durchgefürt, um eine bestimmte Forschungsfrage zu beantworten.
+Diese Forschungsfrage wird als sog. *inhaltliche Hypothese* formuliert.
+Hypothesen sind Erwartungen über Unterschiede zwischen oder
+Zusammenhänge von Variablen, die vor einer Untersuchung formuliert werden.
+
+Beispiele für inhaltliche Hypothesen sind:
+
+- Niderländer sind größer als Deutsche.
+- Deutsche sind im Mittel größer als 170 cm.
+- Nichtraucher treiben mehr Sport als Raucher.
+- Menschen mit hohen Cholesterinspiegeln entwickeln im Laufe ihres Lebens eher eine Herzkrankheit.
+- Menschen, die sich in ihrer Jugend wenig bewegen, haben später auch mehr Zivilisationskrankheiten.
+- Es gibt einen Zusammenhang zwischen dem Einkommen der Eltern und dem eigenen Einkommen.
+
+Davon unterscheidet man statistische Hypothesen.
+Sie beziehen sich auf statistische Kennwerte und deren Verteilungen.
+
+Beispiele für statistische Hypotehesen:
+
+- Der Mittelwert der Körpergröße der Niederländer ist größer als der der Deutschen.
+- Der Mittelwert der Körpergröße der Deutschen ist größer als 170 cm.
+- ...
+
+## Statistisches Hypothesenpaar
+
+Es werden immer zwei komplementäre statistische Hypothesen formuliert:
+die Nullhypothese und die Alternativhypothese.
+Die Nullhypothese $H_0$ besagt in der Regel, dass es keinen Unterschied
+zwischen zwei Populationen in der Ausprägung eines Merkmals (bzw.
+keinen Zusammenhang zwischen zwei Merkmalen in einer Population) gibt.
+Die Alternativhypothese $H_1$ besagt, dass es einen Unterschied
+(bzw. einen Zusammenhang) gibt.
+$H_0$ und $H_1$ sind komplementär: Das bedeutet entweder die eine oder die
+andere Hypothese trifft zu, es gibt keine dritte Möglichkeit.
+
+Das Ziel des Signifikanz- bzw. Hypothesentests ist es nun häufig, zwischen diesen beiden Hypothesen *entscheiden* zu können.
+Hierzu wird der Stichprobenkennwert (z.B. der Stichprobenmittelwert) mit der Stichprobenkennwerteverteilung verglichen,
+die unter Annahme der *Nullhypothese* entstehen würde.
+Ist der Stichprobenmittelwert unter Annahme der Nullhypothese wenig wahrscheinlich, *verwirft*
+man die Nullhypothese und entscheidet sich für die Alternativhypothese (sie ist ja die einzige Alternative zur als "falsch" befundenen Nullhypothese).
+Ist der Stichprobenmittelwert aber unter Annahme der Nullhypothese recht wahrscheinlich,
+bleibt man bei der Nullhypothese (denn sie hat ja den Stichprobenmittelwert gut vorhersagen können).
+
+Für eine echte Entscheidung *zwischen* diesen beiden Hypothesen reicht dieses Vorgehen eigentlich nicht aus:
+Man hat ja noch nicht überprüft, wie wahrscheinlich oder unwahrscheinlich der Stichprobenmittelwert unter Annahme der Alternativhypothese gewesen wäre. Eigentlich können wir nur sagen, wie wahrscheinlich der Stichprobenkennwert unter Annahme der Nullhypothese war.
+
+## Entscheidungsfehler
+
+Entscheiden wir zwischen zwei Hypothesen, besteht auch immer eine gewisse Wahrscheinlichkeit,
+dass wir einen Entscheidungsfehler begehen und uns für die falsche der beiden Hypothesen entscheiden.
+Das Verwerfen der Nullhypothese, obwohl sie stimmt, nennt man $\alpha$-Fehler (oder Fehler 1. Art),
+das Beibehalten der Nullhypothese, obwohl sie nicht stimmt, nennt man $\beta$-Fehler (oder Fehler 2. Art).
+
+Wann genau entscheidet man sich aber nun für oder gegen die Nullhypothese?
+Es hat sich eingebürgert, sich gegen die Nullhypothese zu entscheiden, wenn die Wahrscheinlichkeit
+des Stichprobenkennwerts unter Annahme der Nullhypothese kleiner oder gleich 5% ist.
+(Diesen Wert nennt man auch "$\alpha$-Fehlerniveau von 5%".)
+Das bedeutet aber auch, dass der Stichprobenkennwert unter Annahme der Nullhypothese nicht unmöglich war,
+sondern eben "nur" eine 5%-ige Wahrscheinlichkeit hatte.
+
+Es ist an dieser Stelle wichtig festzustellen, dass wir anhand einer einzelnen Stichprobe und ihres einen Kennwerts nichts über die Wahrscheinlichkeit wissen, ob wir gerade einen $\alpha$-Fehler begehen oder nicht:
+Es kann ja gut sein, dass die Nullhypothese "wahr" ist und wir nur zufällig eine jener 5% von Stichproben aus der Population gezogen haben, die eben unter der Nullhypothese etwas weniger wahrscheinlich waren.
+
+Was ist dann aber der Vorteil davon, überhaupt einen Signifikanztest zu rechnen?
+Der Vorteil liegt darin, dass wir, wenn wir viele Untersuchungen durchführen, uns "nur" in 5% der Fälle, in denen die Nullhypothese "wahr" ist, 
+gegen sie entscheiden.
+Wenn wir die gleiche Untersuchung mehrfach durchführen -- oder jemand anderes unsere Untersuchung wiederholt -- fällt es eher auf, wenn wir uns einmal falsch entschieden haben und der Fehler kann korrigiert werden.
+
+## Aufgaben {-}
+
+[Öffne App in neuem Fenster](http://134.95.17.54:3838/significance)
+
+```{r}
+knitr::include_app(
+  "http://134.95.17.54:3838/significance/"
+  ,  height = "600px")
+```
+
+Verwendet die App, um die folgenden Fragen zu beantworten:
+
+1. Wenn Ihr 20 Stichproben zieht und anhand deren Mittelwert zwischen $H_0$ und $H_1$ entscheiden müsst, wie häufig begeht Ihr einen $\alpha$-Fehler?
+2. Nehmt nun an, dass der wahre Mittelwert nicht 170 cm, sondern 180 cm beträgt. Wie häufig begeht Ihr einen $\beta$-Fehler?
+3. Nehmt nun an, dass der wahre Mittelwert nicht 170 cm, sondern 190 cm beträgt. Wie häufig begeht Ihr einen $\beta$-Fehler?
+4. Mit welchen Größen lässt sich das Verhältnis von $\alpha$- und $\beta$-Fehler beeinflussen?
