@@ -88,7 +88,8 @@ calculated_mean <- papaja::printnum(mean(psychoclass$Alter), digits = 2, gt1 = T
 
 5. Erläutert, warum es nicht sinnvoll ist, den Median der Variable *Geschlecht* zu berechnen.
 
-Es ist nicht sinnvoll, den Median von Geschlecht zu berechnen, da sich die Merkmalsausprägungen (weiblich vs. männlich) in keine sinnvolle Ordnung bringen lassen. Entsprechend weist die Variable Geschlecht nur Nominalskalenniveau auf.
+Es ist nicht sinnvoll, den Median von Geschlecht zu berechnen, da sich die Merkmalsausprägungen (weiblich vs. männlich) in keine sinnvolle Ordnung bringen lassen.
+Entsprechend weist die Variable Geschlecht nur Nominalskalenniveau auf.
 
 <!-- # Literatur -->
 `r if (knitr:::is_html_output()) '# Literatur {-}'`

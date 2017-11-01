@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="wahrscheinlichkeitstheorie-und-inferenzstatistische-grundlagen.html">
-<link rel="next" href="zusammenhange-zwischen-zwei-variablen.html">
+<link rel="prev" href="hypothesen-und-hypothesentest.html">
+<link rel="next" href="der-einfluss-von-drittvariablen.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -117,60 +117,36 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="hypothesen-und-hypothesentest" class="section level1">
-<h1><span class="header-section-number">Kapitel 4</span> Hypothesen und Hypothesentest</h1>
-<p>Wissenschaftliche Untersuchungen werden durchgefürt, um eine bestimmte Forschungsfrage zu beantworten. Diese Forschungsfrage wird als sog. <em>inhaltliche Hypothese</em> formuliert. Hypothesen sind Erwartungen über Unterschiede zwischen oder Zusammenhänge von Variablen, die vor einer Untersuchung formuliert werden.</p>
-<p>Beispiele für inhaltliche Hypothesen sind:</p>
-<ul>
-<li>Niderländer sind größer als Deutsche.</li>
-<li>Deutsche sind im Mittel größer als 170 cm.</li>
-<li>Nichtraucher treiben mehr Sport als Raucher.</li>
-<li>Menschen mit hohen Cholesterinspiegeln entwickeln im Laufe ihres Lebens eher eine Herzkrankheit.</li>
-<li>Menschen, die sich in ihrer Jugend wenig bewegen, haben später auch mehr Zivilisationskrankheiten.</li>
-<li>Es gibt einen Zusammenhang zwischen dem Einkommen der Eltern und dem eigenen Einkommen.</li>
-</ul>
-<p>Davon unterscheidet man statistische Hypothesen. Sie beziehen sich auf statistische Kennwerte und deren Verteilungen.</p>
-<p>Beispiele für statistische Hypotehesen:</p>
-<ul>
-<li>Der Mittelwert der Körpergröße der Niederländer ist größer als der der Deutschen.</li>
-<li>Der Mittelwert der Körpergröße der Deutschen ist größer als 170 cm.</li>
-<li>…</li>
-</ul>
-<div id="statistisches-hypothesenpaar" class="section level2">
-<h2><span class="header-section-number">4.1</span> Statistisches Hypothesenpaar</h2>
-<p>Es werden immer zwei komplementäre statistische Hypothesen formuliert: die Nullhypothese und die Alternativhypothese. Die Nullhypothese <span class="math inline">\(H_0\)</span> besagt in der Regel, dass es keinen Unterschied zwischen zwei Populationen in der Ausprägung eines Merkmals (bzw. keinen Zusammenhang zwischen zwei Merkmalen in einer Population) gibt. Die Alternativhypothese <span class="math inline">\(H_1\)</span> besagt, dass es einen Unterschied (bzw. einen Zusammenhang) gibt. <span class="math inline">\(H_0\)</span> und <span class="math inline">\(H_1\)</span> sind komplementär: Das bedeutet entweder die eine oder die andere Hypothese trifft zu, es gibt keine dritte Möglichkeit.</p>
-<p>Das Ziel des Signifikanz- bzw. Hypothesentests ist es nun häufig, zwischen diesen beiden Hypothesen <em>entscheiden</em> zu können. Hierzu wird der Stichprobenkennwert (z.B. der Stichprobenmittelwert) mit der Stichprobenkennwerteverteilung verglichen, die unter Annahme der <em>Nullhypothese</em> entstehen würde. Ist der Stichprobenmittelwert unter Annahme der Nullhypothese wenig wahrscheinlich, <em>verwirft</em> man die Nullhypothese und entscheidet sich für die Alternativhypothese (sie ist ja die einzige Alternative zur als “falsch” befundenen Nullhypothese). Ist der Stichprobenmittelwert aber unter Annahme der Nullhypothese recht wahrscheinlich, bleibt man bei der Nullhypothese (denn sie hat ja den Stichprobenmittelwert gut vorhersagen können).</p>
-<p>Für eine echte Entscheidung <em>zwischen</em> diesen beiden Hypothesen reicht dieses Vorgehen eigentlich nicht aus: Man hat ja noch nicht überprüft, wie wahrscheinlich oder unwahrscheinlich der Stichprobenmittelwert unter Annahme der Alternativhypothese gewesen wäre. Eigentlich können wir nur sagen, wie wahrscheinlich der Stichprobenkennwert unter Annahme der Nullhypothese war.</p>
+<div id="zusammenhange-zwischen-zwei-variablen" class="section level1">
+<h1><span class="header-section-number">Kapitel 5</span> Zusammenhänge zwischen zwei Variablen</h1>
+<p>Häufig möchte man nicht nur wissen, wie eine einzelne Variable verteilt ist, sondern vielmehr, wie zwei oder mehr Variablen miteinander <em>zusammenhängen</em>. <!-- Merkmale/Merkmalsträger wäre besser --> Der Zusammenhang zweier Variablen meint deren gemeinsames Variieren (ihre <em>Kovariation</em>) – also ein gemeinsames Auftreten von hohen oder niedrigen Werten: Ein <em>gleichsinniger</em> oder <em>positiver</em> Zusammenhang bedeutet, dass hohe Werte in der einen Variable mit hohen Werten in der anderen Variable einhergehen; ein <em>gegenläufiger</em> oder <em>negativer</em> Zusammenhang liegt dann vor, wenn hohe Werte in der einen Variable mit niedrigen Werte in der anderen Variable einhergen.</p>
+<p>Um Zusammenhänge bildlich darzustellen, verwendet man häufig ein <em>Streudiagramm</em> wie in Abbildung <a href="zusammenhange-zwischen-zwei-variablen.html#fig:first-scatterplot">5.1</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:first-scatterplot"></span>
+<img src="Forschungsmethoden_files/figure-html/first-scatterplot-1.png" alt="Der Zusammenhang zwischen der Geschwindigkeit eines Fahrzeugs und dem Bremsweg, um das Fahrzeug aus dieser Geschwindigkeit zum Stillstand zu bringen. Die Daten stammen aus den 1920er Jahren." width="480" />
+<p class="caption">
+Abbildung 5.1: Der Zusammenhang zwischen der Geschwindigkeit eines Fahrzeugs und dem Bremsweg, um das Fahrzeug aus dieser Geschwindigkeit zum Stillstand zu bringen. Die Daten stammen aus den 1920er Jahren.
+</p>
 </div>
-<div id="entscheidungsfehler" class="section level2">
-<h2><span class="header-section-number">4.2</span> Entscheidungsfehler</h2>
-<p>Entscheiden wir zwischen zwei Hypothesen, besteht auch immer eine gewisse Wahrscheinlichkeit, dass wir einen Entscheidungsfehler begehen und uns für die falsche der beiden Hypothesen entscheiden. Das Verwerfen der Nullhypothese, obwohl sie stimmt, nennt man <span class="math inline">\(\alpha\)</span>-Fehler (oder Fehler 1. Art), das Beibehalten der Nullhypothese, obwohl sie nicht stimmt, nennt man <span class="math inline">\(\beta\)</span>-Fehler (oder Fehler 2. Art).</p>
-<p>Wann genau entscheidet man sich aber nun für oder gegen die Nullhypothese? Es hat sich eingebürgert, sich gegen die Nullhypothese zu entscheiden, wenn die Wahrscheinlichkeit des Stichprobenkennwerts unter Annahme der Nullhypothese kleiner oder gleich 5% ist. (Diesen Wert nennt man auch “<span class="math inline">\(\alpha\)</span>-Fehlerniveau von 5%”.) Das bedeutet aber auch, dass der Stichprobenkennwert unter Annahme der Nullhypothese nicht unmöglich war, sondern eben “nur” eine 5%-ige Wahrscheinlichkeit hatte.</p>
-<p>Es ist an dieser Stelle wichtig festzustellen, dass wir anhand einer einzelnen Stichprobe und ihres einen Kennwerts nichts über die Wahrscheinlichkeit wissen, ob wir gerade einen <span class="math inline">\(\alpha\)</span>-Fehler begehen oder nicht: Es kann ja gut sein, dass die Nullhypothese “wahr” ist und wir nur zufällig eine jener 5% von Stichproben aus der Population gezogen haben, die eben unter der Nullhypothese etwas weniger wahrscheinlich waren.</p>
-<p>Was ist dann aber der Vorteil davon, überhaupt einen Signifikanztest zu rechnen? Der Vorteil liegt darin, dass wir, wenn wir viele Untersuchungen durchführen, uns “nur” in 5% der Fälle, in denen die Nullhypothese “wahr” ist, gegen sie entscheiden. Wenn wir die gleiche Untersuchung mehrfach durchführen – oder jemand anderes unsere Untersuchung wiederholt – fällt es eher auf, wenn wir uns einmal falsch entschieden haben und der Fehler kann korrigiert werden.</p>
-</div>
-<div id="aufgaben-3" class="section level2 unnumbered">
-<h2>Aufgaben</h2>
-<p><a href="http://134.95.17.54:3838/significance">Öffne App in neuem Fenster</a></p>
-<iframe src="http://134.95.17.54:3838/significance/?showcase=0" width="672" height="600px">
-</iframe>
-<p>Verwendet die App, um die folgenden Fragen zu beantworten:</p>
-<ol style="list-style-type: decimal">
-<li>Wenn Ihr 20 Stichproben zieht und anhand deren Mittelwert zwischen <span class="math inline">\(H_0\)</span> und <span class="math inline">\(H_1\)</span> entscheiden müsst, wie häufig begeht Ihr einen <span class="math inline">\(\alpha\)</span>-Fehler?</li>
-<li>Nehmt nun an, dass der wahre Mittelwert nicht 170 cm, sondern 180 cm beträgt. Wie häufig begeht Ihr einen <span class="math inline">\(\beta\)</span>-Fehler?</li>
-<li>Nehmt nun an, dass der wahre Mittelwert nicht 170 cm, sondern 190 cm beträgt. Wie häufig begeht Ihr einen <span class="math inline">\(\beta\)</span>-Fehler?</li>
-<li>Mit welchen Größen lässt sich das Verhältnis von <span class="math inline">\(\alpha\)</span>- und <span class="math inline">\(\beta\)</span>-Fehler beeinflussen?</li>
-</ol>
+<p>Hierdurch ist es nun also auch möglich, von den Werten der einen Variablen auf die Werte der anderen Werte zu schließen. Mit welcher <em>Genauigkeit</em> man dies kann, hängt von der <em>Stärke</em> des Zusammenhangs ab.</p>
+<p>Darüber hinaus unterscheidet man die <em>Form</em> eines Zusammenhangs. <strong>Abbildungen für unterschiedliche Formen</strong></p>
+<p>Will man einen Zusammenhang beschreiben, lassen sich also schon drei Eigenschaften unterscheiden: Richtung, Form und Stärke.</p>
+<p>Die Stärke eines Zusammenhangs lässt sich mithilfe eines geeigneten statistischen Kennwerts quantifizieren. Welcher statistische Kennwert in einer bestimmten Anwendung geeignet ist, hängt von der Form des Zusammenhangs, dem Skalenniveau der beteiligten Variablen und weiteren Voraussetzungen einzelner statistischer Kennwerte bzw. Verfahren ab. Die Frage, welcher Kennwert geeignet ist, stellt dabei eine der Fragen dar, mit denen sich ein großer Teil der statistischen Literatur beschäftigt, den wir aber im Rahmen dieser Veranstaltung nicht vertiefen werden.</p>
+<p>Ein besonders gängiges Maß für den Zusammenhang zweier Variablen ist der Korrelationskoeffizient <span class="math inline">\(r\)</span> nach Pearson (er <em>eignet</em> sich zur Quantifizierung des linearen Zusammenhangs zweier intervallskalierter Variablen). Er ist ein standardisiertes Maß für die <em>Richtung</em> und die <em>Stärke</em> eines linearen Zusammenhangs und hat einen Wertebereich von -1 bis +1: Negative Werte zeigen einen negativen, positive Werte zeigen einen positiven Zusammenhang an. Ein Wert von 0 bedeutet, dass kein (linearer) Zusammenhang besteht.</p>
+<ul>
+<li>Konzept von Kovariation/Zusammenhang:
+<ul>
+<li>Scatterplots, Mittlewertsunterschiede, log. Regression</li>
+</ul></li>
+</ul>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="wahrscheinlichkeitstheorie-und-inferenzstatistische-grundlagen.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="zusammenhange-zwischen-zwei-variablen.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="hypothesen-und-hypothesentest.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="der-einfluss-von-drittvariablen.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -199,7 +175,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/mariusbarth/science-teacher-dev/edit/master/4-hypothesen.Rmd",
+"link": "https://github.com/mariusbarth/science-teacher-dev/edit/master/5-zusammenhang.Rmd",
 "text": "Bearbeiten"
 },
 "download": ["Forschungsmethoden.pdf"],

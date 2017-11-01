@@ -1,0 +1,60 @@
+# Der Einfluss von Drittvariablen
+
+Bisher haben wir uns damit beschäftigt, den Zusammenhang zwischen zwei Variablen zu beschreiben.
+Im folgenden Kapitel soll es weiterhin darum gehen, den Zusammenhang zwischen zwei Variablen zu beschreiben;
+darüber hinaus soll es aber darum gehen, diesen Zusammenhang von dem Einfluss einer weiteren Variable (einer Drittvariable) zu bereinigen.
+
+Warum dies wichtig ist, lässt sich anhand des *Simpson-Paradoxes* verdeutlichen, das im folgenden Abschnitt vorgestellt werden soll.
+
+## Das Simpson-Paradox
+
+<!-- Figure captions -->
+(ref:cap-simpson-overall)  Der Anteil zugelassener Studierender an der Gesamtzahl der Studienbewerberinnen und -bewerber, getrennt nach *Geschlecht*.
+
+(ref:cap-simpson-splitted) Der Anteil zugelassener Studierender an der Gesamtzahl der Studienbewerberinnen und -bewerber, getrennt nach *Geschlecht* und zulassendem *Department*.
+
+
+
+Aggregate data on applicants to graduate school at Berkeley for the six largest departments in 1973 classified by admission and sex.
+
+Originalarbeit: [@bickel_sex_1975]
+
+```{r fig.width = 9, fig.height = 7, fig.cap = "(ref:cap-simpson-overall)"}
+library(shinydegs.definitions)
+set_shinydegs_theme()
+
+theme <- getOption("shinydegs.theme")
+admission <- as.data.frame(datasets::UCBAdmissions)
+data <- list()
+
+for(i in 1:nrow(admission)){
+  data[[i]] <- data.frame(
+    Admit = rep(admission$Admit[i], admission$Freq[i])
+    , Gender = rep(admission$Gender[i], admission$Freq[i])
+    , Department = rep(admission$Dept[i], admission$Freq[i])
+  )
+}
+data <- dplyr::bind_rows(data)
+data$Admitted <- ifelse(data$Admit =="Admitted", 1, 0)
+data$id <- 1:nrow(data)
+
+agg <- aggregate(Admitted ~ Gender + id, data = data, FUN = mean)
+variable_label(agg) <- c(Admitted = "Anteil zugelassener Bewerber", Gender = "Geschlecht")
+levels(agg$Gender) <- c("männlich", "weiblich")
+out <- apa_barplot(data = agg, dv = "Admitted", id = "id", factors = "Gender", las = 1, col = c("white", "grey"), args_error_bars = list(lwd = 0))
+```
+
+
+
+```{r fig.width = 9, fig.height = 7, fig.cap = "(ref:cap-simpson-splitted)"}
+agg <- aggregate(Admitted ~ Gender + Department + id, data = data, FUN = mean)
+variable_label(agg) <- c(Admitted = "Anteil zugelassener Bewerber", Gender = "Geschlecht", Department = "Department")
+levels(agg$Gender) <- c("männlich", "weiblich")
+out <- apa_barplot(data = agg, dv = "Admitted", id = "id", factors = c("Department", "Gender"), las = 1, args_error_bars = list(lwd = 0))
+```
+
+
+## Kontrolle von Drittvariablen
+
+In der Realität ist es meist so, dass es nicht nur eine, sondern viele Ursachen für die
+beobachtete Ausprägung eines Merkmals gibt (man spricht von *Multi-Determiniertheit*).

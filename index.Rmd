@@ -5,10 +5,10 @@ date: 'Stand: `r format(Sys.Date(), format = "%d.%m.%Y")`'
 site: bookdown::bookdown_site
 always_allow_html: yes
 documentclass: book
-bibliography: [book.bib, packages.bib]
+bibliography: [book.bib, packages.bib, "science-teacher.bib"]
 biblio-style: apalike
 link-citations: yes
-github-repo: methexp/bioteacher
+github-repo: mariusbarth/science-teacher
 description: "Unterlagen zur Lehrveranstaltung \"Didaktische Forschungsprojekte\""
 language: ngerman
 keep_tex: yes

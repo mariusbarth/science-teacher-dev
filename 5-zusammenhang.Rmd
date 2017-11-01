@@ -1,0 +1,47 @@
+# Zusammenhänge zwischen zwei Variablen
+
+Häufig möchte man nicht nur wissen, wie eine einzelne Variable verteilt ist, sondern vielmehr,
+wie zwei oder mehr Variablen miteinander *zusammenhängen*.
+<!-- Merkmale/Merkmalsträger wäre besser -->
+Der Zusammenhang zweier Variablen meint deren gemeinsames Variieren (ihre *Kovariation*) --
+also ein gemeinsames Auftreten von hohen oder niedrigen Werten:
+Ein *gleichsinniger* oder *positiver* Zusammenhang bedeutet, dass hohe Werte in der einen Variable
+mit hohen Werten in der anderen Variable einhergehen;
+ein *gegenläufiger* oder *negativer* Zusammenhang liegt dann vor, wenn hohe Werte in der einen Variable
+mit niedrigen Werte in der anderen Variable einhergen.
+
+
+
+Um Zusammenhänge bildlich darzustellen, verwendet man häufig ein *Streudiagramm* wie in Abbildung \@ref(fig:first-scatterplot).
+
+```{r first-scatterplot, fig.cap = "Der Zusammenhang zwischen der Geschwindigkeit eines Fahrzeugs und dem Bremsweg, um das Fahrzeug aus dieser Geschwindigkeit zum Stillstand zu bringen. Die Daten stammen aus den 1920er Jahren.", fig.width=5, fig.height = 4.4, fig.align='center'}
+data <- cars
+variable_label(data) <- c(speed = "Geschwindigkeit [mph]", dist = "Bremsweg [ft]")
+out <- plot_bivariate(data$speed, data$dist)
+```
+
+Hierdurch ist es nun also auch möglich, von den Werten der einen Variablen auf die Werte der
+anderen Werte zu schließen.
+Mit welcher *Genauigkeit* man dies kann, hängt von der *Stärke* des Zusammenhangs ab.
+
+Darüber hinaus unterscheidet man die *Form* eines Zusammenhangs.
+**Abbildungen für unterschiedliche Formen**
+
+Will man einen Zusammenhang beschreiben, lassen sich also schon drei Eigenschaften unterscheiden:
+Richtung, Form und Stärke.
+
+Die Stärke eines Zusammenhangs lässt sich mithilfe eines geeigneten statistischen Kennwerts quantifizieren.
+Welcher statistische Kennwert in einer bestimmten Anwendung geeignet ist, hängt von der Form des Zusammenhangs,
+dem Skalenniveau der beteiligten Variablen und weiteren Voraussetzungen einzelner statistischer Kennwerte bzw. Verfahren ab.
+Die Frage, welcher Kennwert geeignet ist, stellt dabei eine der Fragen dar, mit denen sich ein großer Teil der statistischen Literatur beschäftigt,
+den wir aber im Rahmen dieser Veranstaltung nicht vertiefen werden.
+
+Ein besonders gängiges Maß für den Zusammenhang zweier Variablen ist der Korrelationskoeffizient $r$ nach Pearson
+(er *eignet* sich zur Quantifizierung des linearen Zusammenhangs zweier intervallskalierter Variablen).
+Er ist ein standardisiertes Maß für die *Richtung* und die *Stärke* eines linearen Zusammenhangs und
+hat einen Wertebereich von -1 bis +1:
+Negative Werte zeigen einen negativen, positive Werte zeigen einen positiven Zusammenhang an.
+Ein Wert von 0 bedeutet, dass kein (linearer) Zusammenhang besteht.
+
+- Konzept von Kovariation/Zusammenhang:
+    - Scatterplots, Mittlewertsunterschiede, log. Regression
