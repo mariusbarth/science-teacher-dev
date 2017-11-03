@@ -25,7 +25,51 @@ anderen Werte zu schließen.
 Mit welcher *Genauigkeit* man dies kann, hängt von der *Stärke* des Zusammenhangs ab.
 
 Darüber hinaus unterscheidet man die *Form* eines Zusammenhangs.
-**Abbildungen für unterschiedliche Formen**
+
+```{r fig.width = 8, fig.height = 8}
+set_shinydegs_theme()
+par(mfrow = c(2, 2))
+# ------------------------------------------------------------------------------
+# linear
+x <- rnorm(1e4)
+y <- x * .5 + rnorm(1e4, mean = 0, sd = sqrt(.75))
+variable_label(x) <- "Prädiktor"
+variable_label(y) <- "Kriterium"
+mod <- plot_bivariate(x = x, y = y)
+# lm(formula = y ~ x)
+# ------------------------------------------------------------------------------
+# quadratisch
+x <- rnorm(1e4)
+y <- x^2 * .5 + rnorm(1e4, mean = 0, sd = sqrt(.75))
+
+# lm(formula = y ~ x^2)
+variable_label(x) <- "Prädiktor"
+variable_label(y) <- "Kriterium"
+mod <- plot_bivariate(x = x, y = y)
+# ------------------------------------------------------------------------------
+# kein Zusammenhang
+x <- rnorm(1e4)
+y <- rnorm(1e4)
+
+# lm(formula = y ~ x^2)
+variable_label(x) <- "Prädiktor"
+variable_label(y) <- "Kriterium"
+mod <- plot_bivariate(x = x, y = y)
+
+# ------------------------------------------------------------------------------
+# kubisc
+x <- rnorm(1e4)
+y <- y <- x^3 * .5 + rnorm(1e4, mean = 0, sd = sqrt(.75))
+
+# lm(formula = y ~ x^3)
+variable_label(x) <- "Prädiktor"
+variable_label(y) <- "Kriterium"
+mod <- plot_bivariate(x = x, y = y)
+
+```
+
+
+
 
 Will man einen Zusammenhang beschreiben, lassen sich also schon drei Eigenschaften unterscheiden:
 Richtung, Form und Stärke.
@@ -36,7 +80,7 @@ dem Skalenniveau der beteiligten Variablen und weiteren Voraussetzungen einzelne
 Die Frage, welcher Kennwert geeignet ist, stellt dabei eine der Fragen dar, mit denen sich ein großer Teil der statistischen Literatur beschäftigt,
 den wir aber im Rahmen dieser Veranstaltung nicht vertiefen werden.
 
-Ein besonders gängiges Maß für den Zusammenhang zweier Variablen ist der Korrelationskoeffizient $r$ nach Pearson
+Ein besonders häufig verwendetes Maß für den Zusammenhang zweier Variablen ist der Korrelationskoeffizient $r$ nach Pearson
 (er *eignet* sich zur Quantifizierung des linearen Zusammenhangs zweier intervallskalierter Variablen).
 Er ist ein standardisiertes Maß für die *Richtung* und die *Stärke* eines linearen Zusammenhangs und
 hat einen Wertebereich von -1 bis +1:
@@ -45,3 +89,16 @@ Ein Wert von 0 bedeutet, dass kein (linearer) Zusammenhang besteht.
 
 - Konzept von Kovariation/Zusammenhang:
     - Scatterplots, Mittlewertsunterschiede, log. Regression
+    
+## Andere Formen von Zusammenhängen
+
+```{r logistic-regression}
+x <- infert$spontaneous + infert$induced
+y <- factor(infert$case, levels = 0:1, labels = c("fruchtbar", "unfruchtbar"))
+
+variable_label(x) <- "Anzahl Schwangerschaftsabbrüche"
+variable_label(y) <- "Unfruchtbar"
+mod <- plot_bivariate(x = x, y = y)
+summary(mod)
+```
+
