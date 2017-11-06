@@ -10,73 +10,85 @@ mit hohen Werten in der anderen Variable einhergehen;
 ein *gegenläufiger* oder *negativer* Zusammenhang liegt dann vor, wenn hohe Werte in der einen Variable
 mit niedrigen Werte in der anderen Variable einhergen.
 
-
-
 Um Zusammenhänge bildlich darzustellen, verwendet man häufig ein *Streudiagramm* wie in Abbildung \@ref(fig:first-scatterplot).
 
 ```{r first-scatterplot, fig.cap = "Der Zusammenhang zwischen der Geschwindigkeit eines Fahrzeugs und dem Bremsweg, um das Fahrzeug aus dieser Geschwindigkeit zum Stillstand zu bringen. Die Daten stammen aus den 1920er Jahren.", fig.width=5, fig.height = 4.4, fig.align='center'}
 data <- cars
 variable_label(data) <- c(speed = "Geschwindigkeit [mph]", dist = "Bremsweg [ft]")
-out <- plot_bivariate(data$speed, data$dist)
+out <- plot_bivariate(data$speed, data$dist, model = FALSE)
 ```
 
-Hierdurch ist es nun also auch möglich, von den Werten der einen Variablen auf die Werte der
-anderen Werte zu schließen.
+Neben der *Richtung* (positiv--negativ) eines Zusammenhangs ist auch die *Form* eines Zusammenhangs relevant.
+Abbildung \@ref(fig:covariation-shape) zeigt einerseits, wie ein positiver im Vergleich zu einem negativen Zusammenhang aussieht (Tafel A vs. B),
+aber auch wie ein *Nullzusammenhang* oder ein quadratischer Zusammenhang aussehen könnten. Darüber hinaus sind natürlich viele andere Formen, z.B. kubische oder umgekehrt-U-förmige Zusammenhänge möglich.
 
-<!-- Prädiktor und Kriterium einführen -->
+(ref:cap-shape) Vier unterschiedliche Formen von Zusammenhängen. Tafel A zeigt einen positiv-linearen, Tafel B einen negativ-linearen Zusammenhang.
+Tafel C zeigt einen Nullzusammenhang -- es besteht kein Zusammenhang zwischen $X$ und $Y$. Tafel D zeigt einen quadratischen Zusammenhang.
 
-Mit welcher *Genauigkeit* man dies kann, hängt von der *Stärke* des Zusammenhangs ab.
-
-Darüber hinaus unterscheidet man die *Form* eines Zusammenhangs.
-
-```{r fig.width = 8, fig.height = 8}
+```{r covariation-shape, fig.width = 8, fig.height = 8, fig.cap = "(ref:cap-shape)"}
 set_shinydegs_theme()
 par(mfrow = c(2, 2))
 # ------------------------------------------------------------------------------
-# linear
+# positiv linear
 x <- rnorm(1e4)
-y <- x * .5 + rnorm(1e4, mean = 0, sd = sqrt(.75))
-variable_label(x) <- "Prädiktor"
-variable_label(y) <- "Kriterium"
-mod <- plot_bivariate(x = x, y = y)
+y <- scale(x * .5 + rnorm(1e4, mean = 0, sd = sqrt(.75)))
+variable_label(x) <- ""
+variable_label(y) <- ""
+mod <- plot_bivariate(x = x, y = y, xlim = c(-4, 4), ylim = c(-4, 4), model = FALSE)
+title(xlab = expression(paste("Variable"~italic(X))), ylab = expression(paste("Variable"~italic(Y))))
 # lm(formula = y ~ x)
+legend(x = 2, y = 6, legend = "A", bty = "n", cex = 2, xpd = NA)
 # ------------------------------------------------------------------------------
-# quadratisch
+# negativ linear
 x <- rnorm(1e4)
-y <- x^2 * .5 + rnorm(1e4, mean = 0, sd = sqrt(.75))
+y <- scale(-x * .5 + rnorm(1e4, mean = 0, sd = sqrt(.75)))
+variable_label(x) <- ""
+variable_label(y) <- ""
+mod <- plot_bivariate(x = x, y = y, xlim = c(-4, 4), ylim = c(-4, 4), model = FALSE)
+title(xlab = expression(paste("Variable"~italic(X))), ylab = expression(paste("Variable"~italic(Y))))
+# lm(formula = y ~ x)
+legend(x = 2, y = 6, legend = "B", bty = "n", cex = 2, xpd = NA)
 
-# lm(formula = y ~ x^2)
-variable_label(x) <- "Prädiktor"
-variable_label(y) <- "Kriterium"
-mod <- plot_bivariate(x = x, y = y)
 # ------------------------------------------------------------------------------
 # kein Zusammenhang
 x <- rnorm(1e4)
 y <- rnorm(1e4)
 
 # lm(formula = y ~ x^2)
-variable_label(x) <- "Prädiktor"
-variable_label(y) <- "Kriterium"
-mod <- plot_bivariate(x = x, y = y)
+variable_label(x) <- ""
+variable_label(y) <- ""
+mod <- plot_bivariate(x = x, y = y, xlim = c(-4, 4), ylim = c(-4, 4), model = FALSE)
+title(xlab = expression(paste("Variable"~italic(X))), ylab = expression(paste("Variable"~italic(Y))))
+legend(x = 2, y = 6, legend = "C", bty = "n", cex = 2, xpd = NA)
 
 # ------------------------------------------------------------------------------
-# kubisc
+# quadratisch
 x <- rnorm(1e4)
-y <- y <- x^3 * .5 + rnorm(1e4, mean = 0, sd = sqrt(.75))
+y <- scale(x^2 * .5 + rnorm(1e4, mean = 0, sd = sqrt(.75)))
 
-# lm(formula = y ~ x^3)
-variable_label(x) <- "Prädiktor"
-variable_label(y) <- "Kriterium"
-mod <- plot_bivariate(x = x, y = y)
+# lm(formula = y ~ x^2)
+variable_label(x) <- ""
+variable_label(y) <- ""
+mod <- plot_bivariate(x = x, y = y, xlim = c(-4, 4), ylim = c(-6, 6), model = FALSE)
+title(xlab = expression(paste("Variable"~italic(X))), ylab = expression(paste("Variable"~italic(Y))))
+legend(x = 2, y = 6*1.5, legend = "D", bty = "n", cex = 2, xpd = NA)
+
+# ------------------------------------------------------------------------------
+# kubisch
+# x <- rnorm(1e4)
+# y <- scale(y <- x^3 * .5 + rnorm(1e4, mean = 0, sd = sqrt(.75)))
+# 
+# # lm(formula = y ~ x^3)
+# variable_label(x) <- "Prädiktor"
+# variable_label(y) <- "Kriterium"
+# mod <- plot_bivariate(x = x, y = y, xlim = c(-4, 4), ylim = c(-12, 12), model = FALSE)
+# title(xlab = expression(paste("Variable"~italic(X))), ylab = expression(paste("Variable"~italic(Y))))
+# legend(x = 2, y = 12*1.5, legend = "D", bty = "n", cex = 2, xpd = NA)
 
 ```
 
-
-
-
-Will man einen Zusammenhang beschreiben, lassen sich also schon drei Eigenschaften unterscheiden:
-Richtung, Form und Stärke.
-
+Die dritte wichtige Eigenschaft eines Zusammenhangs ist dessen *Stärke*:
+Hiermit beschreibt man, wie eng das Verhältnis der beiden Variablen zueinander ist.
 Die Stärke eines Zusammenhangs lässt sich mithilfe eines geeigneten statistischen Kennwerts quantifizieren.
 Welcher statistische Kennwert in einer bestimmten Anwendung geeignet ist, hängt von der Form des Zusammenhangs,
 dem Skalenniveau der beteiligten Variablen und weiteren Voraussetzungen einzelner statistischer Kennwerte bzw. Verfahren ab.
@@ -90,18 +102,67 @@ hat einen Wertebereich von -1 bis +1:
 Negative Werte zeigen einen negativen, positive Werte zeigen einen positiven Zusammenhang an.
 Ein Wert von 0 bedeutet, dass kein (linearer) Zusammenhang besteht.
 
-- Konzept von Kovariation/Zusammenhang:
-    - Scatterplots, Mittlewertsunterschiede, log. Regression
+Abbildung \@ref(fig:covariation-strength) zeigt unterschiedlich starke (linear-positive) Zusammenhänge.
+
+(ref:cap-covariation-strength) Vier unterschiedlich *starke* Zusammenhänge.
+
+```{r covariation-strength, fig.width = 8, fig.height = 8, fig.cap = "(ref:cap-covariation-strength)"}
+set_shinydegs_theme()
+par(mfrow = c(2, 2))
+
+n_obs <- 2e3
+
+r <- c(0.05, .35, .65, .95)
+
+for (i in 1:4){
+  # ------------------------------------------------------------------------------
+  # positiv linear
+  x <- rnorm(n_obs)
+  y <- scale(x * r[i] + rnorm(n_obs, mean = 0, sd = sqrt(1-r[i]^2)))
+  variable_label(x) <- ""
+  variable_label(y) <- ""
+  mod <- plot_bivariate(x = x, y = y, xlim = c(-3, 3), ylim = c(-3, 3), model = TRUE)
+  title(xlab = expression(paste("Variable"~italic(X))), ylab = expression(paste("Variable"~italic(Y))))
+  # lm(formula = y ~ x)
+  legend(x = 2, y = 3*1.5, legend = substitute(italic(r)==a, list(a = papaja::printnum(cor(x, y), gt1=FALSE))), bty = "n", xpd = NA)
+}
+
+```
+
     
 ## Andere Formen von Zusammenhängen
 
-```{r logistic-regression}
-x <- infert$spontaneous + infert$induced
-y <- factor(infert$case, levels = 0:1, labels = c("fruchtbar", "unfruchtbar"))
+(ref:cap-logistic-regression) Der Zusammenhang zwischen dem Abschneiden in einem allgemeinen Intelligenztest ($x$-Achse) und der Wahrscheinlichkeit, für
+den Studiengang *Verteidigung gegen die dunklen Künste* ($y$-Achse) zugelassen zu werden.
 
-variable_label(x) <- "Anzahl Schwangerschaftsabbrüche"
-variable_label(y) <- "Unfruchtbar"
-mod <- plot_bivariate(x = x, y = y)
-# summary(mod)
+(ref:cap-mean-differences) Der Zusammenhang zwischen der Zulassung zum Studiengang *Verteidigung gegen die dunklen Künste* ($x$-Achse) und dem Abschneiden in einem allgemeinen Intelligenztest ($y$-Achse). Für jeden
+
+```{r logistic-regression, fig.cap = "(ref:cap-logistic-regression)"}
+x <- round(rnorm(2e2, mean = 100, sd = 10))
+y <- rbinom(n = 2e2, size = 1, prob = pnorm(x, mean = 105, sd = 10))
+y <- factor(y, levels = 0:1, labels = c("keine Zulassung", "Zulassung"))
+variable_label(x) <- "Intelligenz [IQ-Punkte]"
+variable_label(y) <- "Entscheidung"
+
+mod <- plot_bivariate(x = x, y = y, xlim = c(60, 140))
 ```
 
+```{r mean-differences, fig.cap = "(ref:cap-mean-differences)"}
+apa_barplot(
+  data = data.frame(x, y, id = 1:length(x))
+  , id = "id"
+  , dv = "x"
+  , factors = "y"
+  , args_error_bars = list(lwd = 0)
+  , args_rect = getOption("shinydegs.theme")
+  , las = 1
+)
+```
+
+
+
+## Regression
+
+Hierdurch ist es nun also auch möglich, von den Werten der einen Variablen auf die Werte der anderen Variablen schließen.
+
+Mit welcher *Genauigkeit* man dies kann, hängt von der *Stärke* des Zusammenhangs ab.
