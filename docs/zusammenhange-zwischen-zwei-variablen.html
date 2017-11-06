@@ -92,6 +92,7 @@
 </ul></li>
 <li class="chapter" data-level="5" data-path="zusammenhange-zwischen-zwei-variablen.html"><a href="zusammenhange-zwischen-zwei-variablen.html"><i class="fa fa-check"></i><b>5</b> Zusammenhänge zwischen zwei Variablen</a><ul>
 <li class="chapter" data-level="5.1" data-path="zusammenhange-zwischen-zwei-variablen.html"><a href="zusammenhange-zwischen-zwei-variablen.html#andere-formen-von-zusammenhangen"><i class="fa fa-check"></i><b>5.1</b> Andere Formen von Zusammenhängen</a></li>
+<li class="chapter" data-level="5.2" data-path="zusammenhange-zwischen-zwei-variablen.html"><a href="zusammenhange-zwischen-zwei-variablen.html#regression"><i class="fa fa-check"></i><b>5.2</b> Regression</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="der-einfluss-von-drittvariablen.html"><a href="der-einfluss-von-drittvariablen.html"><i class="fa fa-check"></i><b>6</b> Der Einfluss von Drittvariablen</a><ul>
 <li class="chapter" data-level="6.1" data-path="der-einfluss-von-drittvariablen.html"><a href="der-einfluss-von-drittvariablen.html#das-simpson-paradox"><i class="fa fa-check"></i><b>6.1</b> Das Simpson-Paradox</a></li>
@@ -129,43 +130,45 @@
 Abbildung 5.1: Der Zusammenhang zwischen der Geschwindigkeit eines Fahrzeugs und dem Bremsweg, um das Fahrzeug aus dieser Geschwindigkeit zum Stillstand zu bringen. Die Daten stammen aus den 1920er Jahren.
 </p>
 </div>
-<p>Hierdurch ist es nun also auch möglich, von den Werten der einen Variablen auf die Werte der anderen Werte zu schließen. Mit welcher <em>Genauigkeit</em> man dies kann, hängt von der <em>Stärke</em> des Zusammenhangs ab.</p>
-<p>Darüber hinaus unterscheidet man die <em>Form</em> eines Zusammenhangs.</p>
-<p><img src="Forschungsmethoden_files/figure-html/unnamed-chunk-9-1.png" width="768" /></p>
-<p>Will man einen Zusammenhang beschreiben, lassen sich also schon drei Eigenschaften unterscheiden: Richtung, Form und Stärke.</p>
-<p>Die Stärke eines Zusammenhangs lässt sich mithilfe eines geeigneten statistischen Kennwerts quantifizieren. Welcher statistische Kennwert in einer bestimmten Anwendung geeignet ist, hängt von der Form des Zusammenhangs, dem Skalenniveau der beteiligten Variablen und weiteren Voraussetzungen einzelner statistischer Kennwerte bzw. Verfahren ab. Die Frage, welcher Kennwert geeignet ist, stellt dabei eine der Fragen dar, mit denen sich ein großer Teil der statistischen Literatur beschäftigt, den wir aber im Rahmen dieser Veranstaltung nicht vertiefen werden.</p>
+<p>Neben der <em>Richtung</em> (positiv–negativ) eines Zusammenhangs ist auch die <em>Form</em> eines Zusammenhangs relevant. Abbildung <a href="zusammenhange-zwischen-zwei-variablen.html#fig:covariation-shape">5.2</a> zeigt einerseits, wie ein positiver im Vergleich zu einem negativen Zusammenhang aussieht (Tafel A vs. B), aber auch wie ein <em>Nullzusammenhang</em> oder ein quadratischer Zusammenhang aussehen könnten. Darüber hinaus sind natürlich viele andere Formen, z.B. kubische oder umgekehrt-U-förmige Zusammenhänge möglich.</p>
+
+<div class="figure"><span id="fig:covariation-shape"></span>
+<img src="Forschungsmethoden_files/figure-html/covariation-shape-1.png" alt="Vier unterschiedliche Formen von Zusammenhängen. Tafel A zeigt einen positiv-linearen, Tafel B einen negativ-linearen Zusammenhang. Tafel C zeigt einen Nullzusammenhang – es besteht kein Zusammenhang zwischen \(X\) und \(Y\). Tafel D zeigt einen quadratischen Zusammenhang." width="768" />
+<p class="caption">
+Abbildung 5.2: Vier unterschiedliche Formen von Zusammenhängen. Tafel A zeigt einen positiv-linearen, Tafel B einen negativ-linearen Zusammenhang. Tafel C zeigt einen Nullzusammenhang – es besteht kein Zusammenhang zwischen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span>. Tafel D zeigt einen quadratischen Zusammenhang.
+</p>
+</div>
+<p>Die dritte wichtige Eigenschaft eines Zusammenhangs ist dessen <em>Stärke</em>: Hiermit beschreibt man, wie eng das Verhältnis der beiden Variablen zueinander ist. Die Stärke eines Zusammenhangs lässt sich mithilfe eines geeigneten statistischen Kennwerts quantifizieren. Welcher statistische Kennwert in einer bestimmten Anwendung geeignet ist, hängt von der Form des Zusammenhangs, dem Skalenniveau der beteiligten Variablen und weiteren Voraussetzungen einzelner statistischer Kennwerte bzw. Verfahren ab. Die Frage, welcher Kennwert geeignet ist, stellt dabei eine der Fragen dar, mit denen sich ein großer Teil der statistischen Literatur beschäftigt, den wir aber im Rahmen dieser Veranstaltung nicht vertiefen werden.</p>
 <p>Ein besonders häufig verwendetes Maß für den Zusammenhang zweier Variablen ist der Korrelationskoeffizient <span class="math inline">\(r\)</span> nach Pearson (er <em>eignet</em> sich zur Quantifizierung des linearen Zusammenhangs zweier intervallskalierter Variablen). Er ist ein standardisiertes Maß für die <em>Richtung</em> und die <em>Stärke</em> eines linearen Zusammenhangs und hat einen Wertebereich von -1 bis +1: Negative Werte zeigen einen negativen, positive Werte zeigen einen positiven Zusammenhang an. Ein Wert von 0 bedeutet, dass kein (linearer) Zusammenhang besteht.</p>
-<ul>
-<li>Konzept von Kovariation/Zusammenhang:
-<ul>
-<li>Scatterplots, Mittlewertsunterschiede, log. Regression</li>
-</ul></li>
-</ul>
+<p>Abbildung <a href="zusammenhange-zwischen-zwei-variablen.html#fig:covariation-strength">5.3</a> zeigt unterschiedlich starke (linear-positive) Zusammenhänge.</p>
+
+<div class="figure"><span id="fig:covariation-strength"></span>
+<img src="Forschungsmethoden_files/figure-html/covariation-strength-1.png" alt="Vier unterschiedlich starke Zusammenhänge." width="768" />
+<p class="caption">
+Abbildung 5.3: Vier unterschiedlich starke Zusammenhänge.
+</p>
+</div>
 <div id="andere-formen-von-zusammenhangen" class="section level2">
 <h2><span class="header-section-number">5.1</span> Andere Formen von Zusammenhängen</h2>
-<p><img src="Forschungsmethoden_files/figure-html/logistic-regression-1.png" width="672" /></p>
-<pre><code>## 
-## Call:
-## glm(formula = y ~ x, family = binomial(link = &quot;probit&quot;), data = data)
-## 
-## Deviance Residuals: 
-##     Min       1Q   Median       3Q      Max  
-## -1.4886  -0.8354  -0.5734   1.2117   1.9425  
-## 
-## Coefficients:
-##             Estimate Std. Error z value Pr(&gt;|z|)    
-## (Intercept) -1.02970    0.15148  -6.797 1.06e-11 ***
-## x            0.48966    0.09908   4.942 7.73e-07 ***
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## (Dispersion parameter for binomial family taken to be 1)
-## 
-##     Null deviance: 316.17  on 247  degrees of freedom
-## Residual deviance: 290.72  on 246  degrees of freedom
-## AIC: 294.72
-## 
-## Number of Fisher Scoring iterations: 3</code></pre>
+
+
+<div class="figure"><span id="fig:logistic-regression"></span>
+<img src="Forschungsmethoden_files/figure-html/logistic-regression-1.png" alt="Der Zusammenhang zwischen dem Abschneiden in einem allgemeinen Intelligenztest (\(x\)-Achse) und der Wahrscheinlichkeit, für den Studiengang Verteidigung gegen die dunklen Künste (\(y\)-Achse) zugelassen zu werden." width="672" />
+<p class="caption">
+Abbildung 5.4: Der Zusammenhang zwischen dem Abschneiden in einem allgemeinen Intelligenztest (<span class="math inline">\(x\)</span>-Achse) und der Wahrscheinlichkeit, für den Studiengang <em>Verteidigung gegen die dunklen Künste</em> (<span class="math inline">\(y\)</span>-Achse) zugelassen zu werden.
+</p>
+</div>
+<div class="figure"><span id="fig:mean-differences"></span>
+<img src="Forschungsmethoden_files/figure-html/mean-differences-1.png" alt="Der Zusammenhang zwischen der Zulassung zum Studiengang Verteidigung gegen die dunklen Künste (\(x\)-Achse) und dem Abschneiden in einem allgemeinen Intelligenztest (\(y\)-Achse). Für jeden" width="672" />
+<p class="caption">
+Abbildung 5.5: Der Zusammenhang zwischen der Zulassung zum Studiengang <em>Verteidigung gegen die dunklen Künste</em> (<span class="math inline">\(x\)</span>-Achse) und dem Abschneiden in einem allgemeinen Intelligenztest (<span class="math inline">\(y\)</span>-Achse). Für jeden
+</p>
+</div>
+</div>
+<div id="regression" class="section level2">
+<h2><span class="header-section-number">5.2</span> Regression</h2>
+<p>Hierdurch ist es nun also auch möglich, von den Werten der einen Variablen auf die Werte der anderen Variablen schließen.</p>
+<p>Mit welcher <em>Genauigkeit</em> man dies kann, hängt von der <em>Stärke</em> des Zusammenhangs ab.</p>
 
 </div>
 </div>

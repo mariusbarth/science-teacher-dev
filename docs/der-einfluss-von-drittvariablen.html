@@ -92,6 +92,7 @@
 </ul></li>
 <li class="chapter" data-level="5" data-path="zusammenhange-zwischen-zwei-variablen.html"><a href="zusammenhange-zwischen-zwei-variablen.html"><i class="fa fa-check"></i><b>5</b> Zusammenhänge zwischen zwei Variablen</a><ul>
 <li class="chapter" data-level="5.1" data-path="zusammenhange-zwischen-zwei-variablen.html"><a href="zusammenhange-zwischen-zwei-variablen.html#andere-formen-von-zusammenhangen"><i class="fa fa-check"></i><b>5.1</b> Andere Formen von Zusammenhängen</a></li>
+<li class="chapter" data-level="5.2" data-path="zusammenhange-zwischen-zwei-variablen.html"><a href="zusammenhange-zwischen-zwei-variablen.html#regression"><i class="fa fa-check"></i><b>5.2</b> Regression</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="der-einfluss-von-drittvariablen.html"><a href="der-einfluss-von-drittvariablen.html"><i class="fa fa-check"></i><b>6</b> Der Einfluss von Drittvariablen</a><ul>
 <li class="chapter" data-level="6.1" data-path="der-einfluss-von-drittvariablen.html"><a href="der-einfluss-von-drittvariablen.html#das-simpson-paradox"><i class="fa fa-check"></i><b>6.1</b> Das Simpson-Paradox</a></li>
@@ -125,23 +126,40 @@
 <p>Warum dies wichtig ist, lässt sich anhand des <em>Simpson-Paradoxes</em> verdeutlichen, das im folgenden Abschnitt vorgestellt werden soll.</p>
 <div id="das-simpson-paradox" class="section level2">
 <h2><span class="header-section-number">6.1</span> Das Simpson-Paradox</h2>
+<!-- -------------------------------------------------------------------------------- -->
 <!-- Figure captions -->
 
 
-<p>Aggregate data on applicants to graduate school at Berkeley for the six largest departments in 1973 classified by admission and sex.</p>
-<p>Originalarbeit: <span class="citation">(Bickel, Hammel, and O’connell <a href="#ref-bickel_sex_1975">1975</a>)</span></p>
-<div class="figure"><span id="fig:unnamed-chunk-10"></span>
-<img src="Forschungsmethoden_files/figure-html/unnamed-chunk-10-1.png" alt="Der Anteil zugelassener Studierender an der Gesamtzahl der Studienbewerberinnen und -bewerber, getrennt nach Geschlecht." width="864" />
+
+<p>Das Simpson-Paradox stellt eine besondere Form von Zusammenhang dar, bei dem es zunächst so aussieht, dass es einen positiven (oder negativen) Zusammnhang zwischen einer Prädiktor- und einer Kriteriumsvariable gibt. Berücksichtigt man jedoch den Einfluss einer weiteren (Prädiktor-)Variable (der <em>Drittvariable</em>) auf die Kriteriumsvariable, dreht sich der Zusammenhang zwischen der ursprünglichen Prädiktor- und der Kriteriumsvariable um.</p>
+<p>Für solch eine Situation gibt es einen prominenten Fall: Im Jahr 1973 wurde die University of California-Berkeley verklagt, Frauen bei der Zulassung zur Graduate School zu benachteiligen. Die Daten sprachen zunächst deutlich dafür, dass hier aufgrund des Geschlechts diskriminiert wurde, denn von den Männern wurden 44% der Bewerber zugelassen, von den Frauen jedoch nur 35%. Anders ausgedrückt hatten Männer also eine ungefähr 20% höhere Wahrscheinlichkeit zugelassen zu werden als Frauen. Abbildung <a href="der-einfluss-von-drittvariablen.html#fig:simpson-overall">6.1</a> zeigt diesen zunächst bebobachteten Zusammenhang.</p>
+<div class="figure"><span id="fig:simpson-overall"></span>
+<img src="Forschungsmethoden_files/figure-html/simpson-overall-1.png" alt="Der Anteil zugelassener Studierender an der Gesamtzahl der Studienbewerberinnen und -bewerber, getrennt nach Geschlecht." width="864" />
 <p class="caption">
 Abbildung 6.1: Der Anteil zugelassener Studierender an der Gesamtzahl der Studienbewerberinnen und -bewerber, getrennt nach <em>Geschlecht</em>.
 </p>
 </div>
-<div class="figure"><span id="fig:unnamed-chunk-11"></span>
-<img src="Forschungsmethoden_files/figure-html/unnamed-chunk-11-1.png" alt="Der Anteil zugelassener Studierender an der Gesamtzahl der Studienbewerberinnen und -bewerber, getrennt nach Geschlecht und zulassendem Department." width="864" />
+<p>Bickel, Hammel und O’Connell <span class="citation">(<a href="#ref-bickel_sex_1975">1975</a>)</span> untersuchten dieses Phänomen genauer: Hierzu betrachteten sie die Zulassungszahlen nicht nur getrennt nach Geschlecht, sondern auch zusätzlich danach, welches Department der Universität die Bewerber zugelassen hat. Abbildung <a href="der-einfluss-von-drittvariablen.html#fig:simpson-splitted">6.2</a> zeigt den jeweiligen Anteil zugelassener Bewerber getrennt nach Geschlecht und Department (für die sechs größten Departments).</p>
+<div class="figure"><span id="fig:simpson-splitted"></span>
+<img src="Forschungsmethoden_files/figure-html/simpson-splitted-1.png" alt="Der Anteil zugelassener Studierender an der Gesamtzahl der Studienbewerberinnen und -bewerber, getrennt nach Geschlecht und zulassendem Department." width="864" />
 <p class="caption">
 Abbildung 6.2: Der Anteil zugelassener Studierender an der Gesamtzahl der Studienbewerberinnen und -bewerber, getrennt nach <em>Geschlecht</em> und zulassendem <em>Department</em>.
 </p>
 </div>
+<p>Man kann erkennen, dass es offenbar innerhalb jedes Departments kaum Unterschiede bzgl. des Anteils zugelassener Bewerber gibt, Frauen und Männer also ungefähr die gleiche Wahrscheinlichkeit hatten, zugelassen zu werden. Die Autoren fanden sogar einen sehr kleinen Effekt, dass Frauen geringfügig “bevorzugt” wurden – die Richtung des Zusammenhangs dreht sich um, es handelt sich also um einen Fall von Simpsons Paradox.</p>
+<p>Aber wie erklären die Autoren, dass sich der ursprünglich beobachtete Effekt umkehrt, wenn man die Daten der unterschidlichen Departments getrennt betrachtet? Betrachten wir noch einmal Abbildung <a href="der-einfluss-von-drittvariablen.html#fig:simpson-splitted">6.2</a>: Auch wenn sich die Balken zwischen Männern und Frauen kaum unterscheiden, ist es doch offensichtlich, dass die Departments (unabhängig vom Geschlecht) sehr unterschiedlich große Anteile an Bewerbern zulassen. So ist es z.B. viel leichter, in Department A zugelassen zu werden als in Department F. Zusätzlich hierzu muss man berücksichtigen, dass sich Männer und Frauen unterschiedlich häufig in den unterschiedlichen Departments beworben haben, nämlich Frauen häufiger in den “schweren” und Männer häufiger in den “leichten” Departments. Diesen Zusammenhang zeigt Abbildung <a href="der-einfluss-von-drittvariablen.html#fig:simpson-gender-department">6.3</a>.</p>
+<div class="figure"><span id="fig:simpson-gender-department"></span>
+<img src="Forschungsmethoden_files/figure-html/simpson-gender-department-1.png" alt="Streudiagramm des Anteils zugelassener Bewerberinnen und Bewerber (\(y\)-Achse) und des Anteils weiblicher Bewerberinnen (\(x\)-Achse) für die sechs größten Departments der University of California-Berkeley. " width="864" />
+<p class="caption">
+Abbildung 6.3: Streudiagramm des Anteils zugelassener Bewerberinnen und Bewerber (<span class="math inline">\(y\)</span>-Achse) und des Anteils weiblicher Bewerberinnen (<span class="math inline">\(x\)</span>-Achse) für die sechs größten Departments der University of California-Berkeley. <!-- -------------------------------------------------------------------------------- -->
+</p>
+</div>
+<p>Zusammenfassend war es also nicht so, dass die Universität im Rahmen des Zulassungsverfahrens Frauen benachteiligte. Die unterschiedlichen Fächerpräferenzen von Männern und Frauen und die unterschiedlichen Zulassungsquoten der Fächer (Departments) führte jedoch dazu, dass Frauen eine geringere Wahrscheinlihckeit hatten, zugelassen zu werden. Bickel, Hammel und O’Connell <span class="citation">(<a href="#ref-bickel_sex_1975">1975</a>)</span> machen aber auch deutlich, dass dies nicht bedeutet, dass die Welt diskriminierungsfrei ist: Vielmehr lässt sich einerseits die Frage stellen, (1) warum überhaupt Männer und Frauen unterschiedliche Fächerpräferenzen haben und (2) warum in den von Frauen bevorzugten Fächern offenbar pro Bewerber weniger Studienplätze zur Verfügung stehen:</p>
+<blockquote>
+<p>Women are shunted by their socialization and education toward fields of graduate study that are generally more crowded, less productive of completed degrees, and less well funded, and that frequently offer poorer professional employment prospects.</p>
+</blockquote>
+<!-- Statistics is a broad discipline that encompasses areas ranging from data aquisition and analysis to modeling complex phenomena to the science of decision making under uncertainty. -->
+<!-- Aggregate data on applicants to graduate school at Berkeley for the six largest departments in 1973 classified by admission and sex. -->
 </div>
 <div id="kontrolle-von-drittvariablen" class="section level2">
 <h2><span class="header-section-number">6.2</span> Kontrolle von Drittvariablen</h2>
