@@ -38,4 +38,5 @@ Datum   | bisher geplantes Thema
 
 # Vorwort {-}
 
-Diese Unterlagen sollen
+Diese Materialien sollen die im Rahmen der Lehrveranstaltung *Didaktische Forschungsprojekte* vermittelten Grundkenntnisse
+zur Statistik in leicht verständlicher Form zusammenfassen.
