@@ -22,6 +22,9 @@ out <- plot_bivariate(data$speed, data$dist)
 
 Hierdurch ist es nun also auch möglich, von den Werten der einen Variablen auf die Werte der
 anderen Werte zu schließen.
+
+<!-- Prädiktor und Kriterium einführen -->
+
 Mit welcher *Genauigkeit* man dies kann, hängt von der *Stärke* des Zusammenhangs ab.
 
 Darüber hinaus unterscheidet man die *Form* eines Zusammenhangs.
@@ -99,6 +102,6 @@ y <- factor(infert$case, levels = 0:1, labels = c("fruchtbar", "unfruchtbar"))
 variable_label(x) <- "Anzahl Schwangerschaftsabbrüche"
 variable_label(y) <- "Unfruchtbar"
 mod <- plot_bivariate(x = x, y = y)
-summary(mod)
+# summary(mod)
 ```
 

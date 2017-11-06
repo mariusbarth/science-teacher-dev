@@ -8,18 +8,31 @@ Warum dies wichtig ist, lässt sich anhand des *Simpson-Paradoxes* verdeutlichen
 
 ## Das Simpson-Paradox
 
+<!-- -------------------------------------------------------------------------------- -->
 <!-- Figure captions -->
 (ref:cap-simpson-overall)  Der Anteil zugelassener Studierender an der Gesamtzahl der Studienbewerberinnen und -bewerber, getrennt nach *Geschlecht*.
 
 (ref:cap-simpson-splitted) Der Anteil zugelassener Studierender an der Gesamtzahl der Studienbewerberinnen und -bewerber, getrennt nach *Geschlecht* und zulassendem *Department*.
 
+(ref:cap-simpson-gender-department) Streudiagramm des Anteils zugelassener Bewerberinnen und Bewerber ($y$-Achse) und des Anteils weiblicher Bewerberinnen ($x$-Achse) für die sechs größten Departments der University of California-Berkeley.
+<!-- -------------------------------------------------------------------------------- -->
 
 
-Aggregate data on applicants to graduate school at Berkeley for the six largest departments in 1973 classified by admission and sex.
+Das Simpson-Paradox stellt eine besondere Form von Zusammenhang dar, bei dem es zunächst so aussieht, dass es einen positiven (oder negativen)
+Zusammnhang zwischen einer Prädiktor- und einer Kriteriumsvariable gibt.
+Berücksichtigt man jedoch den Einfluss einer weiteren (Prädiktor-)Variable (der *Drittvariable*) auf die Kriteriumsvariable,
+dreht sich der Zusammenhang zwischen der ursprünglichen Prädiktor- und der Kriteriumsvariable um.
 
-Originalarbeit: [@bickel_sex_1975]
+Für solch eine Situation gibt es einen prominenten Fall:
+Im Jahr 1973 wurde die University of California-Berkeley verklagt,
+Frauen bei der Zulassung zur Graduate School zu benachteiligen.
+Die Daten sprachen zunächst deutlich dafür, dass hier aufgrund des Geschlechts diskriminiert wurde, denn von den Männern wurden 44% der Bewerber zugelassen,
+von den Frauen jedoch nur 35%.
+Anders ausgedrückt hatten Männer also eine ungefähr 20% höhere Wahrscheinlichkeit zugelassen zu werden als Frauen.
+Abbildung \@ref(fig:simpson-overall) zeigt diesen zunächst bebobachteten Zusammenhang.
 
-```{r fig.width = 9, fig.height = 7, fig.cap = "(ref:cap-simpson-overall)"}
+
+```{r simpson-overall, fig.width = 9, fig.height = 7, fig.cap = "(ref:cap-simpson-overall)"}
 library(shinydegs.definitions)
 set_shinydegs_theme()
 
@@ -41,17 +54,55 @@ data$id <- 1:nrow(data)
 agg <- aggregate(Admitted ~ Gender + id, data = data, FUN = mean)
 variable_label(agg) <- c(Admitted = "Anteil zugelassener Bewerber", Gender = "Geschlecht")
 levels(agg$Gender) <- c("männlich", "weiblich")
-out <- apa_barplot(data = agg, dv = "Admitted", id = "id", factors = "Gender", las = 1, col = c("white", "grey"), args_error_bars = list(lwd = 0))
+out <- apa_barplot(data = agg, dv = "Admitted", id = "id", factors = "Gender", las = 1, args_error_bars = list(lwd = 0), args_rect = theme)
 ```
 
 
+Bickel, Hammel und O'Connell [-@bickel_sex_1975] untersuchten dieses Phänomen genauer:
+Hierzu betrachteten sie die Zulassungszahlen nicht nur getrennt nach Geschlecht, sondern auch zusätzlich danach,
+welches Department der Universität die Bewerber zugelassen hat.
+Abbildung \@ref(fig:simpson-splitted) zeigt den jeweiligen Anteil zugelassener Bewerber getrennt nach Geschlecht und Department (für die sechs größten Departments).
 
-```{r fig.width = 9, fig.height = 7, fig.cap = "(ref:cap-simpson-splitted)"}
+```{r simpson-splitted, fig.width = 9, fig.height = 7, fig.cap = "(ref:cap-simpson-splitted)"}
 agg <- aggregate(Admitted ~ Gender + Department + id, data = data, FUN = mean)
 variable_label(agg) <- c(Admitted = "Anteil zugelassener Bewerber", Gender = "Geschlecht", Department = "Department")
 levels(agg$Gender) <- c("männlich", "weiblich")
-out <- apa_barplot(data = agg, dv = "Admitted", id = "id", factors = c("Department", "Gender"), las = 1, args_error_bars = list(lwd = 0))
+out <- apa_barplot(
+  data = agg
+  , dv = "Admitted"
+  , id = "id"
+  , factors = c("Department", "Gender")
+  , las = 1
+  , args_error_bars = list(lwd = 0)
+  , args_rect = list(col = c("seagreen4", "indianred3"), border = "white")
+  , args_legend = list(fill = c("seagreen4", "indianred3"), border = "white")
+)
 ```
+
+Man kann erkennen, dass es offenbar innerhalb jedes Departments kaum Unterschiede bzgl. des Anteils zugelassener
+Bewerber gibt, Frauen und Männer also ungefähr die gleiche Wahrscheinlichkeit hatten, zugelassen zu werden.
+Die Autoren fanden sogar einen sehr kleinen Effekt, dass Frauen geringfügig "bevorzugt" wurden -- es sich also um 
+einen Fall von Simpsons Paradox handelt.
+
+Aber wie erklären die Autoren, dass sich der ursprünglich beobachtete Effekt umkehrt, wenn man die Daten der
+unterschidlichen Departments getrennt betrachtet?
+Betrachten wir noch einmal Abbildung \@ref(fig:simpson-splitted):
+Auch wenn sich die Balken zwischen Männern und Frauen kaum unterscheiden, ist es doch offensichtlich, dass die Departments (unabhängig vom Geschlecht) sehr unterschiedlich große Anteile an Bewerbern zulassen. So ist es z.B. viel leichter, in Department A zugelassen zu werden als in Department F.
+Zusätzlich hierzu muss man berücksichtigen, dass sich Männer und Frauen unterschiedlich häufig in den unterschiedlichen Departments beworben haben,
+nämlich Frauen häufiger in den "schweren" und Männer häufiger in den "leichten" Departments.
+Diesen Zusammenhang zeigt Abbildung \ref(fig:simpson-gender-department).
+
+```{r simpson-gender-department, fig.width = 9, fig.height =7, fig.cap = "(ref:cap-simpson-gender-department)"}
+data$female <- ifelse(data$Gender=="Female", 1, 0)
+
+agg <- aggregate(formula = cbind(female, Admitted) ~ Department, data = data, FUN = mean)
+variable_label(agg) <- c(female = "Anteil weiblicher Bewerber", Admitted = "Anteil zugelassener Bewerber")
+mod <- plot_bivariate(x = agg$female, y = agg$Admitted, xlim = c(0, 1), ylim = c(0, 1))
+text(x = agg$female + .025, y = agg$Admitted + .025, col = "skyblue4", labels = agg$Department)
+```
+
+<!-- Statistics is a broad discipline that encompasses areas ranging from data aquisition and analysis to modeling complex phenomena to the science of decision making under uncertainty. -->
+<!-- Aggregate data on applicants to graduate school at Berkeley for the six largest departments in 1973 classified by admission and sex. -->
 
 
 ## Kontrolle von Drittvariablen
