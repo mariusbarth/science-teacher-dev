@@ -42,7 +42,7 @@ Die Relation der *Ordnung* ist schon nicht mehr wirklich gegeben: Zwar kann man 
 
 1. Zeichnet ein Histogramm der Variable *Alter* in der folgenden Tabelle.
 
-```{r}
+```{r fig.width = 7, fig.height = 6, fig.align='center'}
 hist(
   psychoclass$Alter
   , breaks = seq(18, 45, 1)
@@ -54,12 +54,12 @@ hist(
   , axes = FALSE
 )
 axis(side = 1, at = seq(18, 45, 1), label = seq(18, 45, 1), cex = .75)
-axis(side = 2)
+axis(side = 2, las = 1)
 ```
 
 2. Zeichnet ein Histogramm der Variable *Alter* aus der vorigen Aufgabe. Zeichnet dieses Mal jedoch eine sekundäre Häufigkeitsverteilung, beginnend mit der Kategorie "18-21 Jahre".
 
-```{r}
+```{r fig.width = 7, fig.height = 6, fig.align='center'}
 hist(
   psychoclass$Alter
   , breaks = seq(18, 45, 3)
@@ -71,7 +71,7 @@ hist(
   , axes = FALSE
 )
 axis(side = 1, at = seq(18, 45, 3), label = seq(18, 45, 3))
-axis(side = 2)
+axis(side = 2, las = 1)
 ```
 
 3. Berechnet den Modus der Variable *Geschlecht* aus Aufgabe 1.

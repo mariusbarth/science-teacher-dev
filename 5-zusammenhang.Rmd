@@ -88,6 +88,7 @@ legend(x = 2, y = 6*1.5, legend = "D", bty = "n", cex = 2, xpd = NA)
 ```
 
 Die dritte wichtige Eigenschaft eines Zusammenhangs ist dessen *Stärke*:
+<!-- Genauigkeit?? -->
 Hiermit beschreibt man, wie eng das Verhältnis der beiden Variablen zueinander ist.
 Die Stärke eines Zusammenhangs lässt sich mithilfe eines geeigneten statistischen Kennwerts quantifizieren.
 Welcher statistische Kennwert in einer bestimmten Anwendung geeignet ist, hängt von der Form des Zusammenhangs,
@@ -132,6 +133,11 @@ for (i in 1:4){
     
 ## Andere Formen von Zusammenhängen
 
+Die obigen Beispiele zeigen ausschließlich Zusammenhänge zwischen zwei jeweils mindestens intervallskalierten (man spricht auch von *metrischen* oder *kardinalskalierten*) Variablen.
+Zusammenhänge lassen sich aber auch sinnvoll zwischen Variablen unterschiedlicher Skalenniveaus bestimmen.
+So zeigt zum Beispiel Abbildung \@ref(fig:logistic-regression) den Zusammenhang zwischen einer intervallskalierten Variable (hier der IQ-Wert)
+und einer nominalskalierten Variable (hier die Zulassung zum Studium). Genauer ausgedrückt wird hier auf die $x$-Achse die intervallskalierte Variable gezeichnet, auf die $y$Achse zeichnen wir aber die *Wahrscheinlichkeit* dafür, dass eine bestimmte Ausprägung der nominalskalierten Variable vorliegt. In diesem (fiktiven) Beispiel ist es so, dass es einen Zusammenhang zwischen der Intelligenz und der Wahrscheinlichkeit zugelasse zu werden gibt.
+
 (ref:cap-logistic-regression) Der Zusammenhang zwischen dem Abschneiden in einem allgemeinen Intelligenztest ($x$-Achse) und der Wahrscheinlichkeit, für
 den Studiengang *Verteidigung gegen die dunklen Künste* ($y$-Achse) zugelassen zu werden.
 
@@ -147,6 +153,10 @@ variable_label(y) <- "Entscheidung"
 mod <- plot_bivariate(x = x, y = y, xlim = c(60, 140))
 ```
 
+Abbildung \@ref(fig:mean-differences) zeigt die gleichen Daten bzw. auch den gleichen Zusammenhang:
+Wie man sehen kann, kann man einen solchen Unterschied zwischen zwei Gruppen (Bewerber, die zugelassen wurden, sind auch im Mittel intelligenter) auch so verstehen, dass es einen *Zusammenhang zwischen Gruppenzugehörigkeit und Intelligenz gibt*.
+
+
 ```{r mean-differences, fig.cap = "(ref:cap-mean-differences)"}
 apa_barplot(
   data = data.frame(x, y, id = 1:length(x))
@@ -160,9 +170,18 @@ apa_barplot(
 ```
 
 
-
 ## Regression
 
 Hierdurch ist es nun also auch möglich, von den Werten der einen Variablen auf die Werte der anderen Variablen schließen.
-
 Mit welcher *Genauigkeit* man dies kann, hängt von der *Stärke* des Zusammenhangs ab.
+
+Wenn es einen Zusammenhang zwischen zwei Variablen gibt, kann man also aus der Kenntnis der Werte der einen
+Variable auf die auf die Werte der anderen variable schließen oder die Werte der andereren Variable vorhersagen.
+Wie genau man dies kann, hängt aber von der Stärke des Zusammenhangs ab.
+Perfekte Korrelationen kommen aber in vielen Forschungsbereichen nicht vor, d.h. immer dann, wenn man einen Wert der Y-Vari
+
+Wollen wir die Werte
+
+Kriterium
+Prädiktor
+

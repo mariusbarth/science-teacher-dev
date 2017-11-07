@@ -54,7 +54,7 @@ data$id <- 1:nrow(data)
 agg <- aggregate(Admitted ~ Gender + id, data = data, FUN = mean)
 variable_label(agg) <- c(Admitted = "Anteil zugelassener Bewerber", Gender = "Geschlecht")
 levels(agg$Gender) <- c("männlich", "weiblich")
-out <- apa_barplot(data = agg, dv = "Admitted", id = "id", factors = "Gender", las = 1, args_error_bars = list(lwd = 0), args_rect = theme)
+out <- apa_barplot(data = agg, dv = "Admitted", id = "id", factors = "Gender", las = 1, args_error_bars = list(lty = 0), args_rect = theme)
 ```
 
 
@@ -73,7 +73,8 @@ out <- apa_barplot(
   , id = "id"
   , factors = c("Department", "Gender")
   , las = 1
-  , args_error_bars = list(lwd = 0)
+  , dispersion = 
+  , args_error_bars = list(lty = 0)
   , args_rect = list(col = c("seagreen4", "indianred3"), border = "white")
   , args_legend = list(fill = c("seagreen4", "indianred3"), border = "white")
 )
