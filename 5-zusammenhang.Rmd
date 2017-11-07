@@ -18,7 +18,7 @@ variable_label(data) <- c(speed = "Geschwindigkeit [mph]", dist = "Bremsweg [ft]
 out <- plot_bivariate(data$speed, data$dist, model = FALSE)
 ```
 
-Neben der *Richtung* (positiv--negativ) eines Zusammenhangs ist auch die *Form* eines Zusammenhangs relevant.
+Neben der *Richtung* (positiv vs. negativ) eines Zusammenhangs ist auch die *Form* eines Zusammenhangs relevant.
 Abbildung \@ref(fig:covariation-shape) zeigt einerseits, wie ein positiver im Vergleich zu einem negativen Zusammenhang aussieht (Tafel A vs. B),
 aber auch wie ein *Nullzusammenhang* oder ein quadratischer Zusammenhang aussehen könnten. Darüber hinaus sind natürlich viele andere Formen, z.B. kubische oder umgekehrt-U-förmige Zusammenhänge möglich.
 
@@ -88,8 +88,8 @@ legend(x = 2, y = 6*1.5, legend = "D", bty = "n", cex = 2, xpd = NA)
 ```
 
 Die dritte wichtige Eigenschaft eines Zusammenhangs ist dessen *Stärke*:
-<!-- Genauigkeit?? -->
-Hiermit beschreibt man, wie eng das Verhältnis der beiden Variablen zueinander ist.
+Sie drückt aus, wie *genau* man von den Werten der einen Variable auf die Werte der anderen Werte schließen kann.
+<!-- Hiermit beschreibt man, wie eng das Verhältnis der beiden Variablen zueinander ist. -->
 Die Stärke eines Zusammenhangs lässt sich mithilfe eines geeigneten statistischen Kennwerts quantifizieren.
 Welcher statistische Kennwert in einer bestimmten Anwendung geeignet ist, hängt von der Form des Zusammenhangs,
 dem Skalenniveau der beteiligten Variablen und weiteren Voraussetzungen einzelner statistischer Kennwerte bzw. Verfahren ab.
@@ -105,7 +105,7 @@ Ein Wert von 0 bedeutet, dass kein (linearer) Zusammenhang besteht.
 
 Abbildung \@ref(fig:covariation-strength) zeigt unterschiedlich starke (linear-positive) Zusammenhänge.
 
-(ref:cap-covariation-strength) Vier unterschiedlich *starke* Zusammenhänge.
+(ref:cap-covariation-strength) Vier unterschiedlich *starke* Zusammenhänge (Die Gerade verdeutlicht die Stärke des linearen Zusammenhangs $r$).
 
 ```{r covariation-strength, fig.width = 8, fig.height = 8, fig.cap = "(ref:cap-covariation-strength)"}
 set_shinydegs_theme()
@@ -172,16 +172,28 @@ apa_barplot(
 
 ## Regression
 
-Hierdurch ist es nun also auch möglich, von den Werten der einen Variablen auf die Werte der anderen Variablen schließen.
+Gibt es einen Zusammenhang zwischen zwei Variablen, kann man von den Werten der einen Variablen auf die Werte der anderen Variablen schließen.
 Mit welcher *Genauigkeit* man dies kann, hängt von der *Stärke* des Zusammenhangs ab.
 
 Wenn es einen Zusammenhang zwischen zwei Variablen gibt, kann man also aus der Kenntnis der Werte der einen
 Variable auf die auf die Werte der anderen variable schließen oder die Werte der andereren Variable vorhersagen.
 Wie genau man dies kann, hängt aber von der Stärke des Zusammenhangs ab.
-Perfekte Korrelationen kommen aber in vielen Forschungsbereichen nicht vor, d.h. immer dann, wenn man einen Wert der Y-Vari
+Perfekte Korrelationen kommen aber in vielen Forschungsbereichen nicht vor, d.h.  meist kann man einen Wert der $Y$-Variable nicht perfekt
+aus den Werten der $X$-Variable vorhersagen kann. Das bedeutet auch, dass man immer einen unterschiedlich großen *Vorhersagefehler* macht.
 
-Wollen wir die Werte
+Die *Regressionsanalyse* ist eine Methode, diesen Vorhersagefehler zu minimieren.
+Man spricht im Rahmen der Regressionsanalyse davon, eine *Kriteriumsvariable* (die $Y$-Variable)
+durch eine oder mehrere *Prädiktorvariablen* (die $X$-Variable) vorherzusagen.
+Die Regressionanalyse liefert eine sog. *Regressionsgleichung*, mit deren Hilfe man dann aus den Werten $x_i$ der Prädiktorvariable ($i$ ist der Laufindex, d.h. eine Zahl, doe angibt, um die wievielte Beobachtung es sich handelt)
+vorhergesagte Werte $\hat{y}_i$ der Kriteriumsvariable berechnen kann (das kleine Dach über dem $y$ bedeutet, dass es sich um vorhergesagte und nicht um beobachtete Werte handelt).
 
-Kriterium
-Prädiktor
+Ihre allgemeine Form lautet:
+$$\hat{y}_i = b_0 + b_1 * x_i$$
 
+Die vorhergesagten Kriteriumswerte $\hat{y}_i$ sind also gleich der Summe aus einem $y$-Achsenabschnitt $b_0$ und dem Produkt eines Steigungskoeffizienten $b_1$ mit den Werten $x_i$ der Prädiktorvariable. Den $y$-Achsenabschnitt $b_0$ und den Steigungskoeffizienten $b_1$ nennt man auch Regressionskoeffizienten oder -gewichte. Diese Vorhersagegleichung lässt sich als Regressionsgerade in ein Streudigramm einzeichnen, wie es in Abbildung \@ref(fig:regression) darstellt ist.
+
+```{r regression, fig.cap = "Der Zusammenhang zwischen der Geschwindigkeit eines Fahrzeugs und dem Bremsweg, um das Fahrzeug aus dieser Geschwindigkeit zum Stillstand zu bringen. Die Daten stammen aus den 1920er Jahren.", fig.width=5, fig.height = 4.4, fig.align='center'}
+data <- cars
+variable_label(data) <- c(speed = "Geschwindigkeit [mph]", dist = "Bremsweg [ft]")
+out <- plot_bivariate(data$speed, data$dist, model = TRUE)
+```

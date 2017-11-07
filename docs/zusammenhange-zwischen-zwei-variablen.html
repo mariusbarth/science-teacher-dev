@@ -130,7 +130,7 @@
 Abbildung 5.1: Der Zusammenhang zwischen der Geschwindigkeit eines Fahrzeugs und dem Bremsweg, um das Fahrzeug aus dieser Geschwindigkeit zum Stillstand zu bringen. Die Daten stammen aus den 1920er Jahren.
 </p>
 </div>
-<p>Neben der <em>Richtung</em> (positiv–negativ) eines Zusammenhangs ist auch die <em>Form</em> eines Zusammenhangs relevant. Abbildung <a href="zusammenhange-zwischen-zwei-variablen.html#fig:covariation-shape">5.2</a> zeigt einerseits, wie ein positiver im Vergleich zu einem negativen Zusammenhang aussieht (Tafel A vs. B), aber auch wie ein <em>Nullzusammenhang</em> oder ein quadratischer Zusammenhang aussehen könnten. Darüber hinaus sind natürlich viele andere Formen, z.B. kubische oder umgekehrt-U-förmige Zusammenhänge möglich.</p>
+<p>Neben der <em>Richtung</em> (positiv vs. negativ) eines Zusammenhangs ist auch die <em>Form</em> eines Zusammenhangs relevant. Abbildung <a href="zusammenhange-zwischen-zwei-variablen.html#fig:covariation-shape">5.2</a> zeigt einerseits, wie ein positiver im Vergleich zu einem negativen Zusammenhang aussieht (Tafel A vs. B), aber auch wie ein <em>Nullzusammenhang</em> oder ein quadratischer Zusammenhang aussehen könnten. Darüber hinaus sind natürlich viele andere Formen, z.B. kubische oder umgekehrt-U-förmige Zusammenhänge möglich.</p>
 
 <div class="figure"><span id="fig:covariation-shape"></span>
 <img src="Forschungsmethoden_files/figure-html/covariation-shape-1.png" alt="Vier unterschiedliche Formen von Zusammenhängen. Tafel A zeigt einen positiv-linearen, Tafel B einen negativ-linearen Zusammenhang. Tafel C zeigt einen Nullzusammenhang – es besteht kein Zusammenhang zwischen \(X\) und \(Y\). Tafel D zeigt einen quadratischen Zusammenhang." width="768" />
@@ -138,14 +138,14 @@ Abbildung 5.1: Der Zusammenhang zwischen der Geschwindigkeit eines Fahrzeugs und
 Abbildung 5.2: Vier unterschiedliche Formen von Zusammenhängen. Tafel A zeigt einen positiv-linearen, Tafel B einen negativ-linearen Zusammenhang. Tafel C zeigt einen Nullzusammenhang – es besteht kein Zusammenhang zwischen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span>. Tafel D zeigt einen quadratischen Zusammenhang.
 </p>
 </div>
-<p>Die dritte wichtige Eigenschaft eines Zusammenhangs ist dessen <em>Stärke</em>: <!-- Genauigkeit?? --> Hiermit beschreibt man, wie eng das Verhältnis der beiden Variablen zueinander ist. Die Stärke eines Zusammenhangs lässt sich mithilfe eines geeigneten statistischen Kennwerts quantifizieren. Welcher statistische Kennwert in einer bestimmten Anwendung geeignet ist, hängt von der Form des Zusammenhangs, dem Skalenniveau der beteiligten Variablen und weiteren Voraussetzungen einzelner statistischer Kennwerte bzw. Verfahren ab. Die Frage, welcher Kennwert geeignet ist, stellt dabei eine der Fragen dar, mit denen sich ein großer Teil der statistischen Literatur beschäftigt, den wir aber im Rahmen dieser Veranstaltung nicht vertiefen werden.</p>
+<p>Die dritte wichtige Eigenschaft eines Zusammenhangs ist dessen <em>Stärke</em>: Sie drückt aus, wie <em>genau</em> man von den Werten der einen Variable auf die Werte der anderen Werte schließen kann. <!-- Hiermit beschreibt man, wie eng das Verhältnis der beiden Variablen zueinander ist. --> Die Stärke eines Zusammenhangs lässt sich mithilfe eines geeigneten statistischen Kennwerts quantifizieren. Welcher statistische Kennwert in einer bestimmten Anwendung geeignet ist, hängt von der Form des Zusammenhangs, dem Skalenniveau der beteiligten Variablen und weiteren Voraussetzungen einzelner statistischer Kennwerte bzw. Verfahren ab. Die Frage, welcher Kennwert geeignet ist, stellt dabei eine der Fragen dar, mit denen sich ein großer Teil der statistischen Literatur beschäftigt, den wir aber im Rahmen dieser Veranstaltung nicht vertiefen werden.</p>
 <p>Ein besonders häufig verwendetes Maß für den Zusammenhang zweier Variablen ist der Korrelationskoeffizient <span class="math inline">\(r\)</span> nach Pearson (er <em>eignet</em> sich zur Quantifizierung des linearen Zusammenhangs zweier intervallskalierter Variablen). Er ist ein standardisiertes Maß für die <em>Richtung</em> und die <em>Stärke</em> eines linearen Zusammenhangs und hat einen Wertebereich von -1 bis +1: Negative Werte zeigen einen negativen, positive Werte zeigen einen positiven Zusammenhang an. Ein Wert von 0 bedeutet, dass kein (linearer) Zusammenhang besteht.</p>
 <p>Abbildung <a href="zusammenhange-zwischen-zwei-variablen.html#fig:covariation-strength">5.3</a> zeigt unterschiedlich starke (linear-positive) Zusammenhänge.</p>
 
 <div class="figure"><span id="fig:covariation-strength"></span>
-<img src="Forschungsmethoden_files/figure-html/covariation-strength-1.png" alt="Vier unterschiedlich starke Zusammenhänge." width="768" />
+<img src="Forschungsmethoden_files/figure-html/covariation-strength-1.png" alt="Vier unterschiedlich starke Zusammenhänge (Die Gerade verdeutlicht die Stärke des linearen Zusammenhangs \(r\))." width="768" />
 <p class="caption">
-Abbildung 5.3: Vier unterschiedlich <em>starke</em> Zusammenhänge.
+Abbildung 5.3: Vier unterschiedlich <em>starke</em> Zusammenhänge (Die Gerade verdeutlicht die Stärke des linearen Zusammenhangs <span class="math inline">\(r\)</span>).
 </p>
 </div>
 <div id="andere-formen-von-zusammenhangen" class="section level2">
@@ -169,7 +169,17 @@ Abbildung 5.5: Der Zusammenhang zwischen der Zulassung zum Studiengang <em>Verte
 </div>
 <div id="regression" class="section level2">
 <h2><span class="header-section-number">5.2</span> Regression</h2>
-<p>Hierdurch ist es nun also auch möglich, von den Werten der einen Variablen auf die Werte der anderen Variablen schließen. Mit welcher <em>Genauigkeit</em> man dies kann, hängt von der <em>Stärke</em> des Zusammenhangs ab.</p>
+<p>Gibt es einen Zusammenhang zwischen zwei Variablen, kann man von den Werten der einen Variablen auf die Werte der anderen Variablen schließen. Mit welcher <em>Genauigkeit</em> man dies kann, hängt von der <em>Stärke</em> des Zusammenhangs ab.</p>
+<p>Wenn es einen Zusammenhang zwischen zwei Variablen gibt, kann man also aus der Kenntnis der Werte der einen Variable auf die auf die Werte der anderen variable schließen oder die Werte der andereren Variable vorhersagen. Wie genau man dies kann, hängt aber von der Stärke des Zusammenhangs ab. Perfekte Korrelationen kommen aber in vielen Forschungsbereichen nicht vor, d.h. meist kann man einen Wert der <span class="math inline">\(Y\)</span>-Variable nicht perfekt aus den Werten der <span class="math inline">\(X\)</span>-Variable vorhersagen kann. Das bedeutet auch, dass man immer einen unterschiedlich großen <em>Vorhersagefehler</em> macht.</p>
+<p>Die <em>Regressionsanalyse</em> ist eine Methode, diesen Vorhersagefehler zu minimieren. Man spricht im Rahmen der Regressionsanalyse davon, eine <em>Kriteriumsvariable</em> (die <span class="math inline">\(Y\)</span>-Variable) durch eine oder mehrere <em>Prädiktorvariablen</em> (die <span class="math inline">\(X\)</span>-Variable) vorherzusagen. Die Regressionanalyse liefert eine sog. <em>Regressionsgleichung</em>, mit deren Hilfe man dann aus den Werten <span class="math inline">\(x_i\)</span> der Prädiktorvariable (<span class="math inline">\(i\)</span> ist der Laufindex, d.h. eine Zahl, doe angibt, um die wievielte Beobachtung es sich handelt) vorhergesagte Werte <span class="math inline">\(\hat{y}_i\)</span> der Kriteriumsvariable berechnen kann (das kleine Dach über dem <span class="math inline">\(y\)</span> bedeutet, dass es sich um vorhergesagte und nicht um beobachtete Werte handelt).</p>
+<p>Ihre allgemeine Form lautet: <span class="math display">\[\hat{y}_i = b_0 + b_1 * x_i\]</span></p>
+<p>Die vorhergesagten Kriteriumswerte <span class="math inline">\(\hat{y}_i\)</span> sind also gleich der Summe aus einem <span class="math inline">\(y\)</span>-Achsenabschnitt <span class="math inline">\(b_0\)</span> und dem Produkt eines Steigungskoeffizienten <span class="math inline">\(b_1\)</span> mit den Werten <span class="math inline">\(x_i\)</span> der Prädiktorvariable. Den <span class="math inline">\(y\)</span>-Achsenabschnitt <span class="math inline">\(b_0\)</span> und den Steigungskoeffizienten <span class="math inline">\(b_1\)</span> nennt man auch Regressionskoeffizienten oder -gewichte. Diese Vorhersagegleichung lässt sich als Regressionsgerade in ein Streudigramm einzeichnen, wie es in Abbildung <a href="zusammenhange-zwischen-zwei-variablen.html#fig:regression">5.6</a> darstellt ist.</p>
+<div class="figure" style="text-align: center"><span id="fig:regression"></span>
+<img src="Forschungsmethoden_files/figure-html/regression-1.png" alt="Der Zusammenhang zwischen der Geschwindigkeit eines Fahrzeugs und dem Bremsweg, um das Fahrzeug aus dieser Geschwindigkeit zum Stillstand zu bringen. Die Daten stammen aus den 1920er Jahren." width="480" />
+<p class="caption">
+Abbildung 5.6: Der Zusammenhang zwischen der Geschwindigkeit eines Fahrzeugs und dem Bremsweg, um das Fahrzeug aus dieser Geschwindigkeit zum Stillstand zu bringen. Die Daten stammen aus den 1920er Jahren.
+</p>
+</div>
 
 </div>
 </div>
