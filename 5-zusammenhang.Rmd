@@ -136,12 +136,12 @@ for (i in 1:4){
 Die obigen Beispiele zeigen ausschließlich Zusammenhänge zwischen zwei jeweils mindestens intervallskalierten (man spricht auch von *metrischen* oder *kardinalskalierten*) Variablen.
 Zusammenhänge lassen sich aber auch sinnvoll zwischen Variablen unterschiedlicher Skalenniveaus bestimmen.
 So zeigt zum Beispiel Abbildung \@ref(fig:logistic-regression) den Zusammenhang zwischen einer intervallskalierten Variable (hier der IQ-Wert)
-und einer nominalskalierten Variable (hier die Zulassung zum Studium). Genauer ausgedrückt wird hier auf die $x$-Achse die intervallskalierte Variable gezeichnet, auf die $y$Achse zeichnen wir aber die *Wahrscheinlichkeit* dafür, dass eine bestimmte Ausprägung der nominalskalierten Variable vorliegt. In diesem (fiktiven) Beispiel ist es so, dass es einen Zusammenhang zwischen der Intelligenz und der Wahrscheinlichkeit zugelasse zu werden gibt.
+und einer nominalskalierten Variable (hier die Zulassung zum Studium). Genauer ausgedrückt wird hier auf die $x$-Achse die intervallskalierte Variable gezeichnet, auf die $y$Achse zeichnen wir aber die *Wahrscheinlichkeit* dafür, dass eine bestimmte Ausprägung der nominalskalierten Variable vorliegt. In diesem (fiktiven) Beispiel ist es so, dass es einen Zusammenhang zwischen der Intelligenz und der Wahrscheinlichkeit zugelassen zu werden gibt.
 
 (ref:cap-logistic-regression) Der Zusammenhang zwischen dem Abschneiden in einem allgemeinen Intelligenztest ($x$-Achse) und der Wahrscheinlichkeit, für
 den Studiengang *Verteidigung gegen die dunklen Künste* ($y$-Achse) zugelassen zu werden.
 
-(ref:cap-mean-differences) Der Zusammenhang zwischen der Zulassung zum Studiengang *Verteidigung gegen die dunklen Künste* ($x$-Achse) und dem Abschneiden in einem allgemeinen Intelligenztest ($y$-Achse). Für jeden
+(ref:cap-mean-differences) Der Zusammenhang zwischen der Zulassung zum Studiengang *Verteidigung gegen die dunklen Künste* ($x$-Achse) und dem Abschneiden in einem allgemeinen Intelligenztest ($y$-Achse).
 
 ```{r logistic-regression, fig.cap = "(ref:cap-logistic-regression)"}
 x <- round(rnorm(2e2, mean = 100, sd = 10))
@@ -176,7 +176,7 @@ Gibt es einen Zusammenhang zwischen zwei Variablen, kann man von den Werten der 
 Mit welcher *Genauigkeit* man dies kann, hängt von der *Stärke* des Zusammenhangs ab.
 
 Wenn es einen Zusammenhang zwischen zwei Variablen gibt, kann man also aus der Kenntnis der Werte der einen
-Variable auf die auf die Werte der anderen variable schließen oder die Werte der andereren Variable vorhersagen.
+Variable auf die auf die Werte der anderen variable schließen oder die Werte der anderen Variable vorhersagen.
 Wie genau man dies kann, hängt aber von der Stärke des Zusammenhangs ab.
 Perfekte Korrelationen kommen aber in vielen Forschungsbereichen nicht vor, d.h.  meist kann man einen Wert der $Y$-Variable nicht perfekt
 aus den Werten der $X$-Variable vorhersagen kann. Das bedeutet auch, dass man immer einen unterschiedlich großen *Vorhersagefehler* macht.
@@ -184,7 +184,7 @@ aus den Werten der $X$-Variable vorhersagen kann. Das bedeutet auch, dass man im
 Die *Regressionsanalyse* ist eine Methode, diesen Vorhersagefehler zu minimieren.
 Man spricht im Rahmen der Regressionsanalyse davon, eine *Kriteriumsvariable* (die $Y$-Variable)
 durch eine oder mehrere *Prädiktorvariablen* (die $X$-Variable) vorherzusagen.
-Die Regressionanalyse liefert eine sog. *Regressionsgleichung*, mit deren Hilfe man dann aus den Werten $x_i$ der Prädiktorvariable ($i$ ist der Laufindex, d.h. eine Zahl, doe angibt, um die wievielte Beobachtung es sich handelt)
+Die Regressionanalyse liefert eine sog. *Regressionsgleichung*, mit deren Hilfe man dann aus den Werten $x_i$ der Prädiktorvariable ($i$ ist der Laufindex, d.h. eine Zahl, die angibt, um die wievielte Beobachtung es sich handelt)
 vorhergesagte Werte $\hat{y}_i$ der Kriteriumsvariable berechnen kann (das kleine Dach über dem $y$ bedeutet, dass es sich um vorhergesagte und nicht um beobachtete Werte handelt).
 
 Ihre allgemeine Form lautet:

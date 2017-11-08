@@ -19,7 +19,7 @@ Warum dies wichtig ist, lässt sich anhand des *Simpson-Paradoxes* verdeutlichen
 
 
 Das Simpson-Paradox stellt eine besondere Form von Zusammenhang dar, bei dem es zunächst so aussieht, dass es einen positiven (oder negativen)
-Zusammnhang zwischen einer Prädiktor- und einer Kriteriumsvariable gibt.
+Zusammenhang zwischen einer Prädiktor- und einer Kriteriumsvariable gibt.
 Berücksichtigt man jedoch den Einfluss einer weiteren (Prädiktor-)Variable (der *Drittvariable*) auf die Kriteriumsvariable,
 dreht sich der Zusammenhang zwischen der ursprünglichen Prädiktor- und der Kriteriumsvariable um.
 
@@ -29,7 +29,7 @@ Frauen bei der Zulassung zur Graduate School zu benachteiligen.
 Die Daten sprachen zunächst deutlich dafür, dass hier aufgrund des Geschlechts diskriminiert wurde, denn von den Männern wurden 44% der Bewerber zugelassen,
 von den Frauen jedoch nur 35%.
 Anders ausgedrückt hatten Männer also eine ungefähr 20% höhere Wahrscheinlichkeit zugelassen zu werden als Frauen.
-Abbildung \@ref(fig:simpson-overall) zeigt diesen zunächst bebobachteten Zusammenhang.
+Abbildung \@ref(fig:simpson-overall) zeigt diesen zunächst beobachteten Zusammenhang.
 
 
 ```{r simpson-overall, fig.width = 9, fig.height = 7, fig.cap = "(ref:cap-simpson-overall)"}
@@ -103,7 +103,7 @@ mod <- plot_bivariate(x = agg$female, y = agg$Admitted, xlim = c(0, 1), ylim = c
 text(x = agg$female + .025, y = agg$Admitted + .025, col = "skyblue4", labels = agg$Department)
 ```
 
-Zusammenfassend war es also nicht so, dass die Universität im Rahmen des Zulassungsverfahrens Frauen benachteiligte. Die unterschiedlichen Fächerpräferenzen von Männern und Frauen und die unterschiedlichen Zulassungsquoten der Fächer (Departments) führte jedoch dazu, dass Frauen eine geringere Wahrscheinlihckeit hatten, zugelassen zu werden.
+Zusammenfassend war es also nicht so, dass die Universität im Rahmen des Zulassungsverfahrens Frauen benachteiligte. Die unterschiedlichen Fächerpräferenzen von Männern und Frauen und die unterschiedlichen Zulassungsquoten der Fächer (Departments) führte jedoch dazu, dass Frauen eine geringere Wahrscheinlichkeit hatten, zugelassen zu werden.
 Bickel, Hammel und O'Connell [-@bickel_sex_1975] machen aber auch deutlich, dass dies nicht bedeutet, dass die Welt diskriminierungsfrei ist: Vielmehr lässt sich einerseits die Frage stellen, (1) warum überhaupt Männer und Frauen unterschiedliche Fächerpräferenzen haben und (2) warum in den von Frauen bevorzugten Fächern offenbar pro Bewerber weniger Studienplätze zur Verfügung stehen:
 
 > Women are shunted by their socialization and education toward fields of graduate study that are generally more crowded, less productive of completed degrees, and less well funded, and that frequently offer poorer professional employment prospects.
@@ -126,12 +126,12 @@ Das bedeutet auch, dass es immer viele potentielle Drittvariablen gibt, die den 
 für die wir uns interessieren, verschleiern, verkehren, oder verstärken können.
 
 Gehen wir aber davon aus, dass es sehr viele Einflüsse gibt, die einen Einfluss auf unsere Kriteriumsvariable haben, müssen wir uns die Frage stellen, wie wir sicherstellen können, dass wir alle möglichen Drittvariablen erfassen und ggf. kontrollieren können.
-Anders ausgedrückt, wir stehen wieder einmal vor dem Problem, einen möglichen Fehler im wissenschaftlichen Erkennisprozess zu begehn, nämlich den *Fehler nicht berücksichtigter Drittvariablen*.
+Anders ausgedrückt, wir stehen wieder einmal vor dem Problem, einen möglichen Fehler im wissenschaftlichen Erkenntnisprozess zu begehen, nämlich den *Fehler nicht berücksichtigter Drittvariablen*.
 Unterschiedliche Forschungsansätze haben unterschiedliche Strategien entwickelt, mit diesem Problem umzugehen, von denen wir zwei vorstellen werden.
 
 *Experimenteller Ansatz*. Eine elegante Art, mit diesem Problem umzugehen, ist die experimentelle Methode.
 Bei diesem Forschungsansatz versucht man, alle möglichen Einflussgrößen (alle möglichen Drittvariablen), für die man sich nicht interessiert, (1) *konstant* zu halten oder (2) durch *zufälliges* Zuordnen von Untersuchungsobjekten zu experimentelle Bedingungen dafür zu sorgen, dass sich die Ausprägungen nicht kontrollierter Drittvariablen gleichermaßen auf die Bedingungen verteilen. Der Forscher muss nun aber die Variation der Prädiktorvariable (man spricht auch von der Unabhängigen Variablen) herstellen, was er durch eine experimentelle Manipulation erzeugt.
-Will ein Forscher z.B. den Einfluss von gewalthaltigen Computerspielen auf aggressives Verhalten untersuchen, könnte er Untersuchungsteilnehmer zufällig zwei Gruppen zuordnen; die eine Gruppe spielt für eine halbe Stunde ein gewalthaltiges Spiel (z.B. einen Ego-Shooter), die andere Gruppe ein nicht gewalthaltiges Spiel (das ist die experimentelle Manipulation). Beide Gruppen nehmen anschließend an einem Test teil, der das Ausmaß aggressiven Verhaltens erfassen soll. Unterscheiden sich die beiden Gruppen hinsichtlich ighres aggressiven Verhaltens in dem Test, kann man relativ sicher sagen, dass das Spielen des gewalthaltigen Spiels diesen Effekt verursacht hat.
+Will ein Forscher z.B. den Einfluss von gewalthaltigen Computerspielen auf aggressives Verhalten untersuchen, könnte er Untersuchungsteilnehmer zufällig zwei Gruppen zuordnen; die eine Gruppe spielt für eine halbe Stunde ein gewalthaltiges Spiel (z.B. einen Ego-Shooter), die andere Gruppe ein nicht gewalthaltiges Spiel (das ist die experimentelle Manipulation). Beide Gruppen nehmen anschließend an einem Test teil, der das Ausmaß aggressiven Verhaltens erfassen soll. Unterscheiden sich die beiden Gruppen hinsichtlich ihres aggressiven Verhaltens in dem Test, kann man relativ sicher sagen, dass das Spielen des gewalthaltigen Spiels diesen Effekt verursacht hat.
 
 Solch eine experimentelle Manipulation ist aber für viele Prädiktoren (= unabhängige Variablen) nicht möglich; interessiert man sich z.B. für den Zusammenhang zwischen Intelligenz und dem späteren Berufserfolg, kann man nicht die Intelligenz der Untersuchungsteilnehmer "manipulieren", also gezielt verändern. Vielmehr ist man darauf angewiesen, die natürliche Variation dieses Merkmals zu messen und mit der interessierenden Variable in Beziehung zu setzen.
 Ein solches Vorgehen ist im Rahmen des korrelativen Forschungsansatzes möglich.
@@ -140,7 +140,7 @@ Ein solches Vorgehen ist im Rahmen des korrelativen Forschungsansatzes möglich.
 Die statistische Kontrolle von Drittvariablen ist z.B. im Rahmen der Regression möglich, indem man sie als weitere Prädiktorvariablen in die Regressionsgleichung mit aufnimmt.
 
 Die Grenzen dieses Ansatzes liegen aber ebenfalls auf der Hand: Erstens ist schwierig bis unmöglich abzuschätzen welche Gesamtheit von Merkmalen als mögliche zu berücksichtigende Drittvariablen mit erhoben werden müssen -- es bleibt immer das Risiko, an eine wichtige Drittvariable nicht gedacht zu haben und sie deshalb nicht miterhoben und statistisch kontrolliert zu haben. Zweitens muss man berücksichtigen, dass man zwar alle Drittvariablen, die einen "störenden" Einfluss auf den interessierenden Zusammenhang haben, statistisch kontrolliert, jedoch keine Variable (bzw. kein Merkmal), das den Zusammenhang nicht stört, sondern erst *vermittelt*: Ein Beispiel hierfür wäre z.B. eine Variable, die die Menge an aggressiven Gedanken nach dem Videospielen misst -- nähmen wir einmal an, dass aggressive Gedanken den Zusammenhang zwischen Videospielen und aggressivem verhalten vermittet, dann würde, wenn man diesen vermittelnden Einfluss "rausrechnet", auch der Zusammenhang zwischen gewalthaltigen Videospielen und aggressivem Verhalten verschwinden. Das mag interessant sein, könnte aber auch den interessanten Zusammenhang zwischen Videospiel und Verhalten verschleiern.
-Dittens kann es sein, dass wir ein Merkmal zwar miterheben und statistisch kontrollieren; erinnern wir uns aber daran, dass praktische jede Messung mit einem bestimmten Messfehler behaftet ist und manche Merkmale gar nicht direkt sondern nur indirekt messbar sind, besteht auch das Problem, dass wir denken, den Einfluss eines Merkmals statistisch zu kontrollieren, aber augrund unseres Messfehlers messen wir das Merkmal so schlecht, dass wir seinen Einfluss nicht vollständig statistisch kontrollieren können.
+Drittens kann es sein, dass wir ein Merkmal zwar miterheben und statistisch kontrollieren; erinnern wir uns aber daran, dass praktische jede Messung mit einem bestimmten Messfehler behaftet ist und manche Merkmale gar nicht direkt sondern nur indirekt messbar sind, besteht auch das Problem, dass wir denken, den Einfluss eines Merkmals statistisch zu kontrollieren, aber aufgrund unseres Messfehlers messen wir das Merkmal so schlecht, dass wir seinen Einfluss nicht vollständig statistisch kontrollieren können.
 
 ## Aufgaben {-}
 
