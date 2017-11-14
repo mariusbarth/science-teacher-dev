@@ -1,4 +1,70 @@
 
 # Überprüfung und Bestätigung
 
-lalalalala
+
+David Hume [-@hume_1748] definierte das *Induktionsproblem*:
+Wir können niemals von den bisher beobachteten Fällen auf alle Fälle schließen.
+Popper (1934)
+
+
+Induktion: ein schluss von *besonderen Sätzen* (Beobachtungen, Experimenten) auf allgemeine Sätze (Hypothesen und Theorien).
+Dieser Schluss ist aber nicht logisch, denn wir können so viele weiße Schwäne beobachten wie wir wollen, wir können nicht einfach schließen, dass *alle* Schwäne weiß sind.
+
+Deduktive Überprüfung von Theorien:
+Man leitet aus der Theorie Hypothesen und Vorhersagen ab, die man überprüfen kann.
+Es muss dabei möglich sein, ein Ereignis beobachten zu können, das die Theorie *falsifiziert*.
+Ist dies nicht möglich, die Theorie ist also prinzipiell mit jedem möglichen Ereignis vereinbar, ist sie *nicht wissenschaftlich*.
+
+Die Theorie kann ihre Überprüfung immer nur vorläufig bestehen; es ist immer möglich, dass sie zu einem späteren Zeitpunkt widerlegt wird.
+Wenn eine Theorie immer wieder deduktiven Nachprüfungen standhält, gilt sie als *bewährt*
+
+![](swane.png)
+
+# Wissenschaft und Pseudo-Wissenchaft
+
+Popper:
+Das Kriterium der Wissenschaftlichkeit ist die Falsifizierbarkeit, d.h. eine Theorie kann durch ein Ereignis widerlegt werden.
+
+- Einsteins Gravitationstheorie: Wissenschaftlich
+- Marxismus und Astrologie: Unwissenschaftlich, da die Vorhersagen so vage sind, dass sie nicht mehr falsifiziert werden können
+- Psychoanalytische Theorie: Es ist kein menschliches Verhalten denkbar, das mit der Theorie nicht erklärbar ist.
+
+
+Lakatos:
+Wissenschaftlicher Fortschritt resultiert aus dem Wettbewerb von Forschungsprogrammen
+
+
+Die Grundidee
+
+- Bleirohre/IQ-Beispiel (besseres Beispiel -- oder genau richtig, da es auch klar macht, dass man nicht für alle Fragen Experimente durchführen kann?)
+- Beispiele für spurious correlations
+- Einführung der experimentellen Methode:
+    - zufälliges Zuteilen von Personen auf Wohnblocks mit/ohne Bleirohr
+    - Worauf könnte dann noch ein IQ-Unterschied zurückgeführt werden?
+    - Zufällige Schwankungen oder Ursache-Wirkung
+
+
+
+
+- Warum ist es wichtig, hypothesengeleitet vorzugehen?
+
+- Beispiel: Wir sind Forscher, die möglichst viele Verhaltensweisen identifizieren wollen, die Herz-Kreislauf-Erkrankungen verursachen.
+
+
+
+<!--
+Meehl-Argument:
+
+- "reife" naturwissenschaften: Theorie sagt einen bestimmenten numerischen Wert
+(oder z.B. die Gleichheit von zwei Werten) vorher
+- Beispiel:
+    - Aristoteles: „Wenn man eine Kugel von Blei und eine von Holz von einem hohen Turm fallen läßt, bewegt sich das Blei weit voraus.“
+    - Stevin und andere: Gleichförmige Beschleunigung, d.h. egal wie "schwer" die Körper sind, sie treffen gleichzeitig auf.
+- Stevin bzw. Benedetti-Experiment
+Immer dann, wenn ein Test "signifikant" wird, wird eine Theorie falsifiziert
+- Sozialwisschenschaften/Psychologie/Bildungswissenschaften/Ernährungswissenschaften
+- Theorie sagt etwas darüber aus, dass etwas einen Einfluss hat (also der Zusammenhang  nicht Null ist)
+    - Beispiel: Koffeinkonsum ~ Bluthochdruck
+Immer dann, wenn ein statistischer Test signifikant wird, wird eine Theorie "bestätigt"
+Wird sie das wirklich?
+-->
