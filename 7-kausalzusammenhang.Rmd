@@ -82,5 +82,16 @@ Stellen wir uns nun vor, wir beobachten einen klaren Nullzusammenhang zwischen z
 Wie ließe sich dieses Nicht-Vorhandensein eines Zusammenhangs kausal erklären?
 
 1. Variable A hat keine Einfluss auf Variable B und Variable B hat keinen Einfluss auf Variable A -- es besteht kein Wirkgefüge zwischen den beiden Variablen.
-2. Es gibt ein kausales Wirkgefüge zwischen den beiden Variablen, dieses wird jedoch durch den Einfluss einer oder mehrerer Drittvariablen verdeckt. Beispielsweise könnte die Wirksamkeit eines Medikaments auf die Symptome einer Krankheit davon abhängen, ob eine bestimmte genetische Disposition des Patienten vorliegt oder nicht.
+2. Es gibt ein kausales Wirkgefüge zwischen den beiden Variablen, dieses wird jedoch durch den Einfluss einer oder mehrerer Drittvariablen verdeckt. Beispielsweise könnte es passieren, dass ein Medikament besser wirkt als ein anderes, aber auch Nebenwirkungen erzeugt, die beide n Patienten Verhaltensänderungen bewirken, die die eigentliche Symptomatik verschlechtern.
 3. In unserer Untersuchung beobachten wir nur einen Teil der Variationsbreite der beiden Variablen, in dem es keinen Zusammenhang gibt; in einem anderen Wertebereich könnte es aber sehr wohl einen Zusammenhang geben. Beispielsweise könnte es sein, dass  es so scheint, dass ein Medikament nicht die erwünschte Wirkung auf eine Krankheit hat. Vielleicht war aber in unserer Untersuchung die Dosis zu gering und das Medikament könnte sehr wohl wirken, wenn man es höher dosierte.
+
+
+## Aufgaben {-}
+
+1. Überlegt in 2er- oder 3-er-Gruppen, welche Kausalmodelle mit dem folgenden Datenmuster vereinbar sind:
+Es gibt einen negativen Zusammenhang zwischen dem Bleigehalt im Trinkwasser und der Intelligenz. Je höher der Bleigehalt, desto geringer die mittlere Intelligenz der Hausbewohner. Überlegt hierzu, welche Drittvariablen ggf. einen Einfluss nehmen könnten -- bedenkt, dass Ihr natürlich nicht *alle* potentiell relevanten Drittvariablen kennen könnt.
+2. Wie würdet Ihr Eure Überlegungen überdenken, wenn Ihr zusätzlich folgende Information zur Verfügung stehen habt: Der Bleigehalt des Trinkwassers wird fast ausschließlich dadurch beeinflusst, ob in einem Haus Blei- oder Kupferrohre verlegt wurden (das Wasser kommt praktisch ohne Bleibelastung am Haus an). Bleirohre sind vor allen Dingen in alten Häusern, deren Installationsleitungen nicht erneuert wuurden, zu finden.
+3. Wie würdet Ihr Eure Überlegungen überdenken, wenn Ihr zusätzlich folgende Information zur Verfügung stehen habt:
+Kontrolliert man (statistisch) den Einfluss des Einkommens auf die Intelligenz, gibt es keinen (signifikanten) Zusammenhang mehr zwischen Bleigehalt und Intelligenz.
+
+
