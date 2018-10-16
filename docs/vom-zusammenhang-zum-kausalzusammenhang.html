@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Forschungsmethoden im Biologieunterricht</title>
   <meta name="description" content="Unterlagen zur Lehrveranstaltung “Didaktische Forschungsprojekte”">
-  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
   <meta property="og:title" content="Forschungsmethoden im Biologieunterricht" />
   <meta property="og:type" content="book" />
@@ -156,35 +156,35 @@
 <ol style="list-style-type: decimal">
 <li>Die Ausprägung von A beeinflusst die Ausprägung von B, d.h. es liegt eine kausale Wirkbeziehung von A auf B vor (Abbildung <a href="vom-zusammenhang-zum-kausalzusammenhang.html#fig:a-causes-b">7.1</a>)
 <div class="figure"><span id="fig:a-causes-b"></span>
-<img src="graph1.png" alt="Ein mögliches Kausalmodell: A beeinflusst B."  />
+<img src="graph1.png" alt="Ein mögliches Kausalmodell: A beeinflusst B." width="399" />
 <p class="caption">
 Abbildung 7.1: Ein mögliches Kausalmodell: A beeinflusst B.
 </p>
 </div></li>
 <li>Die Ausprägung von B beeinflusst die Ausprägung von A, also eine Wirkbeziehung in die gegenteilige Richtung vorliegt (Abbildung <a href="vom-zusammenhang-zum-kausalzusammenhang.html#fig:b-causes-a">7.2</a>).
 <div class="figure"><span id="fig:b-causes-a"></span>
-<img src="graph2.png" alt="Ein mögliches Kausalmodell: B beeinflusst A."  />
+<img src="graph2.png" alt="Ein mögliches Kausalmodell: B beeinflusst A." width="399" />
 <p class="caption">
 Abbildung 7.2: Ein mögliches Kausalmodell: B beeinflusst A.
 </p>
 </div></li>
 <li>Die Ausprägungen von A und B beeinflussen sich wechselseitig (Abbildung <a href="vom-zusammenhang-zum-kausalzusammenhang.html#fig:a-causes-b-causes-a">7.3</a>).
 <div class="figure"><span id="fig:a-causes-b-causes-a"></span>
-<img src="graph5.png" alt="Ein mögliches Kausalmodell: A und B beeinflussen sich wechselseitig."  />
+<img src="graph5.png" alt="Ein mögliches Kausalmodell: A und B beeinflussen sich wechselseitig." width="399" />
 <p class="caption">
 Abbildung 7.3: Ein mögliches Kausalmodell: A und B beeinflussen sich wechselseitig.
 </p>
 </div></li>
 <li>Eine weitere Variable C beeinflusst die Variablen A und B, diese beeinflussen sich aber nicht gegenseitig (Abbildung <a href="vom-zusammenhang-zum-kausalzusammenhang.html#fig:c-causes-a-b">7.4</a>).
 <div class="figure"><span id="fig:c-causes-a-b"></span>
-<img src="graph3.png" alt="Ein mögliches Kausalmodell: C beeinflusst A und B."  />
+<img src="graph3.png" alt="Ein mögliches Kausalmodell: C beeinflusst A und B." width="399" />
 <p class="caption">
 Abbildung 7.4: Ein mögliches Kausalmodell: C beeinflusst A und B.
 </p>
 </div></li>
 <li>Multi-Determiniertheit: Variable A hat keinen direkten Einfluss auf B, aber es gibt vielfache Wechselwirkungen über die Variablen C-F(Abbildung <a href="vom-zusammenhang-zum-kausalzusammenhang.html#fig:multiple-causes">7.5</a>).
 <div class="figure"><span id="fig:multiple-causes"></span>
-<img src="graph4.png" alt="Ein mögliches Kausalmodell: Multi-Determiniertheit."  />
+<img src="graph4.png" alt="Ein mögliches Kausalmodell: Multi-Determiniertheit." width="399" />
 <p class="caption">
 Abbildung 7.5: Ein mögliches Kausalmodell: Multi-Determiniertheit.
 </p>
@@ -231,10 +231,11 @@ gitbook.start({
 "facebook": true,
 "twitter": true,
 "google": false,
+"linkedin": false,
 "weibo": false,
 "instapper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -258,9 +259,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(script.src))
-      script.src  = script.src.replace(/^https?:/, '');
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

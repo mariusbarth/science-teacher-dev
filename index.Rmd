@@ -20,6 +20,7 @@ keep_tex: yes
 # citation_package: natbib
 knitr::opts_chunk$set(echo = FALSE)
 library(papaja)
+library(annotate4)
 library(shinydegs.definitions)
 set_shinydegs_theme()
 ```

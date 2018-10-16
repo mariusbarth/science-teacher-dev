@@ -52,7 +52,7 @@ data$Admitted <- ifelse(data$Admit =="Admitted", 1, 0)
 data$id <- 1:nrow(data)
 
 agg <- aggregate(Admitted ~ Gender + id, data = data, FUN = mean)
-variable_label(agg) <- c(Admitted = "Anteil zugelassener Bewerber", Gender = "Geschlecht")
+annotate4::variable_label(agg) <- c(Admitted = "Anteil zugelassener Bewerber", Gender = "Geschlecht")
 levels(agg$Gender) <- c("männlich", "weiblich")
 out <- apa_barplot(data = agg, dv = "Admitted", id = "id", factors = "Gender", las = 1, args_error_bars = list(lty = 0), args_rect = theme)
 ```
@@ -65,7 +65,7 @@ Abbildung \@ref(fig:simpson-splitted) zeigt den jeweiligen Anteil zugelassener B
 
 ```{r simpson-splitted, fig.width = 9, fig.height = 7, fig.cap = "(ref:cap-simpson-splitted)"}
 agg <- aggregate(Admitted ~ Gender + Department + id, data = data, FUN = mean)
-variable_label(agg) <- c(Admitted = "Anteil zugelassener Bewerber", Gender = "Geschlecht", Department = "Department")
+annotate4::variable_label(agg) <- c(Admitted = "Anteil zugelassener Bewerber", Gender = "Geschlecht", Department = "Department")
 levels(agg$Gender) <- c("männlich", "weiblich")
 out <- apa_barplot(
   data = agg
@@ -98,7 +98,7 @@ Diesen Zusammenhang zeigt Abbildung \@ref(fig:simpson-gender-department).
 data$female <- ifelse(data$Gender=="Female", 1, 0)
 
 agg <- aggregate(formula = cbind(female, Admitted) ~ Department, data = data, FUN = mean)
-variable_label(agg) <- c(female = "Anteil weiblicher Bewerber", Admitted = "Anteil zugelassener Bewerber")
+annotate4::variable_label(agg) <- c(female = "Anteil weiblicher Bewerber", Admitted = "Anteil zugelassener Bewerber")
 mod <- plot_bivariate(x = agg$female, y = agg$Admitted, xlim = c(0, 1), ylim = c(0, 1))
 text(x = agg$female + .025, y = agg$Admitted + .025, col = "skyblue4", labels = agg$Department)
 ```

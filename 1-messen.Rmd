@@ -124,7 +124,6 @@ und viele andere mögliche Störeinflüsse.
 Hierzu is es sinnvoll, zunächst zu überlegen, welches Merkmal die Variable wohl eigentlich erfassen soll
 und welche Relationen (= Beziehungen zwischen den Merkmalsausprägungen) erhalten sind.
 
-a) Das bei uns geläufige metrische System zur Messung von Distanzen in Millimetern, Zentimetern, Metern, oder Kilometern;
-b) die Nummern der Straßenbahnen der KVB (Kölner Verkehrsbetriebe);
-c) Schulnoten;
-d) Postleitzahlen.
+a) Die Verzehrmenge eines Lebensmittels, gemessen in Gramm;
+b) das Studienfach eines Untersuchungsteilnehmers;
+c) das Vorliegen einer koronaren Herzkrankheit in den Abstufungen "keine", "leicht", "mittelgradig", "schwer".

@@ -41,7 +41,7 @@ data <- c(
 )
 data <- as.factor(data)
 
-variable_label(data) <- "Lieblingsgericht"
+annotate4::variable_label(data) <- "Lieblingsgericht"
 par(cex = .8)
 plot_univariate(x = data)
 
@@ -64,7 +64,7 @@ Die häufigste Form der Darstellung ist bei solchen Variablen eine besondere For
 ```{r first-histogram, fig.margin = TRUE, fig.cap = "Histogramm der gemessenen Körpergröße in einer 10. Klasse."}
 data <- rnorm(n = 24, mean = 168, sd = 12)
 # todo: füge fixe Werte ein
-variable_label(data) <- "Körpergröße in cm"
+annotate4::variable_label(data) <- "Körpergröße in cm"
 plot_univariate(data)
 ```
 
