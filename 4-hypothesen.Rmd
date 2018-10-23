@@ -7,7 +7,7 @@ Zusammenhänge von Variablen, die vor einer Untersuchung formuliert werden.
 
 Beispiele für inhaltliche Hypothesen sind:
 
-- Niderländer sind größer als Deutsche.
+- Niederländer sind größer als Deutsche.
 - Deutsche sind im Mittel größer als 170 cm.
 - Nichtraucher treiben mehr Sport als Raucher.
 - Menschen mit hohen Cholesterinspiegeln entwickeln im Laufe ihres Lebens eher eine Herzkrankheit.
