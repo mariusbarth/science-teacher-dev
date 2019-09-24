@@ -7,7 +7,7 @@ Popper (Popper, 1934) führte diesen Gedanken folgendermaßen aus:
 Induktion ist der Schluss von *besonderen Sätzen* (Beobachtungen, Experimenten) auf allgemeine Sätze (Hypothesen und Theorien).
 Dieser Schluss ist aber im Sinne der formalen Logik nicht zulässig, denn wir können so viele weiße Schwäne beobachten wie wir wollen, wir können trotzdem nicht einfach schließen, dass *alle* Schwäne weiß sind -- wir können also unsere Beobachtung nicht verallgemeinern.
 
-```{r popper-swane, fig.margin = TRUE, fig.cap = "Nur weil man viele weiße Schwäne gesehen hat, kann man nicht behaupten, dass alle Schwäne weiß sind."}
+```{r popper-swane, fig.margin = TRUE, fig.cap = "Nur weil man viele weiße Schwäne gesehen hat, kann man nicht behaupten, dass alle Schwäne weiß sind.", out.width = "100%"}
 knitr::include_graphics("swane.png")
 ```
 
@@ -43,7 +43,7 @@ dies muss jedoch nicht immer gegeben sein, solange die Theorie konstruktiv weite
 *Degenerierende* Forschungsprogramme seien solche, bei denen die Theorie den Tatsachen hinterherhinke,
 also ständiger Überarbeitung bedarf, um noch die neuen Ergebnisse und Beobachtungen erklären zu können.
 Der Wettbewerb von Forschungsprogrammen, also das Versiegen von degenerierenden und das Prosperieren erfolgreicher Programme,
-führe letzlich zu wissenschaftlichem Fortschritt.
+führe letztlich zu wissenschaftlichem Fortschritt.
 
 
 
@@ -72,7 +72,7 @@ Meehl-Argument:
 - "reife" naturwissenschaften: Theorie sagt einen bestimmenten numerischen Wert
 (oder z.B. die Gleichheit von zwei Werten) vorher
 - Beispiel:
-    - Aristoteles: „Wenn man eine Kugel von Blei und eine von Holz von einem hohen Turm fallen läßt, bewegt sich das Blei weit voraus.“
+    - Aristoteles: „Wenn man eine Kugel von Blei und eine von Holz von einem hohen Turm fallen lässt, bewegt sich das Blei weit voraus.“
     - Stevin und andere: Gleichförmige Beschleunigung, d.h. egal wie "schwer" die Körper sind, sie treffen gleichzeitig auf.
 - Stevin bzw. Benedetti-Experiment
 Immer dann, wenn ein Test "signifikant" wird, wird eine Theorie falsifiziert

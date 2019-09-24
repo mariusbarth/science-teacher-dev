@@ -3,7 +3,7 @@
 
 In den vorausgehenden Kapitel haben wir uns damit beschäftigt,
 Merkmale zu messen, zu beschreiben und zusammenzufassen.
-Ziel jeder Wissenschaft ist es jedoch, ausgehend von spezischen Beobachtungen auf
+Ziel jeder Wissenschaft ist es jedoch, ausgehend von spezifischen Beobachtungen auf
  *allgemeingültige* Aussagen schließen zu können.
 
 Hierzu ist es hilfreich, zwischen der Population bzw. Grundgesamtheit
@@ -52,7 +52,7 @@ Diese Intuition findet sich auch in unterschiedlichen Wahrscheinlichkeitsbegriff
 Wahrscheinlichkeitstheorie wieder.
 
 
-*Klassicher Wahrscheinlichkeitsbegriff*. Der klassische Wahrscheinlichkeitsbegriff entspricht unserem obigen Beispiel des Würfelwurfs. Hierbei geht man davon aus, dass man ein und denselben Zufallsvorgang beliebig häufig wiederholen kann.
+*Klassischer Wahrscheinlichkeitsbegriff*. Der klassische Wahrscheinlichkeitsbegriff entspricht unserem obigen Beispiel des Würfelwurfs. Hierbei geht man davon aus, dass man ein und denselben Zufallsvorgang beliebig häufig wiederholen kann.
 
 Die klassische Definition einer Wahrscheinlichkeit (nach Pierre-Simon Laplace) lautet:
 Wahrscheinlichkeit ist der Anteil der günstigen Fälle an der Gesamtzahl der Fälle.
@@ -62,15 +62,15 @@ $$p(A) = \frac{n_A}{N_{\mathrm{gesamt}}}$$
 wobei $n_A$ die Anzahl der günstigen Fälle und $N_{\mathrm{gesamt}}$ die Gesamtzahl der Fälle bezeichnet.
 
 Die frequentistische Definition einer Wahrscheinlichkeit (nach Richard Edler von Mises) erweitert diesen Gedanken,
-indem sie annimmt, dass es eine *wahre* Wahrscheinlichkeit gibt, die wir mit einer wachsenden Anzahl an Versuchen bzw. Beobachtungen immer genauer schätzen können. Die Definition besagt, dass bei prinzipiell unendlich häufiger Durchführung des Versuchs der *Grenzwert* des Anteils der günstigen Fälle dieser wahren Wahrscheinlichkeit $\pi(A)$ ("pi von A") enspricht.
+indem sie annimmt, dass es eine *wahre* Wahrscheinlichkeit gibt, die wir mit einer wachsenden Anzahl an Versuchen bzw. Beobachtungen immer genauer schätzen können. Die Definition besagt, dass bei prinzipiell unendlich häufiger Durchführung des Versuchs der *Grenzwert* des Anteils der günstigen Fälle dieser wahren Wahrscheinlichkeit $\pi(A)$ ("pi von A") entspricht.
 
 $$\pi(A) = \lim_{N \to \infty} \frac{n_A}{N}$$
 Man kann also auch sagen, dass sich der Anteil der günstigen Fälle $\frac{n_A}{N}$ immer weiter der Wahrscheinlichkeit $\pi(A)$ annähert, je größer $N$, also die Anzahl an Versuchen oder Wiederholungen, wird.
 Diese Überlegungen bilden die Grundlage der klassischen -- frequentistischen -- Statistik.
 
-*Subjektiver Wahrscheinlichkeitsbegriff*. Im Gegensatz dazu geht es beim subjektiven Wahrscheinlichkeitsbegriff darum, die subjektive Einschätzung der Sicherheits des Eintretens eines Ereignisses auszudrücken, z.B. "Morgen wird es mit einer Wahrscheinlichkeit von 80% regnen".
+*Subjektiver Wahrscheinlichkeitsbegriff*. Im Gegensatz dazu geht es beim subjektiven Wahrscheinlichkeitsbegriff darum, die subjektive Einschätzung der Sicherheit des Eintretens eines Ereignisses auszudrücken, z.B. "Morgen wird es mit einer Wahrscheinlichkeit von 80% regnen".
 Es geht hierbei darum, das Ausmaß des Vertrauens, das ein vernünftiger Akteur in eine Aussage setzen würde, auszudrücken.
-Dieser Wahrscheinlichkeitsbegriff erlaubt Aussagen über einzelne Ereignisse, nicht nur um "prinzipiell beliebig häufig wiederholbare" Ereignisse (wie bei dem klassichen Wahrscheinlichkeitsbegriff).
+Dieser Wahrscheinlichkeitsbegriff erlaubt Aussagen über einzelne Ereignisse, nicht nur um "prinzipiell beliebig häufig wiederholbare" Ereignisse (wie bei dem klassischen Wahrscheinlichkeitsbegriff).
 Darüber hinaus erlaubt er die Kombination vielfältiger Informationen zu einem Urteil (z.B. Vorwissen, Plausibilitätsüberlegungen, etc.).
 Dieser Wahrscheinlichkeitsbegriff bildet die Grundlage der sog. Bayes-Statistik (die wir im Rahmen dieser Veranstaltung nicht vertiefen werden).
 
@@ -82,7 +82,7 @@ Wahrscheinlichkeitsverteilungen kommen dabei bei *diskreten*,
 Wahrscheinlichkeitsdichteverteilungen bei *stetigen* Zufallsvariablen zur Anwendung.
 Eine diskrete Variable liegt dann vor, wenn es endlich viele Ausprägungen eines Merkmals gibt (z.B. die wählbaren Parteien bei der Bundestagswahl), *oder* wenn es theoretisch unendlich viele, aber abzählbare Ausprägungen eines Merkmals gibt (z.B. die Anzahl der Versuche, bis jemand eine Aufgabe gelöst hat -- theoretisch gibt es unendlich viele mögliche Ausprägungen des Variable *Anzahl Versuche*, man kann aber trotzdem die Anzahl der Versuche abzählen.)
 Gibt es jedoch überabzählbar unendlich viele Merkmalsausprägungen, sprechen wir von einer *stetigen* oder *kontinuierlichen* Variable.
-"Überabzählbar" bedeutet, dass innerhalb eines Werteintervalls beliebig viele Zwischenwerte liegen können, 
+"Überabzählbar" bedeutet, dass innerhalb eines Wertebereichs beliebig viele Zwischenwerte liegen können, 
 man also die Gesamtheit möglicher Werte nicht abzählen kann (typische Beispiele sind die Körpergröße in Meter oder das Gewicht in Kilogramm).
 
 *Wahrscheinlichkeitsverteilungen*. Eine Wahrscheinlichkeitsverteilung gibt für jeden Wert einer *diskreten* Zufallsvariable die Auftretenswahrscheinlichkeit an. Eine Wahrscheinlichkeitsverteilung lässt sich als Säulendiagramm wie Abbildung \@ref(fig:probability-distribution) darstellen.
@@ -148,7 +148,7 @@ Nehmen wir nun ein bestimmtes Modell des Merkmals in der Population an,
 können wir mithilfe der Stichprobenkennwerte *Schätzer* der entsprechenden Populationskennwerte bestimmen.
 Hierbei gilt, dass mit wachsender Stichprobengröße die Genauigkeit der Schätzung zunimmt.
 
-In der klassichen (= frequentistischen) Inferenzstatistik verwendet man die oben beschriebene
+In der klassischen (= frequentistischen) Inferenzstatistik verwendet man die oben beschriebene
 frequentistische Definition einer Wahrscheinlichkeit zusätzlich, um Verteilungen
 von Stichprobenkennwerten über viele Stichproben hinweg vorherzusagen, diese sind Wahrscheinlichkeits- bzw. Wahrscheinlichkeitsdichteverteilungen.
 Hiermit ist es auch möglich, die Wahrscheinlichkeit zu bestimmen, dass ein bestimmter Stichprobenkennwert

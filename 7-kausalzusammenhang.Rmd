@@ -38,9 +38,9 @@ Wie wir bereits gesehen haben, können wir auch dann eine Kovariation zweier Var
 wenn sie sich nicht einander bedingen, sondern wenn beide gleichermaßen durch eine dritte Variable bedingt werden.
 Will man also tatsächlich auf ein Bedingungsgefüge einer einzelnen Variable auf eine andere Variable schließen können,
 muss der Einfluss der Gesamtheit aller Drittvariablen kontrolliert werden.
-Um die Koviariation zweier Variablen festzustellen, genügen uns die Mittel der Statistik;
+Um die Kovariation zweier Variablen festzustellen, genügen uns die Mittel der Statistik;
 der Ausschluss von Alternativerklärungen lässt sich jedoch nur erreichen, indem unsere Untersuchung so geplant ist,
-dass ihre Ergebnisse nicht durch eine andere Erklärung als ein Wirkgefüge unserer beiden interessierendn Variablen erklärbar ist.
+dass ihre Ergebnisse nicht durch eine andere Erklärung als ein Wirkgefüge unserer beiden interessierenden Variablen erklärbar ist.
 Eine Untersuchung, die es schafft, tatsächlich alle relevanten Alternativerklärungen auszuschließen,
 bezeichnen wir als *intern valide*.
 
@@ -51,7 +51,7 @@ Stellen wir uns vor, wir beobachten einen Zusammenhang zwischen zwei Variablen A
 Wie ließe sich dieser Zusammenhang kausal erklären?
 
 1. Die Ausprägung von A beeinflusst die Ausprägung von B, d.h. es liegt eine kausale Wirkbeziehung von A auf B vor (Abbildung \@ref(fig:a-causes-b))
-```{r a-causes-b, fig.margin = TRUE, fig.cap = "Ein mögliches Kausalmodell: A beeinflusst B."}
+```{r a-causes-b, fig.margin = TRUE, fig.cap = "Ein mögliches Kausalmodell: A beeinflusst B.", out.width = "100%"}
 # source("R/causation_models.R")
 # par(mfrow = c(2, 2))
 # render_graph(causality_graph)
@@ -62,19 +62,19 @@ Wie ließe sich dieser Zusammenhang kausal erklären?
 knitr::include_graphics("graph1.png")
 ```
 2. Die Ausprägung von B beeinflusst die Ausprägung von A, also eine Wirkbeziehung in die gegenteilige Richtung vorliegt (Abbildung \@ref(fig:b-causes-a)).
-```{r b-causes-a, fig.margin = TRUE, fig.cap = "Ein mögliches Kausalmodell: B beeinflusst A."}
+```{r b-causes-a, fig.margin = TRUE, fig.cap = "Ein mögliches Kausalmodell: B beeinflusst A.", out.width = "100%"}
 knitr::include_graphics("graph2.png")
 ```
 3. Die Ausprägungen von A und B beeinflussen sich wechselseitig (Abbildung \@ref(fig:a-causes-b-causes-a)).
-```{r a-causes-b-causes-a, fig.margin = TRUE, fig.cap = "Ein mögliches Kausalmodell: A und B beeinflussen sich wechselseitig."}
+```{r a-causes-b-causes-a, fig.margin = TRUE, fig.cap = "Ein mögliches Kausalmodell: A und B beeinflussen sich wechselseitig.", out.width = "100%"}
 knitr::include_graphics("graph5.png")
 ```
 4. Eine weitere Variable C beeinflusst die Variablen A und B, diese beeinflussen sich aber nicht gegenseitig (Abbildung \@ref(fig:c-causes-a-b)).
-```{r c-causes-a-b, fig.margin = TRUE, fig.cap = "Ein mögliches Kausalmodell: C beeinflusst A und B."}
+```{r c-causes-a-b, fig.margin = TRUE, fig.cap = "Ein mögliches Kausalmodell: C beeinflusst A und B.", out.width = "100%"}
 knitr::include_graphics("graph3.png")
 ```
 5. Multi-Determiniertheit: Variable A hat keinen direkten Einfluss auf B, aber es gibt vielfache Wechselwirkungen über die Variablen C-F(Abbildung \@ref(fig:multiple-causes)).
-```{r multiple-causes, fig.margin = TRUE, fig.cap = "Ein mögliches Kausalmodell: Multi-Determiniertheit."}
+```{r multiple-causes, fig.margin = TRUE, fig.cap = "Ein mögliches Kausalmodell: Multi-Determiniertheit.", out.width = "100%"}
 knitr::include_graphics("graph4.png")
 ```
 
@@ -82,7 +82,7 @@ Stellen wir uns nun vor, wir beobachten einen klaren Nullzusammenhang zwischen z
 Wie ließe sich dieses Nicht-Vorhandensein eines Zusammenhangs kausal erklären?
 
 1. Variable A hat keine Einfluss auf Variable B und Variable B hat keinen Einfluss auf Variable A -- es besteht kein Wirkgefüge zwischen den beiden Variablen.
-2. Es gibt ein kausales Wirkgefüge zwischen den beiden Variablen, dieses wird jedoch durch den Einfluss einer oder mehrerer Drittvariablen verdeckt. Beispielsweise könnte es passieren, dass ein Medikament besser wirkt als ein anderes, aber auch Nebenwirkungen erzeugt, die beide n Patienten Verhaltensänderungen bewirken, die die eigentliche Symptomatik verschlechtern.
+2. Es gibt ein kausales Wirkgefüge zwischen den beiden Variablen, dieses wird jedoch durch den Einfluss einer oder mehrerer Drittvariablen verdeckt. Beispielsweise könnte es passieren, dass ein Medikament besser wirkt als ein anderes, aber auch Nebenwirkungen erzeugt, die bei den Patienten Verhaltensänderungen bewirken, die die eigentliche Symptomatik verschlechtern.
 3. In unserer Untersuchung beobachten wir nur einen Teil der Variationsbreite der beiden Variablen, in dem es keinen Zusammenhang gibt; in einem anderen Wertebereich könnte es aber sehr wohl einen Zusammenhang geben. Beispielsweise könnte es sein, dass  es so scheint, dass ein Medikament nicht die erwünschte Wirkung auf eine Krankheit hat. Vielleicht war aber in unserer Untersuchung die Dosis zu gering und das Medikament könnte sehr wohl wirken, wenn man es höher dosierte.
 
 
@@ -90,7 +90,7 @@ Wie ließe sich dieses Nicht-Vorhandensein eines Zusammenhangs kausal erklären?
 
 1. Überlegt in 2er- oder 3-er-Gruppen, welche Kausalmodelle mit dem folgenden Datenmuster vereinbar sind:
 Es gibt einen negativen Zusammenhang zwischen dem Bleigehalt im Trinkwasser und der Intelligenz. Je höher der Bleigehalt, desto geringer die mittlere Intelligenz der Hausbewohner. Überlegt hierzu, welche Drittvariablen ggf. einen Einfluss nehmen könnten -- bedenkt, dass Ihr natürlich nicht *alle* potentiell relevanten Drittvariablen kennen könnt.
-2. Wie würdet Ihr Eure Überlegungen überdenken, wenn Ihr zusätzlich folgende Information zur Verfügung stehen habt: Der Bleigehalt des Trinkwassers wird fast ausschließlich dadurch beeinflusst, ob in einem Haus Blei- oder Kupferrohre verlegt wurden (das Wasser kommt praktisch ohne Bleibelastung am Haus an). Bleirohre sind vor allen Dingen in alten Häusern, deren Installationsleitungen nicht erneuert wuurden, zu finden.
+2. Wie würdet Ihr Eure Überlegungen überdenken, wenn Ihr zusätzlich folgende Information zur Verfügung stehen habt: Der Bleigehalt des Trinkwassers wird fast ausschließlich dadurch beeinflusst, ob in einem Haus Blei- oder Kupferrohre verlegt wurden (das Wasser kommt praktisch ohne Bleibelastung am Haus an). Bleirohre sind vor allen Dingen in alten Häusern, deren Installationsleitungen nicht erneuert wurden, zu finden.
 3. Wie würdet Ihr Eure Überlegungen überdenken, wenn Ihr zusätzlich folgende Information zur Verfügung stehen habt:
 Kontrolliert man (statistisch) den Einfluss des Einkommens auf die Intelligenz, gibt es keinen (signifikanten) Zusammenhang mehr zwischen Bleigehalt und Intelligenz.
 

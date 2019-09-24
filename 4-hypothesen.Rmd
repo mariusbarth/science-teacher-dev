@@ -17,7 +17,7 @@ Beispiele für inhaltliche Hypothesen sind:
 Davon unterscheidet man statistische Hypothesen.
 Sie beziehen sich auf statistische Kennwerte und deren Verteilungen.
 
-Beispiele für statistische Hypotehesen:
+Beispiele für statistische Hypothesen:
 
 - Der Mittelwert der Körpergröße der Niederländer ist größer als der der Deutschen.
 - Der Mittelwert der Körpergröße der Deutschen ist größer als 170 cm.

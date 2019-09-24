@@ -8,7 +8,7 @@ also ein gemeinsames Auftreten von hohen oder niedrigen Werten:
 Ein *gleichsinniger* oder *positiver* Zusammenhang bedeutet, dass hohe Werte in der einen Variable
 mit hohen Werten in der anderen Variable einhergehen;
 ein *gegenläufiger* oder *negativer* Zusammenhang liegt dann vor, wenn hohe Werte in der einen Variable
-mit niedrigen Werte in der anderen Variable einhergen.
+mit niedrigen Werte in der anderen Variable einhergehen.
 
 Um Zusammenhänge bildlich darzustellen, verwendet man häufig ein *Streudiagramm* wie in Abbildung \@ref(fig:first-scatterplot).
 
@@ -184,7 +184,7 @@ aus den Werten der $X$-Variable vorhersagen kann. Das bedeutet auch, dass man im
 Die *Regressionsanalyse* ist eine Methode, diesen Vorhersagefehler zu minimieren.
 Man spricht im Rahmen der Regressionsanalyse davon, eine *Kriteriumsvariable* (die $Y$-Variable)
 durch eine oder mehrere *Prädiktorvariablen* (die $X$-Variable) vorherzusagen.
-Die Regressionanalyse liefert eine sog. *Regressionsgleichung*, mit deren Hilfe man dann aus den Werten $x_i$ der Prädiktorvariable ($i$ ist der Laufindex, d.h. eine Zahl, die angibt, um die wievielte Beobachtung es sich handelt)
+Die Regressionsanalyse liefert eine sog. *Regressionsgleichung*, mit deren Hilfe man dann aus den Werten $x_i$ der Prädiktorvariable ($i$ ist der Laufindex, d.h. eine Zahl, die angibt, um die wievielte Beobachtung es sich handelt)
 vorhergesagte Werte $\hat{y}_i$ der Kriteriumsvariable berechnen kann (das kleine Dach über dem $y$ bedeutet, dass es sich um vorhergesagte und nicht um beobachtete Werte handelt).
 
 Ihre allgemeine Form lautet:

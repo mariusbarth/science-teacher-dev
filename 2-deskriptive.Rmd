@@ -1,6 +1,6 @@
 # Beschreiben und Zusammenfassen
 
-Die *deskriptive Statistik* beschäftigt sicht mit der Frage, wie Merkmale bzw. Variablen sinnvoll beschrieben und zusammengefasst werden können.
+Die *deskriptive Statistik* beschäftigt sich mit der Frage, wie Merkmale bzw. Variablen sinnvoll beschrieben und zusammengefasst werden können.
 Wichtige Methoden hierzu sind *Häufigkeitsverteilungen* und *statistische Kennwerte*, die wir in diesem Kapitel vorstellen werden.
 
 ## Häufigkeitsverteilungen
@@ -53,7 +53,7 @@ die Häufigkeitsverteilung noch leicht in einem Diagramm darstellen. Wenn es abe
 könnte man aber auch *Kategorien von Merkmalsausprägungen* bilden, um diese dann als sog. *sekundäre Häufigkeitsverteilung* darzustellen.
 Z.B. wäre es denkbar, dass die Schüler viele unterschiedliche Nudelgerichte angegeben hätten, die man dann zu der Kategorie "Nudelgerichte" zusammengefasst hätte.
 
-<!-- oder doch schon diskontionuierlich/stetig oben einführen?? -->
+<!-- oder doch schon diskontinuierlich/stetig oben einführen?? -->
   
   Betrachtet man die Häufigkeitsverteilung eines Merkmals wie der Körpergröße von Schülern in einer Klasse, merkt man schnell, dass man nicht für jede Merkmalsausprägung eine eigene Säule zeichnen möchte:
   Hat man die Körpergröße z.B. auf den Zentimeter genau gemessen, wird es in einer Klasse kaum zwei Schüler geben, die genau gleich groß sind und jede Säule hätte die Höhe 1.
@@ -156,7 +156,7 @@ axis(side = 1)
 
 ### Lagemaße
 
-*Modus* bzw. *Modelwert*.
+*Modus* bzw. *Modalwert*.
 Der Modus $\textit{Mo}$ ist derjenige Wert einer Variablen, der *am häufigsten* vorkommt.
 Man "berechnet" ihn also, indem man zählt, wie häufig jede einzelne Merkmalsausprägung vorkommt und
 die häufigste Ausprägung aufschreibt.
@@ -168,9 +168,9 @@ Hätten wir den einzelnen Gerichten Zahlen zugeordnet, z.B. "Pizza" = 1, "Pommes
 Das ist genau der Zahlenwert, den wir zuvor der Antwort "Pizza" zugeordnet hatten.
 
 *Median*.
-Der Median $\textit{Md}$ ist derjenige Wert einer Variablen, der alle Werte, die man voher der Größe nach geordnet hat, genau in der Mitte halbiert.
+Der Median $\textit{Md}$ ist derjenige Wert einer Variablen, der alle Werte, die man vorher der Größe nach geordnet hat, genau in der Mitte halbiert.
 Um ihn zu berechnen, ordnet man also zunächst alle Werte der Größe nach und schaut dann, welcher Wert genau in der Mitte dieser geordneten Zahlenreihe steht.
-Der Median ist dann sinvoll interpretierbar, wenn die Variable mindestens Ordinalskalenniveau aufweist,
+Der Median ist dann sinnvoll interpretierbar, wenn die Variable mindestens Ordinalskalenniveau aufweist,
 sich die Werte also sinnvoll der Größe, Intensität oder Stärke nach ordnen lassen.
 Ein gutes Beispiel hierfür sind Schulnoten.
 
@@ -178,10 +178,10 @@ Ein gutes Beispiel hierfür sind Schulnoten.
 *Mittelwert*.
 Der Mittelwert $M$ ist der Durchschnitt der Werte einer Variablen.
 Ihn kann man am leichtesten bestimmen, indem man (1) alle beobachteten Werte aufsummiert und dann (2) durch die Anzahl der beobachteten Werte teilt.
-Damit der Mittelwert sinnvoll interpretierbar ist, muss die Variable mindestens Intervallskalennievau aufweisen.
+Damit der Mittelwert sinnvoll interpretierbar ist, muss die Variable mindestens Intervallskalenniveau aufweisen.
 Ein gutes Beispiel hierfür ist die Temperatur in Grad Celsius:
   Haben wir einen Eimer mit 10°C warmen Wasser und einem Eimer mit 20°C warmen Wasser, können wir sagen, 
-dass die Temperatur des wassers in den beiden Eimern im Durchschnitt oder im Mittel 15°C beträgt.
+dass die Temperatur des Wassers in den beiden Eimern im Durchschnitt oder im Mittel 15°C beträgt.
 Das geht deshalb, da der Unterschied von 15°C zu 10°C genauso groß ist wieder der Unterschied von 15°C zu 20°C (nämlich jeweils 5°C).
 
 
@@ -189,7 +189,7 @@ Das geht deshalb, da der Unterschied von 15°C zu 10°C genauso groß ist wieder
 
 *Range* bzw. *Variationsbreite*.
 Der Range $v$ (engl. für Reichweite/Bandbreite) bezeichnet dem Umfang der Werte einer Variable.
-Im Falle einer nominalskalierten Variable berechnet er sich als die Anzahl unterschiedlicher Merkmalsausprägungen, die beobachtet wurden (wenn z.B. nur drei unterschiedliche Lieblinsgerichte genannt, ist der Range $v=3$)
+Im Falle einer nominalskalierten Variable berechnet er sich als die Anzahl unterschiedlicher Merkmalsausprägungen, die beobachtet wurden (wenn z.B. nur drei unterschiedliche Lieblingsgerichte genannt, ist der Range $v=3$)
 Im Falle von mindestens ordinalskalierten Variablen bezeichnet er die Differenz zwischen dem höchsten und niedrigsten beobachteten Wert der Variablen. (Besser ist es im Falle von nominal- oder ordinalskalierten Variablen, den sog. *relativen Informationsgehalt* $H$ zu berechnen.)
 
 *Interquartilsbereich*.
@@ -203,7 +203,7 @@ Das klingt ziemlich kompliziert, muss man aber zum Glück praktisch nie von Hand
 Um zu verstehen, was die Standardabweichung ausdrückt, kann man sich vorstellen, dass sie ungefähr dem Wert entspricht, den die Messwerte (betragsmäßig) durchschnittlich vom Mittelwert abweichen (wobei große Abweichungen aber etwas stärker gewichtet werden).
 Es lässt sich erst ab Intervallskalenniveau berechnen, da erst hier die Größen von Abständen bzw. Unterschieden sinnvoll interpretierbar sind.
 
-Tabelle 1.2 zeigt einen Überblick, ab welchem Skalenniveau man welchen der vorgestellen Kennwerte berechnen darf.
+Tabelle 1.2 zeigt einen Überblick, ab welchem Skalenniveau man welchen der vorgestellten Kennwerte berechnen darf.
 
 ```{r}
 x <- matrix("nein", ncol = 3, nrow = 3)

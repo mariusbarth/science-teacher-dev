@@ -32,12 +32,13 @@ set_shinydegs_theme()
 Datum   | bisher geplantes Thema
 --------|---------------------------------------------------------------------------------------------------------------------------------------
 18.10.  | messen/skalenniveaus, methoden der datenerhebung
-25.10.  | wahrscheinlichkeitstheorie, grundlagen des signifikanztests, power
+25.10.  | Wahrscheinlichkeitstheorie, Grundlagen des Signifikanztests, power
 08.11.  | Regression, Korrelation vs. Kausalität
-15.11.  | Logik des wissenchaftlichen Arbeitens, Theory Appraisal, Anekdote vs. Wissenschaft, Qualitätssicherung im Wissenschaftsbetrieb
+15.11.  | Logik des wissenschaftlichen Arbeitens, Theory Appraisal, Anekdote vs. Wissenschaft, Qualitätssicherung im Wissenschaftsbetrieb
 -->
 
 # Vorwort {-}
 
-Diese Materialien sollen die im Rahmen der Lehrveranstaltung *Didaktische Forschungsprojekte* vermittelten Grundkenntnisse
-zur Statistik in leicht verständlicher Form zusammenfassen.
+Diese Materialien wurden für die Lehrveranstaltung *Didaktische Forschungsprojekte* entwickelt. Sie sollen die in dieser Veranstaltung vermittelten Grundkenntnisse zu Statistik und Forschungsmethoden zusammenfassen und es ermöglichen, diese auch im Selbststudium erwerben zu können.
+
+In vier Sitzungen wurden hierzu jeweils zwei Kapitel dieses Buchs behandelt. Bei der Konzeption war es unser Ziel, dass die Studierenden in jeder Sitzung eine mögliche "Fehlerquelle" im wissenschaftlichen Prozess kennenlernen: (1) Messfehler, (2) statistischer Entscheidungsfehler, (3) Fehler nicht berücksichtigter Drittvariablen und (4) der Fehler des Schlusses von speziellen auf allgemeine Sätze.
